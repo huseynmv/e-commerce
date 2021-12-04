@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 
 <div class="page-title-area">
@@ -20,10 +21,10 @@
 </div>
 </div>
 <div class="title-img">
-<img src="assets/images/page-title1.jpg" alt="About">
-<img src="assets/images/shape16.png" alt="Shape">
-<img src="assets/images/shape17.png" alt="Shape">
-<img src="assets/images/shape18.png" alt="Shape">
+<img src="{% static 'images/page-title1.jpg' %}" alt="About">
+<img src="{% static 'images/shape16.png' %}" alt="Shape">
+<img src="{% static 'images/shape17.png' %}" alt="Shape">
+<img src="{% static 'images/shape18.png' %}" alt="Shape">
 </div>
 </div>
 

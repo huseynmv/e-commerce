@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -6,30 +8,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="../static/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 
-<link rel="stylesheet" href="../static/fonts/flaticon.css">
+<link rel="stylesheet" href="{% static 'fonts/flaticon.css' %}">
 
-<link rel="stylesheet" href="../static/css/nice-select.min.css">
+<link rel="stylesheet" href="{% static 'css/nice-select.min.css' %}">
 
-<link rel="stylesheet" href="../static/css/boxicons.min.css">
+<link rel="stylesheet" href="{% static 'css/boxicons.min.css' %}">
 
-<link rel="stylesheet" href="../static/css/meanmenu.css">
+<link rel="stylesheet" href="{% static 'css/meanmenu.css' %}">
 
-<link rel="stylesheet" type="text/css" href="../static/css/settings.css">
-<link rel="stylesheet" type="text/css" href="../static/css/layers.css">
-<link rel="stylesheet" type="text/css" href="../static/css/navigation.css">
+<link rel="stylesheet" type="text/css" href="{% static 'css/settings.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/layers.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/navigation.css' %}">
 
-<link rel="stylesheet" href="../static/css/owl.carousel.min.css">
-<link rel="stylesheet" href="../static/css/owl.theme.default.min.css">
+<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
 
-<link rel="stylesheet" href="../static/css/modal-video.min.css">
+<link rel="stylesheet" href="{% static 'css/modal-video.min.css' %}">
 
-<link rel="stylesheet" href="../static/css/style.css">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-<link rel="stylesheet" href="../static/css/responsive.css">
+<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
 <title>Ecop - Multipurpose eCommerce HTML Template</title>
-<link rel="icon" type="image/png" href="../../static/images/favicon.png">
+<link rel="icon" type="image/png" href="{% static 'images/favicon.png ' %}">
 </head>
 <body>
 
@@ -107,7 +109,7 @@
 <div class="col-lg-2">
 <div class="left">
 <a href="index.html">
-<img src="../../static/images/logo.png" alt="Logo">
+<img src="{% static 'images/logo.png ' %}" alt="Logo">
 </a>
 </div>
 </div>
@@ -183,7 +185,7 @@ Join
 
 <div class="mobile-nav">
 <a href="index.html" class="logo">
-<img src="../../static/images/logo.png" alt="Logo">
+<img src="{% static 'images/logo.png ' %}" alt="Logo">
 </a>
 </div>
 
@@ -208,8 +210,8 @@ Join
 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
 <ul class="navbar-nav">
 <li class="nav-item">
-<a href="#" class="nav-link dropdown-toggle active">Home <i class='bx bx-chevron-down'></i></a>
-<ul class="dropdown-menu">
+<a href="#" class="nav-link dropdown-toggle active">Home </a>
+<!-- <ul class="dropdown-menu">
 <li class="nav-item">
 <a href="index.html" class="nav-link active">Home Demo One</a>
 </li>
@@ -222,7 +224,7 @@ Join
 <li class="nav-item">
 <a href="index-4.html" class="nav-link">Home Demo Four (Revolution)</a>
 </li>
-</ul>
+</ul> -->
 </li>
 <li class="nav-item">
 <a href="#" class="nav-link dropdown-toggle">Pages <i class='bx bx-chevron-down'></i></a>
@@ -317,8 +319,8 @@ Join
 
 <footer class="footer-area pt-100 pb-70">
     <div class="footer-shape">
-    <img src="../../static/images/footer-right-shape.png" alt="Shape">
-    <img src="../../static/images/shape5.png" alt="Shape">
+    <img src="{% static 'images/footer-right-shape.png ' %}" alt="Shape">
+    <img src="{% static 'images/shape5.png ' %}" alt="Shape">
     </div>
     <div class="container">
     <div class="row justify-content-center">
@@ -326,7 +328,7 @@ Join
     <div class="footer-item">
     <div class="footer-logo">
     <a class="logo" href="index.html">
-    <img src="../../static/images/logo.png" alt="Logo">
+    <img src="{% static 'images/logo.png ' %}" alt="Logo">
     </a>
     <ul>
     <li>
@@ -435,22 +437,22 @@ Join
     <ul>
     <li>
     <a href="#" target="_blank">
-    <img src="../../static/images/payment1.png" alt="Payment">
+    <img src="{% static 'images/payment1.png ' %}" alt="Payment">
     </a>
     </li>
     <li>
     <a href="#" target="_blank">
-    <img src="../../static/images/payment2.png" alt="Payment">
+    <img src="{% static 'images/payment2.png ' %}" alt="Payment">
     </a>
     </li>
     <li>
     <a href="#" target="_blank">
-    <img src="../../static/images/payment3.png" alt="Payment">
+    <img src="{% static 'images/payment3.png ' %}" alt="Payment">
     </a>
     </li>
     <li>
     <a href="#" target="_blank">
-    <img src="../../static/images/payment4.png" alt="Payment">
+    <img src="{% static 'images/payment4.png ' %}" alt="Payment">
     </a>
     </li>
     </ul>
@@ -514,7 +516,7 @@ Join
     <tbody>
     <tr>
     <th scope="row">
-    <img src="../../static/images/cart/cart1.png" alt="Cart">
+    <img src="{% static 'images/cart/cart1.png ' %}" alt="Cart">
     </th>
     <td>
     <h3>White Comfy Stool</h3>
@@ -537,7 +539,7 @@ Join
     </tr>
     <tr>
     <th scope="row">
-    <img src="../../static/images/cart/cart2.png" alt="Cart">
+    <img src="{% static 'images/cart/cart2.png ' %}" alt="Cart">
     </th>
     <td>
     <h3>Yellow Armchair</h3>
@@ -570,8 +572,8 @@ Join
     <input type="text" class="form-control" placeholder="Enter Coupon Code">
     <button type="submit" class="btn common-btn">
     Proceed To Checkout
-    <img src="../../static/images/shape1.png" alt="Shape">
-    <img src="../../static/images/shape2.png" alt="Shape">
+    <img src="{% static 'images/shape1.png ' %}" alt="Shape">
+    <img src="{% static 'images/shape2.png ' %}" alt="Shape">
     </button>
     </form>
     </div>
@@ -593,7 +595,7 @@ Join
     <tbody>
     <tr>
     <th scope="row">
-    <img src="../../static/images/cart/cart1.png" alt="Cart">
+    <img src="{% static 'images/cart/cart1.png ' %}" alt="Cart">
     </th>
     <td>
     <h3>White Comfy Stool</h3>
@@ -602,8 +604,8 @@ Join
     <td>
     <a class="common-btn" href="shop.html">
     Add To Cart
-    <img src="../../static/images/shape1.png" alt="Shape">
-    <img src="../../static/images/shape2.png" alt="Shape">
+    <img src="{% static 'images/shape1.png ' %}" alt="Shape">
+    <img src="{% static 'images/shape2.png ' %}" alt="Shape">
     </a>
     </td>
     <td>
@@ -614,7 +616,7 @@ Join
     </tr>
     <tr>
     <th scope="row">
-    <img src="../../static/images/cart/cart2.png" alt="Cart">
+    <img src="{% static 'images/cart/cart2.png ' %}" alt="Cart">
     </th>
     <td>
     <h3>Yellow Armchair</h3>
@@ -623,8 +625,8 @@ Join
     <td>
     <a class="common-btn" href="shop.html">
     Add To Cart
-    <img src="../../static/images/shape1.png" alt="Shape">
-    <img src="../../static/images/shape2.png" alt="Shape">
+    <img src="{% static 'images/shape1.png ' %}" alt="Shape">
+    <img src="{% static 'images/shape2.png ' %}" alt="Shape">
     </a>
     </td>
     <td>
@@ -642,13 +644,13 @@ Join
     </div>
     
     
-    <div class="modal fade" id="modal-subscribe" tabindex="-1" role="dialog">
+    <!-- <div class="modal fade" id="modal-subscribe" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
     <div class="modal-content">
     <div class="subscribe-shape">
-    <img src="../../static/images/subscribe-shape1.png" alt="Shape">
-    <img src="../../static/images/subscribe-shape2.png" alt="Shape">
-    <img src="../../static/images/subscribe-shape3.png" alt="Shape">
+    <img src="{% static 'images/subscribe-shape1.png ' %}" alt="Shape">
+    <img src="{% static 'images/subscribe-shape2.png ' %}" alt="Shape">
+    <img src="{% static 'images/subscribe-shape3.png ' %}" alt="Shape">
     </div>
     <div class="modal-header border-0">
     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -657,7 +659,7 @@ Join
     <div class="row align-items-center">
     <div class="col-sm-6 col-lg-6">
     <div class="subscribe-img">
-    <img src="../../static/images/subscribe-main1.png" alt="Subscribe">
+    <img src="{% static 'images/subscribe-main1.png ' %}" alt="Subscribe">
     </div>
     </div>
     <div class="col-sm-6 col-lg-6">
@@ -668,8 +670,8 @@ Join
     <input type="email" class="form-control" placeholder="Enter Your Email" name="EMAIL" required autocomplete="off">
     <button class="btn common-btn" type="submit">
     Subscribe
-    <img src="../../static/images/shape1.png" alt="Shape">
-    <img src="../../static/images/shape2.png" alt="Shape">
+    <img src="{% static 'images/shape1.png ' %}" alt="Shape">
+    <img src="{% static 'images/shape2.png ' %}" alt="Shape">
     </button>
     <div id="validator-newsletter" class="form-result"></div>
     <div class="inner-check">
@@ -693,7 +695,7 @@ Join
     </div>
     </div>
     </div>
-    </div>
+    </div> -->
     
     
     <div class="go-top">
@@ -702,42 +704,42 @@ Join
     </div>
     
     
-    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../static/js/jquery.min.js"></script>
-    <script src="../static/js/popper.min.js"></script>
-    <script src="../static/js/bootstrap.min.js"></script>
+    <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js ' %}"></script><script src="{% static 'js/jquery.min.js ' %}"></script>
+    <script src="{% static 'js/popper.min.js ' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js ' %}"></script>
     
-    <script src="../static/js/form-validator.min.js"></script>
+    <script src="{% static 'js/form-validator.min.js ' %}"></script>
     
-    <script src="../static/js/contact-form-script.js"></script>
+    <script src="{% static 'js/contact-form-script.js ' %}"></script>
     
-    <script src="../static/js/jquery.ajaxchimp.min.js"></script>
+    <script src="{% static 'js/jquery.ajaxchimp.min.js ' %}"></script>
     
-    <script src="../static/js/jquery.nice-select.min.js"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js ' %}"></script>
     
-    <script src="../static/js/jquery.meanmenu.js"></script>
+    <script src="{% static 'js/jquery.meanmenu.js ' %}"></script>
     
-    <script src="../static/js/jquery.themepunch.tools.min.js"></script>
-    <script src="../static/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="{% static 'js/jquery.themepunch.tools.min.js ' %}"></script>
+    <script src="{% static 'js/jquery.themepunch.revolution.min.js ' %}"></script>
     
-    <script src="../static/js/extensions/revolution.extension.actions.min.js"></script>
-    <script src="../static/js/extensions/revolution.extension.carousel.min.js"></script>
-    <script src="../static/js/extensions/revolution.extension.kenburn.min.js"></script>
-    <script src="../static/js/extensions/revolution.extension.layeranimation.min.js"></script>
-    <script src="../static/js/extensions/revolution.extension.migration.min.js"></script>
-    <script src="../static/js/extensions/revolution.extension.navigation.min.js"></script>
-    <script src="../static/js/extensions/revolution.extension.parallax.min.js"></script>
-    <script src="../static/js/extensions/revolution.extension.slideanims.min.js"></script>
-    <script src="../static/js/extensions/revolution.extension.video.min.js"></script>
+    <script src="{% static 'js/extensions/revolution.extension.actions.min.js ' %}"></script>
+    <script src="{% static 'js/extensions/revolution.extension.carousel.min.js ' %}"></script>
+    <script src="{% static 'js/extensions/revolution.extension.kenburn.min.js ' %}"></script>
+    <script src="{% static 'js/extensions/revolution.extension.layeranimation.min.js ' %}"></script>
+    <script src="{% static 'js/extensions/revolution.extension.migration.min.js ' %}"></script>
+    <script src="{% static 'js/extensions/revolution.extension.navigation.min.js ' %}"></script>
+    <script src="{% static 'js/extensions/revolution.extension.parallax.min.js ' %}"></script>
+    <script src="{% static 'js/extensions/revolution.extension.slideanims.min.js ' %}"></script>
+    <script src="{% static 'js/extensions/revolution.extension.video.min.js ' %}"></script>
     
-    <script src="../static/js/jquery.mixitup.min.js"></script>
+    <script src="{% static 'js/jquery.mixitup.min.js ' %}"></script>
     
-    <script src="../static/js/owl.carousel.min.js"></script>
+    <script src="{% static 'js/owl.carousel.min.js ' %}"></script>
     
-    <script src="../static/js/jquery-modal-video.min.js"></script>
+    <script src="{% static 'js/jquery-modal-video.min.js ' %}"></script>
     
-    <script src="../static/js/thumb-slide.js"></script>
+    <script src="{% static 'js/thumb-slide.js ' %}"></script>
     
-    <script src="../static/js/custom.js"></script>
+    <script src="{% static 'js/custom.js ' %}"></script>
     </body>
     
     <!-- Mirrored from templates.hibootstrap.com/ecop/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 28 Nov 2021 13:55:02 GMT -->

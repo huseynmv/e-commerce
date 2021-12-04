@@ -12,7 +12,7 @@ def privacy(request):
     return render(request, 'privacy-policy.html')
 
 def product_on_sale(request):
-    return render(request, 'product-on-sale.html')
+    return render(request, 'products-on-sale.html')
 
 def policy(request):
     return render(request, 'return-policy.html')
