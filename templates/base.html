@@ -400,7 +400,7 @@ Join
     <a href="{% url 'product:shop' %}">Shop</a>
     </li>
     <li>
-    <a href="{% url account:login %}">My Account</a>
+    <a href="{% url 'account:login' %}">My Account</a>
     </li>
     </ul>
     </div>
@@ -602,7 +602,7 @@ Join
     <span class="rate">$200.00 x 1</span>
     </td>
     <td>
-    <a class="common-btn" href="{% product:shop %}">
+    <a class="common-btn" href="{% url 'product:shop' %}">
     Add To Cart
     <img src="{% static 'images/shape1.png ' %}" alt="Shape">
     <img src="{% static 'images/shape2.png ' %}" alt="Shape">

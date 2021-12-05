@@ -9,7 +9,7 @@
 <h2>About Us</h2>
 <ul>
 <li>
-<a href="index.html">Home</a>
+<a href="{% url 'home:home' %}">Home</a>
 </li>
 <li>
 <span>About Us</span>
@@ -58,7 +58,7 @@
 </li>
 </ul>
 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirm od tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum</p>
-<a class="common-btn" href="shop.html">
+<a class="common-btn" href="{% url 'product:shop' %}">
 Shop Now
 <img src="{% static 'images/shape1.png' %}" alt="Shape">
 <img src="{% static 'images/shape2.png' %}" alt="Shape">
@@ -99,7 +99,7 @@ Shop Now
 <del>$200.00</del>
 </li>
 </ul>
-<a class="common-btn" href="shop.html">
+<a class="common-btn" href="{% url 'product:shop' %}">
 Shop Now
 <img src="{% static 'images/shape1.png' %}" alt="Shape">
 <img src="{% static 'images/shape2.png' %}" alt="Shape">

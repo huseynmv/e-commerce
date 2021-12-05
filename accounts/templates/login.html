@@ -9,7 +9,7 @@
 <h2>Login</h2>
 <ul>
 <li>
-<a href="index.html">Home</a>
+<a href="{% url 'home:home' %}">Home</a>
 </li>
 <li>
 <span>Login</span>
@@ -59,7 +59,7 @@ Login With Google
 </a>
 </li>
 </ul>
-<h5>Didn't Have An Account? <a href="register.html">Register</a></h5>
+<h5>Didn't Have An Account? <a href="{% url 'account:register' %}">Register</a></h5>
 </form>
 </div>
 </div>
