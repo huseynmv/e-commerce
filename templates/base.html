@@ -168,7 +168,7 @@
 </button>
 </li>
 <li>
-<a class="join" href="login.html">
+<a class="join" href="{% url 'account:login' %}">
 <i class="flaticon-round-account-button-with-user-inside"></i>
 Join
 </a>
@@ -184,7 +184,7 @@ Join
 <div class="navbar-area sticky-top">
 
 <div class="mobile-nav">
-<a href="index.html" class="logo">
+<a href="{% url 'home:home' %}" class="logo">
 <img src="{% static 'images/logo.png ' %}" alt="Logo">
 </a>
 </div>
@@ -210,7 +210,7 @@ Join
 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
 <ul class="navbar-nav">
 <li class="nav-item">
-<a href="#" class="nav-link dropdown-toggle active">Home </a>
+<a href="{% url 'home:home' %}" class="nav-link dropdown-toggle active">Home </a>
 <!-- <ul class="dropdown-menu">
 <li class="nav-item">
 <a href="index.html" class="nav-link active">Home Demo One</a>
@@ -227,44 +227,44 @@ Join
 </ul> -->
 </li>
 <li class="nav-item">
-<a href="#" class="nav-link dropdown-toggle">Pages <i class='bx bx-chevron-down'></i></a>
+<a href="{% url 'page:privacy' %}" class="nav-link dropdown-toggle">Pages <i class='bx bx-chevron-down'></i></a>
 <ul class="dropdown-menu">
 <li class="nav-item">
 <a href="#" class="nav-link dropdown-toggle">Users <i class='bx bx-chevron-down'></i></a>
 <ul class="dropdown-menu">
 <li class="nav-item">
-<a href="login.html" class="nav-link">Login</a>
+<a href="{% url 'account:login' %}" class="nav-link">Login</a>
  </li>
 <li class="nav-item">
-<a href="register.html" class="nav-link">Register</a>
+<a href="{% url 'account:register' %}" class="nav-link">Register</a>
 </li>
 </ul>
 </li>
 <li class="nav-item">
-<a href="faq.html" class="nav-link">FAQ</a>
+<a href="{% url 'page:faq' %}" class="nav-link">FAQ</a>
 </li>
 <li class="nav-item">
 <a href="404.html" class="nav-link">404 Error Page</a>
 </li>
 <li class="nav-item">
-<a href="return-policy.html" class="nav-link">Return Policy</a>
+<a href="{% url 'page:policy' %}" class="nav-link">Return Policy</a>
 </li>
 <li class="nav-item">
-<a href="privacy-policy.html" class="nav-link">Privacy Policy</a>
+<a href="{% url 'page:privacy' %}" class="nav-link">Privacy Policy</a>
 </li>
 <li class="nav-item">
-<a href="terms-conditions.html" class="nav-link">Terms & Conditions</a>
+<a href="{% url 'page:conditions' %}" class="nav-link">Terms & Conditions</a>
 </li>
 </ul>
 </li>
 <li class="nav-item">
-<a href="about.html" class="nav-link">About Us</a>
+<a href="{% url 'about:about' %}" class="nav-link">About Us</a>
 </li>
 <li class="nav-item">
-<a href="#" class="nav-link dropdown-toggle">Blog <i class='bx bx-chevron-down'></i></a>
+<a href="{% url 'blog:blog' %}" class="nav-link dropdown-toggle">Blog <i class='bx bx-chevron-down'></i></a>
 <ul class="dropdown-menu">
 <li class="nav-item">
-<a href="blog.html" class="nav-link">Blog</a>
+<a href="{% url 'blog:blog' %}" class="nav-link">Blog</a>
 </li>
 <li class="nav-item">
 <a href="blog-right-sidebar.html" class="nav-link">Blog Right Sidebar</a>
@@ -273,39 +273,39 @@ Join
 <a href="blog-left-sidebar.html" class="nav-link">Blog Left Sidebar</a>
 </li>
 <li class="nav-item">
-<a href="blog-details.html" class="nav-link">Blog Details</a>
+<a href="{% url 'blog:blog-details' %}" class="nav-link">Blog Details</a>
 </li>
 </ul>
 </li>
 <li class="nav-item">
-<a href="#" class="nav-link dropdown-toggle">Shop <i class='bx bx-chevron-down'></i></a>
+<a href="{% url 'product:shop' %}" class="nav-link dropdown-toggle">Shop <i class='bx bx-chevron-down'></i></a>
 <ul class="dropdown-menu">
 <li class="nav-item">
-<a href="shop.html" class="nav-link">Shop</a>
+<a href="{% url 'product:shop' %}" class="nav-link">Shop</a>
 </li>
 <li class="nav-item">
-<a href="checkout.html" class="nav-link">Checkout</a>
+<a href="{% url 'product:views-checkout' %}" class="nav-link">Checkout</a>
 </li>
 <li class="nav-item">
-<a href="single-product.html" class="nav-link">Single Product</a>
+<a href="{% url 'product:single-views' %}" class="nav-link">Single Product</a>
 </li>
 <li class="nav-item">
-<a href="products-on-sale.html" class="nav-link">Products On Sale</a>
+<a href="{% url 'page:product_on_sale' %}" class="nav-link">Products On Sale</a>
 </li>
 <li class="nav-item">
- <a href="order-tracking.html" class="nav-link">Order Tracking</a>
+ <a href="{% url 'product:order-tracking' %}" class="nav-link">Order Tracking</a>
 </li>
 <li class="nav-item">
-<a href="customer-service.html" class="nav-link">Customer Service</a>
+<a href="{% url 'page:customer_service' %}" class="nav-link">Customer Service</a>
 </li>
 </ul>
 </li>
 <li class="nav-item">
-<a href="contact.html" class="nav-link">Contact</a>
+<a href="{% url 'contact:contact' %}" class="nav-link">Contact</a>
 </li>
 </ul>
 <div class="side-nav">
-<h4>Get <span>50%</span> Discount On Black Friday Offer <a href="products-on-sale.html">View Products On Sale</a></h4>
+<h4>Get <span>50%</span> Discount On Black Friday Offer <a href="{% url 'page:product_on_sale' %}">View Products On Sale</a></h4>
 </div>
 </div>
 </nav>
@@ -327,7 +327,7 @@ Join
     <div class="col-sm-6 col-lg-4">
     <div class="footer-item">
     <div class="footer-logo">
-    <a class="logo" href="index.html">
+    <a class="logo" href="{% url 'home:home' %}">
     <img src="{% static 'images/logo.png ' %}" alt="Logo">
     </a>
     <ul>
@@ -356,22 +356,22 @@ Join
     <h3>Customer Services</h3>
     <ul>
     <li>
-    <a href="return-policy.html">Return Policy</a>
+    <a href="{% url 'page:policy' %}">Return Policy</a>
      </li>
     <li>
-    <a href="faq.html">FAQ</a>
+    <a href="{% url 'page:faq' %}">FAQ</a>
     </li>
     <li>
-    <a href="single-product.html">Single Product</a>
+    <a href="{% url 'product:single-views' %}">Single Product</a>
     </li>
     <li>
-    <a href="order-tracking.html">Order Tracking</a>
+    <a href="{% url 'product:order-tracking' %}">Order Tracking</a>
     </li>
     <li>
-    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="{% url 'page:privacy' %}">Privacy Policy</a>
     </li>
     <li>
-    <a href="contact.html">Contact Us</a>
+    <a href="{% url 'contact:contact' %}">Contact Us</a>
     </li>
     </ul>
     </div>
@@ -385,10 +385,10 @@ Join
     <div class="col-6 col-sm-8 col-lg-8">
     <ul>
     <li>
-    <a href="about.html">About Us</a>
+    <a href="{% url 'about:about' %}">About Us</a>
     </li>
     <li>
-    <a href="blog.html">Blog</a>
+    <a href="{% url 'blog:blog' %}">Blog</a>
     </li>
     <li>
     <a href="#">Wishlist</a>
@@ -397,10 +397,10 @@ Join
     <a href="#">Checkout</a>
     </li>
     <li>
-    <a href="shop.html">Shop</a>
+    <a href="{% url 'product:shop' %}">Shop</a>
     </li>
     <li>
-    <a href="login.html">My Account</a>
+    <a href="{% url account:login %}">My Account</a>
     </li>
     </ul>
     </div>
@@ -602,7 +602,7 @@ Join
     <span class="rate">$200.00 x 1</span>
     </td>
     <td>
-    <a class="common-btn" href="shop.html">
+    <a class="common-btn" href="{% product:shop %}">
     Add To Cart
     <img src="{% static 'images/shape1.png ' %}" alt="Shape">
     <img src="{% static 'images/shape2.png ' %}" alt="Shape">
@@ -623,7 +623,7 @@ Join
     <span class="rate">$180.00 x 1</span>
     </td>
     <td>
-    <a class="common-btn" href="shop.html">
+    <a class="common-btn" href="{% url 'product:shop' %}">
     Add To Cart
     <img src="{% static 'images/shape1.png ' %}" alt="Shape">
     <img src="{% static 'images/shape2.png ' %}" alt="Shape">
