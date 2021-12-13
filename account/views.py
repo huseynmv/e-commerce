@@ -6,3 +6,6 @@ def login(request):
 
 def my_account(request):
     return render(request, 'my-account.html')
+
+def register(request):
+    return render(request, 'register.html')
