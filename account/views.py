@@ -1,19 +1,35 @@
 
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
-from . forms import RegistrationForm
+from . forms import RegistrationForm, LoginForm
 from django.contrib import messages
 from account.tasks import send_confirmation_mail
 from django.utils.encoding import force_str
 from django.utils.http import urlsafe_base64_decode
 from account.tools.tokens import account_activation_token
-from django.contrib.auth import get_user_model
+from django.contrib.auth import authenticate, get_user_model, login as django_login
 
 
 User = get_user_model()
 # Create your views here.
 def login(request):
-    return render(request, 'login.html')
+    form = LoginForm()
+    if request.method =='POST':
+        form = LoginForm(data=request.POST)
+        if form.is_valid():
+            email = form.cleaned_data.get('email')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=email, password=password)
+            if user:
+                django_login(request, user)
+                messages.success(request, 'Siz ugurla login oldunuz')
+                return redirect(reverse_lazy('home:home'))
+            else:
+                messages.success(request, 'Siz login ola bilmediniz')
+    context = {
+        'form': form,
+    }
+    return render(request, 'login.html', context)
 
 def my_account(request):
     return render(request, 'my-account.html')
