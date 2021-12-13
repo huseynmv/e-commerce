@@ -52,3 +52,7 @@ class RegistrationForm(UserCreationForm):
     #         raise forms.ValidationError('Paswwords are not same')
         
     #     return super().clean()
+    
+class LoginForm(forms.Form):
+    email = forms.EmailField(max_length=127, widget=forms.EmailInput(attrs={'class' : 'form-control', 'placeholder': 'E-mail'}))
+    password = forms.CharField(max_length=127, widget=forms.PasswordInput(attrs={'class' : 'form-control', 'placeholder': 'Password'}))
