@@ -1,14 +1,13 @@
-from django.core.mail.message import sanitize_address
+
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from . forms import RegistrationForm
 from django.contrib import messages
 from account.tasks import send_confirmation_mail
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str
 from django.utils.http import urlsafe_base64_decode
 from account.tools.tokens import account_activation_token
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth import authenticate, get_user_model, login as django_login, logout as django_logout
+from django.contrib.auth import get_user_model
 
 
 User = get_user_model()
@@ -25,10 +24,13 @@ def register(request):
         form = RegistrationForm(data =request.POST, files = request.FILES)
         if form.is_valid():
             user = form.save(commit=False)
-            user.set_password = form .cleaned_data.get('password1')
-            user.save()
+            user.set_password = form.cleaned_data.get('password1')
             user.is_active = False
-            return redirect(reverse_lazy('home:home'))
+            user.save()
+            site_address = request.is_secure() and "https://" or "http://" + request.META['HTTP_HOST']  # https
+            send_confirmation_mail(user_id=user.id, site_address=site_address)
+            messages.success(request, 'Siz ugurla qeydiyyatdan kecdiniz')
+            return redirect(reverse_lazy('account:login'))
     context = {
         'form' : form
     }
@@ -36,7 +38,7 @@ def register(request):
 
 def activate(request, uidb64, token):
     try:
-        uid = force_text(urlsafe_base64_decode(uidb64))
+        uid = force_str(urlsafe_base64_decode(uidb64))
         user = User.objects.get(pk=uid)
     except (TypeError, ValueError, OverflowError, User.DoesNotExist):
         user = None
