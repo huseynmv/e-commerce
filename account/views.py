@@ -6,6 +6,7 @@ from django.contrib import messages
 from account.tasks import send_confirmation_mail
 from django.utils.encoding import force_str
 from django.utils.http import urlsafe_base64_decode
+from django.contrib.auth.decorators import login_required
 from account.tools.tokens import account_activation_token
 from django.contrib.auth import authenticate, get_user_model, login as django_login, logout as django_logout
 
@@ -71,7 +72,7 @@ def activate(request, uidb64, token):
         messages.error(request, 'Email is not activated')
         return redirect(reverse_lazy('account:register'))
     
-    
+@login_required
 def logout(request):
     django_logout(request)
     return redirect(reverse_lazy('account:login'))
