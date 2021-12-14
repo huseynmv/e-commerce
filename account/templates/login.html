@@ -34,21 +34,18 @@
                             <div class="tab-content">
                                 <form action="" method="post" class="bg-light p-5 contact-form">
                                 {% csrf_token %}
+                                {% for error in form.non_field_errors %}
+                                    {{error}}
+                                {% endfor %}
                                     <div class="tab-pane active" id="sign-in">
                                         {% for field in form %}
                                         <div class="form-group">
                                             {{ field }}
                                             {% for error in field.errors %}
-                                            <li class="alert-danger alert">{{ error }}</li>
+                                            <p>{{error}}</p>
                                             {% endfor %}
                                         </div>
                                         {% endfor %}
-                                        
-                                        <div class="form-checkbox d-flex align-items-center justify-content-between">
-                                            <input type="checkbox" class="custom-checkbox" id="remember1" name="remember1" required="">
-                                            <label for="remember1">Remember me</label>
-                                            <a href="#">Last your password?</a>
-                                        </div>
                                         <input type="submit" value="Login" class="btn btn-primary py-3 px-5">
                                     </div>
                                 </form>
