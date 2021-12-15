@@ -6,7 +6,9 @@ class Leaders(models.Model):
     image = models.ImageField(upload_to='leaders/')
     name = models.CharField(max_length=127)
     title = models.CharField(max_length=127)
-    social_media = models.URLField(null=True, blank=True)
+    facebook = models.URLField(blank=True, null=True)
+    instagram = models.URLField(null=True, blank=True)
+    twitter = models.URLField(null=True, blank=True)
     
     class Meta:
         verbose_name = 'Leader'
