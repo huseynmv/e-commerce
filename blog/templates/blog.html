@@ -40,154 +40,32 @@
                     <div class="row grid cols-lg-3 cols-md-2 mb-2" data-grid-options="{
                         'layoutMode': 'fitRows'
                     }">
+                        {% for blog in blog %}
                         <div class="grid-item fashion">
                             <article class="post post-mask overlay-zoom br-sm">
                                 <figure class="post-media">
-                                    <a href="post-single.html">
-                                        <img src="{% static 'images/blog/2cols/1.jpg' %}" width="600"
+                                    <a href="{{ blog.link }}">
+                                        <img src="{{ blog.image.url }}" width="600"
                                             height="420" alt="blog">
                                     </a>
                                 </figure>
                                 <div class="post-details">
                                     <div class="post-details-visible">
                                         <div class="post-cats">
-                                            <a href="#">Fashion</a>
+                                            <a href="#">{{ blog.category }}</a>
                                         </div>
-                                        <h4 class="post-title text-white"><a href="#">New found the men dress for summer</a>
+                                        <h4 class="post-title text-white"><a href="#">{{ blog.name }}</a>
                                         </h4>
                                     </div>
                                     <div class="post-meta">
-                                        by <a href="#" class="post-author">John Doe</a>
-                                        - <a href="#" class="post-date">03.05.2021</a>
+                                        by <a href="#" class="post-author">{{ blog.author }}</a>
+                                        - <a href="#" class="post-date">{{ blog.date }}</a>
                                         <a href="#" class="post-comment">0 Comments</a>
                                     </div>
                                 </div>
                             </article>
                         </div>
-                        <div class="grid-item others technology">
-                            <article class="post post-mask overlay-zoom br-sm">
-                                <figure class="post-media">
-                                    <a href="post-single.html">
-                                        <img src="{% static 'images/blog/2cols/2.jpg' %}" width="600"
-                                            height="420" alt="blog">
-                                    </a>
-                                </figure>
-                                <div class="post-details">
-                                    <div class="post-details-visible">
-                                        <div class="post-cats">
-                                            <a href="#">Others</a>,
-                                            <a href="#">Technology</a>
-                                        </div>
-                                        <h4 class="post-title text-white"><a href="#">Recognitory the needs is primary condition  for design</a>
-                                        </h4>
-                                    </div>
-                                    <div class="post-meta">
-                                        by <a href="#" class="post-author">John Doe</a>
-                                        - <a href="#" class="post-date">03.05.2021</a>
-                                        <a href="#" class="post-comment">0 Comments</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="grid-item clothes">
-                            <article class="post post-mask overlay-zoom br-sm">
-                                <figure class="post-media">
-                                    <a href="post-single.html">
-                                        <img src="{% static 'images/blog/2cols/3.jpg' %}" width="600"
-                                            height="420" alt="blog">
-                                    </a>
-                                </figure>
-                                <div class="post-details">
-                                    <div class="post-details-visible">
-                                        <div class="post-cats">
-                                            <a href="#">Clothes</a>
-                                        </div>
-                                        <h4 class="post-title text-white"><a href="#">New found the women’s shirt  for summer season</a>
-                                        </h4>
-                                    </div>
-                                    <div class="post-meta">
-                                        by <a href="#" class="post-author">John Doe</a>
-                                        - <a href="#" class="post-date">03.05.2021</a>
-                                        <a href="#" class="post-comment">0 Comments</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="grid-item lifestyle">
-                            <article class="post post-mask overlay-zoom br-sm">
-                                <figure class="post-media">
-                                    <a href="post-single.html">
-                                        <img src="{% static 'images/blog/2cols/4.jpg' %}" width="600"
-                                            height="420" alt="blog">
-                                    </a>
-                                </figure>
-                                <div class="post-details">
-                                    <div class="post-details-visible">
-                                        <div class="post-cats">
-                                            <a href="#">Lifestyle</a>
-                                        </div>
-                                        <h4 class="post-title text-white"><a href="#">We want to be different and fashion gives to me that outlet</a>
-                                        </h4>
-                                    </div>
-                                    <div class="post-meta">
-                                        by <a href="#" class="post-author">John Doe</a>
-                                        - <a href="#" class="post-date">03.05.2021</a>
-                                        <a href="#" class="post-comment">0 Comments</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="grid-item entertainment shoes lifestyle others">
-                            <article class="post post-mask overlay-zoom br-sm">
-                                <figure class="post-media">
-                                    <a href="post-single.html">
-                                        <img src="{% static 'images/blog/2cols/5.jpg' %}" width="600"
-                                            height="420" alt="blog">
-                                    </a>
-                                </figure>
-                                <div class="post-details">
-                                    <div class="post-details-visible">
-                                        <div class="post-cats">
-                                            <a href="#">Entertainment</a>,
-                                            <a href="#">Lifestyle</a>,
-                                            <a href="#">Others</a>
-                                        </div>
-                                        <h4 class="post-title text-white"><a href="#">Comes a cool blog post with Images</a>
-                                        </h4>
-                                    </div>
-                                    <div class="post-meta">
-                                        by <a href="#" class="post-author">John Doe</a>
-                                        - <a href="#" class="post-date">03.05.2021</a>
-                                        <a href="#" class="post-comment">0 Comments</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="grid-item fashion lifestyle">
-                            <article class="post post-mask overlay-zoom br-sm">
-                                <figure class="post-media">
-                                    <a href="post-single.html">
-                                        <img src="{% static 'images/blog/2cols/6.jpg' %}" width="600"
-                                            height="420" alt="blog">
-                                    </a>
-                                </figure>
-                                <div class="post-details">
-                                    <div class="post-details-visible">
-                                        <div class="post-cats">
-                                            <a href="#">Fashion</a>,
-                                            <a href="#">Technology</a>
-                                        </div>
-                                        <h4 class="post-title text-white"><a href="#">Fusce lacinia arcuet nulla</a>
-                                        </h4>
-                                    </div>
-                                    <div class="post-meta">
-                                        by <a href="#" class="post-author">John Doe</a>
-                                        - <a href="#" class="post-date">03.05.2021</a>
-                                        <a href="#" class="post-comment">0 Comments</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
+                        {% endfor %}
                     </div>
                     <ul class="pagination justify-content-center mb-10 pb-2 pt-2 mt-8">
                         <li class="prev disabled">
