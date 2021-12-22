@@ -44,7 +44,7 @@
                         <div class="grid-item fashion">
                             <article class="post post-mask overlay-zoom br-sm">
                                 <figure class="post-media">
-                                    <a href="{{ blog.link }}">
+                                    <a href="{% url 'blog:blog-details' blog.id  %}">
                                         <img src="{{ blog.image.url }}" width="600"
                                             height="420" alt="blog">
                                     </a>
