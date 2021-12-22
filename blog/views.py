@@ -16,7 +16,7 @@ from django.views.generic import ListView
 class BlogListView(ListView):
     model = Blog
     template_name = 'blog.html'
-    paginate_by = 2
+    paginate_by = 3
 
 def single_blog(request):
     return render(request, 'single-blog.html')

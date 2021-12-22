@@ -73,6 +73,8 @@
                             <a href="?page={{ page_obj.previous_page_number }}" aria-label="Previous" tabindex="-1" aria-disabled="true">
                                 <i class="w-icon-long-arrow-left"></i>Prev
                             </a>
+                                <a href="?page=1"><<<</a>
+
                             {% endif %}
                         </li>
                         {% for page in page_obj.paginator.page_range %}
@@ -80,6 +82,7 @@
                                         <li class="page-item active"><a class="page-link" href="#">{{page}}</a></li>
                                     {% else %}
                                         <li class="page-item"><a href="?page={{page}}" class='page-link'>{{page}}</a></li>
+                                        <a href="?page={{ page_obj.paginator.num_pages }}">>>></a>
                                     {% endif %}
                                 {% endfor %}
                         <li class="next">
