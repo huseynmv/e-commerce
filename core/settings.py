@@ -47,7 +47,43 @@ INSTALLED_APPS = [
     'pages',
     'shop',
     'vendor',
+    'social_django',
 ]
+
+
+AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend',
+                           'social_core.backends.facebook.FacebookOAuth2',
+]
+
+from django.urls import reverse_lazy
+
+# [...]
+
+LOGIN_URL = reverse_lazy('account:login')
+LOGIN_REDIRECT_URL = reverse_lazy('home:home')
+LOGOUT_URL = reverse_lazy('account:logout')
+LOGOUT_REDIRECT_URL = reverse_lazy('account:login')
+
+# [...]
+
+
+#[...]
+
+SOCIAL_AUTH_FACEBOOK_KEY = '482741373256989'        # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = '74557900294f5bd99200e45b08d14d7a'  # App Secret
+
+
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
+
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email', 'user_friends']
+
+SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
+    'fields' : 'id,name,email,picture'
+}
+#[...]
+
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
