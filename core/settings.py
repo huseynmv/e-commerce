@@ -53,6 +53,7 @@ INSTALLED_APPS = [
 
 AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend',
                            'social_core.backends.facebook.FacebookOAuth2',
+                           'social_core.backends.google.GoogleOAuth2',
 ]
 
 from django.urls import reverse_lazy
@@ -72,6 +73,9 @@ LOGOUT_REDIRECT_URL = reverse_lazy('account:login')
 SOCIAL_AUTH_FACEBOOK_KEY = '482741373256989'        # App ID
 SOCIAL_AUTH_FACEBOOK_SECRET = '74557900294f5bd99200e45b08d14d7a'  # App Secret
 
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '96253623111-1hri97dnv1glth49i901jos51m9efoch.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
@@ -93,6 +97,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',  # <--
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -108,6 +113,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',  # <--
+                'social_django.context_processors.login_redirect', # <--
             ],
         },
     },
