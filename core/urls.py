@@ -1,6 +1,8 @@
 
 from django.contrib import admin
 from django.urls import path,include
+from django.conf.urls.i18n import i18n_patterns
+from django.utils.translation import gettext_lazy as _
 
 from django.conf.urls.static import static
 from django.conf import settings
@@ -8,7 +10,6 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('home.urls', namespace='home')),
-    path('about/',include('about.urls', namespace='about')),
     path('account/',include('account.urls', namespace='account')),
     path('blog/',include('blog.urls', namespace='blog')),
     path('contact/',include('contact.urls', namespace='contact')),
@@ -19,3 +20,8 @@ urlpatterns = [
     
     
 ]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+
+
+urlpatterns += i18n_patterns(
+    path('about/',include('about.urls', namespace='about')),
+)
