@@ -72,9 +72,10 @@ LOGOUT_REDIRECT_URL = reverse_lazy('account:login')
 #[...]
 
 SOCIAL_AUTH_FACEBOOK_KEY = '482741373256989'        # App ID
-SOCIAL_AUTH_FACEBOOK_SECRET = '74557900294f5bd99200e45b08d14d7a'  # App Secret
+SOCIAL_AUTH_FACEBOOK_SECRET = '74557900294f5bd99200e45b08d14d7a' # App Secret
 
 
+SOCIAL_AUTH_RAISE_EXCEPTIONS = False
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '96253623111-1hri97dnv1glth49i901jos51m9efoch.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
 
@@ -159,11 +160,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+SOCIAL_AUTH_FACEBOOK_API_VERSION = '2.8'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'az'
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
 
@@ -173,15 +175,17 @@ USE_L10N = True
 
 USE_TZ = True
 
-LOCALE_PATHS = (
-    os.path.join(BASE_DIR, 'locale/'),
-)
-
 ugettext = lambda s: s
 LANGUAGES = (
     ('en', ugettext('English')),
     ('az', ugettext('Azerbaijan')),
+
 )
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale/'),
+)
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
