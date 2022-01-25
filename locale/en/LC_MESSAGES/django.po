@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-23 12:32+0400\n"
+"POT-Creation-Date: 2022-01-25 17:32+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,11 +34,11 @@ msgstr ""
 msgid "email address"
 msgstr ""
 
-#: .\core\settings.py:180
+#: .\core\settings.py:179
 msgid "English"
 msgstr ""
 
-#: .\core\settings.py:181
+#: .\core\settings.py:180
 msgid "Azerbaijan"
 msgstr ""
 
@@ -52,4 +52,16 @@ msgstr ""
 
 #: .\templates\base.html:121
 msgid "Home"
+msgstr ""
+
+#: .\templates\base.html:858
+msgid "Got Question? Call us 24/7"
+msgstr ""
+
+#: .\templates\base.html:860
+msgid "Register now to get updates on pronot get up icons"
+msgstr ""
+
+#: .\templates\base.html:1692
+msgid "Ultrices eros in cursus turpis massa cursus mattis."
 msgstr ""
