@@ -5,7 +5,6 @@ from account.models import User
 # Create your models here.
 
 class Product(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
     category = models.CharField(max_length=127, null=True, blank=True)
     name = models.CharField(max_length=127, null=True, blank=True)
     price = models.SmallIntegerField(null=True, blank=True)
