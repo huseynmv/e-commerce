@@ -276,7 +276,7 @@
                                         <!-- <li><a href="coming-soon.html">Coming Soon</a></li> -->
                                         <li><a href="{% url 'pages:wishlist' %}">Wishlist</a></li>
                                         <li><a href="{% url 'shop:cart' %}">Cart</a></li>
-                                        <li><a href="{% url 'pages:checkout' %}">Checkout</a></li>
+                                        <li><a href="{% url 'shop:checkout' %}">Checkout</a></li>
                                         <li><a href="{% url 'account:login' %}">My Account</a></li>
                                         <li><a href="{% url 'pages:compare' %}">Compare</a></li>
                                     </ul>
@@ -326,7 +326,7 @@
                             <div class="cart-overlay"></div>
                             <a href="{% url 'shop:cart' %}" class="cart-toggle label-down link">
                                 <i class="w-icon-cart">
-                                    <span class="cart-count">2</span>
+                                    <span class="cart-count">{{cartItems}}</span>
                                 </i>
                                 <span class="cart-label">Cart</span>
                             </a>
@@ -382,7 +382,7 @@
 
                                 <div class="cart-action">
                                     <a href="{% url 'shop:cart' %}" class="btn btn-dark btn-outline btn-rounded">View Cart</a>
-                                    <a href="{% url 'pages:checkout' %}" class="btn btn-primary  btn-rounded">Checkout</a>
+                                    <a href="{% url 'shop:checkout' %}" class="btn btn-primary  btn-rounded">Checkout</a>
                                 </div>
                             </div>
                             <!-- End of Dropdown Box -->

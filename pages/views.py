@@ -21,5 +21,3 @@ def order_view(request):
 def wishlist(request):
     return render(request, 'wishlist.html')
 
-def checkout(request):
-    return render(request, 'checkout.html')

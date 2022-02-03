@@ -231,23 +231,21 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                {% for item in items %}
                                                 <tr class="bb-no">
-                                                    <td class="product-name">Palm Print Jacket <i
+                                                    <td class="product-name">{{item.product.name}} <i
                                                             class="fas fa-times"></i> <span
-                                                            class="product-quantity">1</span></td>
-                                                    <td class="product-total">$40.00</td>
+                                                            class="product-quantity">{{item.quantity}}</span></td>
+                                                    <td class="product-total">{{ item.get_total }}</td>
                                                 </tr>
-                                                <tr class="bb-no">
-                                                    <td class="product-name">Brown Backpack <i class="fas fa-times"></i>
-                                                        <span class="product-quantity">1</span></td>
-                                                    <td class="product-total">$60.00</td>
-                                                </tr>
+                                                {% endfor %}
+                                                
                                                 <tr class="cart-subtotal bb-no">
                                                     <td>
                                                         <b>Subtotal</b>
                                                     </td>
                                                     <td>
-                                                        <b>$100.00</b>
+                                                        <b>{{order.get_cart_total}}</b>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -292,7 +290,7 @@
                                                         <b>Total</b>
                                                     </th>
                                                     <td>
-                                                        <b>$100.00</b>
+                                                        <b>{{order.get_cart_total}}</b>
                                                     </td>
                                                 </tr>
                                             </tfoot>
