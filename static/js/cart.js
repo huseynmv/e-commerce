@@ -12,7 +12,28 @@ for(let i = 0; i < updateBtns.length; i++ ){
             console.log('Not logged in')
 
         }else{
-            console.log('User logged in, sending data...')
+            updateUserOrder(productID, action)
         }
+    })
+}
+
+function updateUserOrder(productID, action){
+    console.log('User logged in, sending data...')
+
+    var url = 'update_item'
+    fetch(url, {
+        method: 'POST',
+        headers:{
+            'Content-Type': 'application/json',
+            'X-CSRFToken' : csrftoken,
+        },
+        body: JSON.stringify({'productID': productID, 'action': action})
+    })
+
+    .then((response) =>{
+        return response.json()
+    })
+    .then((data) =>{
+        console.log('data:', data)
     })
 }

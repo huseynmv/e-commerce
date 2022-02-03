@@ -6,6 +6,7 @@ from django.utils.translation import  gettext_lazy as _
 
 from django.conf.urls.static import static
 from django.conf import settings
+from shop.views import update_item
 
 urlpatterns = [
     path('admin/', admin.site.urls),
