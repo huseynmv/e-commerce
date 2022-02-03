@@ -173,6 +173,7 @@ USE_I18N = True
 
 USE_L10N = True
 
+\
 
 ugettext = lambda s: s
 LANGUAGES = (
@@ -182,7 +183,7 @@ LANGUAGES = (
 )
 
 LOCALE_PATHS = (
-    os.path.join(BASE_DIR, 'locale/'),
+    os.path.join(BASE_DIR, "",'locale/'),
 )
 
 

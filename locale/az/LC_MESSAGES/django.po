@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-25 17:32+0400\n"
+"POT-Creation-Date: 2022-01-25 17:48+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,16 +34,29 @@ msgstr ""
 msgid "email address"
 msgstr ""
 
-#: .\core\settings.py:179
+#: .\core\settings.py:180
 msgid "English"
 msgstr ""
 
-#: .\core\settings.py:180
+#: .\core\settings.py:181
 msgid "Azerbaijan"
 msgstr ""
 
 #: .\home\templates\index.html:73
 msgid "Sale up to"
+msgstr ""
+
+#: .\pages\templates\faq.html:148
+msgid ""
+"Fringilla urna porttitor rhoncus dolor purus. Luctus venenatis lectus  "
+"semper bibendum Diam maecenas ultricies mi eget mauris. Nibh tellus molestie "
+"nunc non isse faucibus Ultrices eros in cursus turpis massa tincidunt. Ante "
+"in nibh mauri eger enim neque vol lectus. Etiam non quam lacus suspendisse "
+"faucibus."
+msgstr ""
+
+#: .\pages\templates\faq.html:149
+msgid "Hello"
 msgstr ""
 
 #: .\templates\base.html:98
@@ -56,11 +69,11 @@ msgstr ""
 
 #: .\templates\base.html:858
 msgid "Got Question? Call us 24/7"
-msgstr "Sualiniz var? zeng edin ere gedin"
+msgstr ""
 
 #: .\templates\base.html:860
 msgid "Register now to get updates on pronot get up icons"
-msgstr "Indi qeydiyyatdan kecin endirim elde edin"
+msgstr ""
 
 #: .\templates\base.html:1692
 msgid "Ultrices eros in cursus turpis massa cursus mattis."
