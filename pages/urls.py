@@ -5,7 +5,6 @@ app_name = 'pages'
 
 urlpatterns = [
     path('', faq, name='faq'),
-    path('cart/', cart, name='cart'),
     path('error/', error, name='error'),
     path('vendor/', vendor, name='vendor'),
     path('compare/', compare, name='compare'),

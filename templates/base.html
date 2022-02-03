@@ -275,7 +275,7 @@
                                         <li><a href="{% url 'pages:error' %}">Error 404</a></li>
                                         <!-- <li><a href="coming-soon.html">Coming Soon</a></li> -->
                                         <li><a href="{% url 'pages:wishlist' %}">Wishlist</a></li>
-                                        <li><a href="{% url 'pages:cart' %}">Cart</a></li>
+                                        <li><a href="{% url 'shop:cart' %}">Cart</a></li>
                                         <li><a href="{% url 'pages:checkout' %}">Checkout</a></li>
                                         <li><a href="{% url 'account:login' %}">My Account</a></li>
                                         <li><a href="{% url 'pages:compare' %}">Compare</a></li>
@@ -324,7 +324,7 @@
                         </a>
                         <div class="dropdown cart-dropdown mr-0 mr-lg-2">
                             <div class="cart-overlay"></div>
-                            <a href="{% url 'pages:cart' %}" class="cart-toggle label-down link">
+                            <a href="{% url 'shop:cart' %}" class="cart-toggle label-down link">
                                 <i class="w-icon-cart">
                                     <span class="cart-count">2</span>
                                 </i>
@@ -381,7 +381,7 @@
                                 </div>
 
                                 <div class="cart-action">
-                                    <a href="{% url 'pages:cart' %}" class="btn btn-dark btn-outline btn-rounded">View Cart</a>
+                                    <a href="{% url 'shop:cart' %}" class="btn btn-dark btn-outline btn-rounded">View Cart</a>
                                     <a href="{% url 'pages:checkout' %}" class="btn btn-primary  btn-rounded">Checkout</a>
                                 </div>
                             </div>
@@ -906,7 +906,7 @@
                                 <h4 class="widget-title">My Account</h4>
                                 <ul class="widget-body">
                                     <li><a href="#">Track My Order</a></li>
-                                    <li><a href="{% url 'pages:cart' %}">View Cart</a></li>
+                                    <li><a href="{% url 'shop:cart' %}">View Cart</a></li>
                                     <li><a href="{% url 'account:login' %}">Sign In</a></li>
                                     <li><a href="#">Help</a></li>
                                     <li><a href="{% url 'pages:wishlist' %}">My Wishlist</a></li>
@@ -1037,7 +1037,7 @@
             <p>Account</p>
         </a>
         <div class="cart-dropdown dir-up">
-            <a href="{% url 'pages:cart' %}" class="sticky-link">
+            <a href="{% url 'shop:cart' %}" class="sticky-link">
                 <i class="w-icon-cart"></i>
                 <p>Cart</p>
             </a>
