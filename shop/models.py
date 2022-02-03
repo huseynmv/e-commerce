@@ -1,5 +1,7 @@
 from django.db import models
 
+from account.models import User
+
 # Create your models here.
 
 class Product(models.Model):
@@ -15,3 +17,9 @@ class Product(models.Model):
         
     def __str__(self):
         return self.name
+    
+class Order(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
+    date = models.DateTimeField(auto_now_add=True)
+    status = models.BooleanField(default=False, null=True, blank=True)
+    transaction_id = models.CharField(max_length=255, null=True)
