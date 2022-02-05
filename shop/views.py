@@ -5,7 +5,7 @@ import json
 # Create your views here.
 def product(request):
         if request.user.is_authenticated:
-            user = request.user.id
+            user = request.user
             order, created = Order.objects.get_or_create(user=user, status=False)
             items = order.orderitem_set.all()
             cartItems = order.get_cart_items
@@ -24,7 +24,7 @@ def product(request):
 def cart(request):
     
     if request.user.is_authenticated:
-        user = request.user.id
+        user = request.user
         order, created = Order.objects.get_or_create(user=user, status=False)
         items = order.orderitem_set.all()
         cartItems = order.get_cart_items
@@ -48,7 +48,7 @@ def single_product(request):
 
 def checkout(request):
     if request.user.is_authenticated:
-        user = request.user.id
+        user = request.user
         order, created = Order.objects.get_or_create(user=user, status=False)
         items = order.orderitem_set.all()
     else:
@@ -69,7 +69,7 @@ def update_item(request):
     print('Action', action)
     print('ProductID', productID) 
     
-    user = request.user.id
+    user = request.user
     product = Product.objects.get(id=productID)
     order, created = Order.objects.get_or_create(user=user, status=False)
     orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)
