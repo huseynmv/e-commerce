@@ -55,12 +55,12 @@
                                         </td>
                                         <td class="product-price"><span class="amount">{{ item.product.price }}</span></td>
                                         <td class="product-quantity">
-                                            <!-- <div class="input-group form-control">
-                                                <input class="quantity form-control" type="number" min="1" max="100000">
-                                                <button class="quantity-plus w-icon-plus"></button>
-                                                <button class="quantity-minus w-icon-minus"></button>
-                                            </div> -->
-                                            {{item.quantity}}
+                                            <div class="input-group form-control">
+                                                <!-- <input class="quantity form-control" type="number" min="1" max="100000"> -->
+                                                {{item.quantity}}
+                                                <button class="quantity-plus w-icon-plus update-cart" data-product={{item.product.id}} data-action='add' ></button>
+                                                <button class="quantity-minus w-icon-minus update-cart" data-product={{item.product.id}} data-action='remove' ></button>
+                                            </div>
                                         </td>
                                         <td class="product-subtotal">
                                             <span class="amount">{{ item.get_total }}</span>

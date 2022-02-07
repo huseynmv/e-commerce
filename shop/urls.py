@@ -5,9 +5,10 @@ app_name = 'shop'
 
 urlpatterns = [
     path('', product, name='product'),
-    path('cart/', cart, name='cart'),
-    path('update_item', update_item, name='update_item'),
     path('single-product/', single_product, name='single-product'),
     path('checkout/', checkout, name='checkout'),
+    path('cart/', cart, name='cart'),
+    path('update_item/', update_item, name='update_item'),
+    path('cart/update_item/', update_item, name="update_item"),
     
 ]
