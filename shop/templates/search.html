@@ -6,7 +6,9 @@
     <div class="product-wrapper row cols-md-3 cols-sm-2 cols-2">
 
 
-
+        {% if searched in lst %}
+        
+        
         {% for i in search_item %}
         <div class="product-wrap">
             <div class="product text-center">
@@ -45,6 +47,10 @@
             </div>
         </div>
         {% endfor %}
+        {% else %}
+        {{searched}} Not found!
+
+        {% endif %}
 
     </div>
 
