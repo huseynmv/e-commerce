@@ -211,3 +211,6 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'memmedovh5@gmail.com'
 EMAIL_HOST_PASSWORD = 'qtcumqzwmmcqgtxd'
+
+
+DEFAULT_FROM_EMAIL = 'memmedovh5@gmail.com'
