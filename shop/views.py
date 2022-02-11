@@ -85,8 +85,8 @@ def update_item(request):
         orderItem.quantity = (orderItem.quantity - 1)
     orderItem.save()
     
-    if orderItem.quantity <= 0:
-        orderItem.delete() 
+    if orderItem.quantity <= 0 or action == 'removeAll':
+        orderItem.delete()
         
      
     return JsonResponse('item was added', safe=False)
