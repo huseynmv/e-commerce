@@ -96,6 +96,13 @@ def search(request):
     if request.method == 'POST':
         searched = request.POST['searched']
         search_item = Product.objects.filter(name__contains = searched)
-        return render(request, 'search.html',{'search_item':search_item})
-    else:
-        return render(request,'base.html',{}) 
+        print(str(search_item))
+        
+        
+       
+        context = {
+            'search_item':search_item,
+            'searched':searched,
+            'all':all
+        }
+        return render(request, 'search.html',context)
