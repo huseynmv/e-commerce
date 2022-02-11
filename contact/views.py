@@ -18,7 +18,7 @@ def contact(request):
             send_mail(subject, message,settings.DEFAULT_FROM_EMAIL, ['memmedovh5@gmail.com',])
             messageSent = True
             form.save()
-            return redirect('/')
+        
         
     context = {
         'form':form,
