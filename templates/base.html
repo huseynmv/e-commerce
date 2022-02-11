@@ -798,7 +798,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <form method="get" action="#"
+                            <form method="POST" action="{% url 'shop:search' %}" action="#"
                                 class="header-search hs-expanded hs-round d-none d-md-flex input-wrapper mr-4 ml-4">
                                 <div class="select-box">
                                     <select id="category" name="category">
@@ -814,7 +814,8 @@
                                         <option value="12">Clothing</option>
                                     </select>
                                 </div>
-                                <input type="text" class="form-control" name="search" id="search"
+                                {% csrf_token %}
+                                <input type="text" class="form-control" name="searched" id="search"
                                     placeholder="Search in..." required />
                                 <button class="btn btn-search" type="submit"><i class="w-icon-search"></i>
                                 </button>

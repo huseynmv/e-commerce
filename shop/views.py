@@ -91,3 +91,11 @@ def update_item(request):
      
     return JsonResponse('item was added', safe=False)
 
+
+def search(request):
+    if request.method == 'POST':
+        searched = request.POST['searched']
+        search_item = Product.objects.filter(name__contains = searched)
+        return render(request, 'search.html',{'search_item':search_item})
+    else:
+        return render(request,'base.html',{}) 
