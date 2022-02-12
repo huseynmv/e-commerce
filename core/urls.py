@@ -17,6 +17,8 @@ urlpatterns = [
 
 
 urlpatterns += i18n_patterns(
+    path('jet/', include('jet.urls', 'jet')),  # Django JET URLS
+    path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')), # Django JET URLS
     path('about/',include('about.urls', namespace='about')),
     path('',include('home.urls', namespace='home')),
     path('account/',include('account.urls', namespace='account')),

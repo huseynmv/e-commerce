@@ -35,6 +35,8 @@ AUTH_USER_MODEL = 'account.User'
 # Application definition
 
 INSTALLED_APPS = [
+    'jet',
+    'jet.dashboard',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -120,6 +122,7 @@ TEMPLATES = [
                 'django.template.context_processors.i18n',  # multi language
                 'social_django.context_processors.backends',  # social auth
                 'social_django.context_processors.login_redirect', # social auth
+                'django.template.context_processors.request', # jet
             ],
         },
     },
@@ -186,6 +189,49 @@ LANGUAGES = (
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, "",'locale/'),
 )
+
+
+
+
+
+JET_DEFAULT_THEME = 'green'
+JET_THEMES = [
+    {
+        'theme': 'default', # theme folder name
+        'color': '#47bac1', # color of the theme's button in user menu
+        'title': 'Default' # theme title
+    },
+    {
+        'theme': 'green',
+        'color': '#44b78b',
+        'title': 'Green'
+    },
+    {
+        'theme': 'light-green',
+        'color': '#2faa60',
+        'title': 'Light Green'
+    },
+    {
+        'theme': 'light-violet',
+        'color': '#a464c4',
+        'title': 'Light Violet'
+    },
+    {
+        'theme': 'light-blue',
+        'color': '#5EADDE',
+        'title': 'Light Blue'
+    },
+    {
+        'theme': 'light-gray',
+        'color': '#222',
+        'title': 'Light Gray'
+    }
+]
+
+
+
+
+
 
 
 # Static files (CSS, JavaScript, Images)
