@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from . models import Order, OrderItem, Product
 from django.http import JsonResponse
+from django.views.generic import DetailView
 import json
 # Create your views here.
 def product(request):
@@ -43,8 +44,10 @@ def cart(request):
     }
     return render(request, 'cart.html', context)
 
-def single_product(request):
-    return render(request, 'single-product.html')
+class ProductDetailView(DetailView):
+    model = Product
+    template_name = 'single-product.html'
+    context_object_name = 'product'
 
 def checkout(request):
     if request.user.is_authenticated:

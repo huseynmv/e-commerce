@@ -55,32 +55,32 @@
                                             <div class="swiper-wrapper row cols-1 gutter-no">
                                                 <div class="swiper-slide">
                                                     <figure class="product-image">
-                                                        <img src="{% static 'images/products/vertical_thumb/1-800x900.jpg' %}"
-                                                            data-zoom-image="{% static 'images/products/vertical_thumb/1-800x900.jpg' %}"
+                                                        <img src="{{ product.image.url }}"
+                                                            data-zoom-image="{{ product.image.url }}"
                                                             alt="Electronics Black Wrist Watch" width="800"
                                                             height="900">
                                                     </figure>
                                                 </div>
                                                 <div class="swiper-slide">
                                                     <figure class="product-image">
-                                                        <img src="{% static 'images/products/vertical_thumb/2-800x900.jpg' %}"
-                                                            data-zoom-image="{% static 'images/products/vertical_thumb/2-800x900.jpg' %}"
+                                                        <img src="{{ product.image.url }}"
+                                                            data-zoom-image="{{ product.image.url }}"
                                                             alt="Electronics Black Wrist Watch" width="488"
                                                             height="549">
                                                     </figure>
                                                 </div>
                                                 <div class="swiper-slide">
                                                     <figure class="product-image">
-                                                        <img src="{% static 'images/products/vertical_thumb/3-800x900.jpg' %}"
-                                                            data-zoom-image="{% static 'images/products/vertical_thumb/3-800x900.jpg' %}"
+                                                        <img src="{{ product.image.url }}"
+                                                            data-zoom-image="{{ product.image.url }}"
                                                             alt="Electronics Black Wrist Watch" width="800"
                                                             height="900">
                                                     </figure>
                                                 </div>
                                                 <div class="swiper-slide">
                                                     <figure class="product-image">
-                                                        <img src="{% static 'images/products/vertical_thumb/4-800x900.jpg' %}"
-                                                            data-zoom-image="{% static 'images/products/vertical_thumb/4-800x900.jpg' %}"
+                                                        <img src="{{ product.image.url }}"
+                                                            data-zoom-image="{{ product.image.url }}"
                                                             alt="Electronics Black Wrist Watch" width="800"
                                                             height="900">
                                                     </figure>
@@ -105,19 +105,19 @@
                                         }">
                                             <div class="product-thumbs swiper-wrapper row cols-lg-1 cols-4 gutter-sm">
                                                 <div class="product-thumb swiper-slide">
-                                                    <img src="{% static 'images/products/vertical_thumb/1-800x900.jpg' %}"
+                                                    <img src="{{ product.image.url }}"
                                                         alt="Product Thumb" width="800" height="900">
                                                 </div>
                                                 <div class="product-thumb swiper-slide">
-                                                    <img src="{% static 'images/products/vertical_thumb/2-800x900.jpg' %}"
+                                                    <img src="{{ product.image.url }}"
                                                         alt="Product Thumb" width="800" height="900">
                                                 </div>
                                                 <div class="product-thumb swiper-slide">
-                                                    <img src="{% static 'images/products/vertical_thumb/3-800x900.jpg' %}"
+                                                    <img src="{{ product.image.url }}"
                                                         alt="Product Thumb" width="800" height="900">
                                                 </div>
                                                 <div class="product-thumb swiper-slide">
-                                                    <img src="{% static 'images/products/vertical_thumb/4-800x900.jpg' %}"
+                                                    <img src="{{ product.image.url }}"
                                                         alt="Product Thumb" width="800" height="900">
                                                 </div>
                                             </div>
@@ -128,7 +128,7 @@
                                 </div>
                                 <div class="col-md-6 sticky-sidebar-wrapper mb-4 mb-md-6">
                                     <div class="product-details sticky-sidebar" data-sticky-options="{'minWidth': 767}">
-                                        <h1 class="product-title">Professsional Camera Set</h1>
+                                        <h1 class="product-title">{{ product.name }}</h1>
                                         <div class="product-bm-wrapper">
                                             <figure class="brand">
                                                 <img src="{% static 'images/products/brand/brand-2.jpg' %}" alt="Brand"
@@ -137,7 +137,7 @@
                                             <div class="product-meta">
                                                 <div class="product-categories">
                                                     Category:
-                                                    <span class="product-category"><a href="#">Electronics</a></span>
+                                                    <span class="product-category"><a href="#">{{ product.category }}</a></span>
                                                 </div>
                                                 <div class="product-sku">
                                                     SKU: <span>MS46891374</span>
@@ -147,7 +147,7 @@
 
                                         <hr class="product-divider">
 
-                                        <div class="product-price"><ins class="new-price">$780.00</ins></div>
+                                        <div class="product-price"><ins class="new-price">{{ product.price }}</ins></div>
 
                                         <div class="ratings-container">
                                             <div class="ratings-full">
@@ -158,8 +158,7 @@
                                         </div>
 
                                         <div class="product-short-desc lh-2">
-                                            Ultrices eros in cursus turpis massa cursus mattis.
-                                            Volutpat ac tincidunt vitae semper quis lectus aliquam id.
+                                           {{product.name}}
                                         </div>
 
                                         <hr class="product-divider">
