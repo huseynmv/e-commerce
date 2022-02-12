@@ -6,6 +6,7 @@ from account.models import User
 
 class Product(models.Model):
     category = models.CharField(max_length=127, null=True, blank=True)
+    desc = models.TextField(null=True, blank=True)
     name = models.CharField(max_length=127, null=True, blank=True)
     price = models.SmallIntegerField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
