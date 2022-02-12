@@ -95,7 +95,9 @@ def update_item(request):
 def search(request):
     if request.method == 'POST':
         searched = request.POST['searched']
-        search_item = Product.objects.filter(name__contains = searched)
+        search_item = Product.objects.filter(name__icontains = searched)
+        x = list(Product.objects.values_list('name', flat=True))
+        print(x)
         context = {
             'search_item':search_item,
             'searched':searched,
