@@ -46,7 +46,7 @@ def cart(request):
 
 class ProductDetailView(DetailView):
     model = Product
-    template_name = 'single-product.html'
+    template_name = 'single-product.html' 
     context_object_name = 'product'
 
 def checkout(request):

@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 class BlogCategory(models.Model):
@@ -10,7 +11,7 @@ class Blog(models.Model):
     image = models.ImageField(upload_to='blog/')
     author = models.CharField(max_length=127, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True, null=True,blank=True)
-    link = models.URLField(max_length=255)
+    desc = RichTextField(help_text='Content', null=True, blank=True)
     
     
     def __str__(self):
