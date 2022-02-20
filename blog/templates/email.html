@@ -1,0 +1,7 @@
+{% for blog in blogs %}
+
+<p>{{blog.name}}</p>
+
+<a href="{{ site_adress }}{{blog.id}}">{{ blog.name }}</a>
+
+{% endfor %}

@@ -1,6 +1,9 @@
+
+from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Blog
 from django.views.generic import ListView, DetailView
+from . tasks import dump_database
 
 # class BlogListView(ListView):
 #     pass
@@ -30,3 +33,8 @@ class BlogDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         # context['name'] = 'Test user'
         return context
+    
+    
+def dump_database_view(request):
+    dump_database()
+    return HttpResponse('Dump started')
