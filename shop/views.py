@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from . models import Order, OrderItem, Product
+from . models import Order, OrderItem, Product, ProductCategory
 from django.http import JsonResponse
 from django.views.generic import DetailView
 import json
@@ -106,3 +106,12 @@ def search(request):
             'searched':searched,
         }
         return render(request, 'search.html',context)
+    
+def filter(request, slug):
+    product = Product.objects.filter(category__slug=slug)
+    category = ProductCategory.objects.filter(slug=slug).first()
+    context = {
+        'product':product,
+        'category':category,
+    }
+    return render(request, 'filter.html', context)

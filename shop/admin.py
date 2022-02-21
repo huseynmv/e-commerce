@@ -5,6 +5,12 @@ from . models import Product, Order, OrderItem, ProductCategory
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     fields = ('category', 'desc', 'name', 'price', 'image',)
+    
+@admin.register(ProductCategory)
+class ProductCategoryAdmin(admin.ModelAdmin):
+    fileds = ('name',)
+
 admin.site.register(Order)
 admin.site.register(OrderItem)
-admin.site.register(ProductCategory)
+
+

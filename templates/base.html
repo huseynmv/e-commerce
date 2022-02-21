@@ -414,7 +414,7 @@
                                     <ul class="menu vertical-menu category-menu">
                                         {% for i in product_category %}
                                         <li>
-                                            <a href="{% url 'home:home' %}">
+                                            <a href="{% url 'shop:filter' i.slug %}">
                                                 <i class="w-icon-tshirt2"></i>{{ i.name }}
                                             </a>
                                         </li>
