@@ -89,7 +89,7 @@
                     </div>
                     <div class="header-right pr-0">
                         <div class="dropdown">
-                            <a href="#currency">USD</a>
+                            {% comment %} <a href="#currency">USD</a> {% endcomment %}
                             <div class="dropdown-box">
                                 <a href="#USD">USD</a>
                                 <a href="#EUR">EUR</a>
@@ -325,8 +325,8 @@
                             <span class="wishlist-label d-lg-show">Wishlist</span>
                         </a>
                         <a class="compare label-down link d-xs-show" href="{% url 'pages:compare' %}">
-                            <i class="w-icon-compare"></i>
-                            <span class="compare-label d-lg-show">Compare</span>
+                            {% comment %} <i class="w-icon-compare"></i> {% endcomment %}
+                            {% comment %} <span class="compare-label d-lg-show">Compare</span> {% endcomment %}
                         </a>
                         <div class="dropdown cart-dropdown mr-0 mr-lg-2">
                             <div class="cart-overlay"></div>
