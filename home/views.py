@@ -3,8 +3,11 @@ from django.shortcuts import render
 from shop.models import *
 # Create your views here.
 def index(request):
-    
-    return render(request, 'index.html',)
+    product = Product.objects.filter(price__range=(0, 101))[:2]
+    context = {
+        'product':product
+    }
+    return render(request, 'index.html',context)
 
 # def base(request):
 #     category = ProductCategory.objects.all()
