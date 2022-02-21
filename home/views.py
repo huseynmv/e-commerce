@@ -3,7 +3,7 @@ from django.shortcuts import render
 from shop.models import *
 # Create your views here.
 def index(request):
-    product = Product.objects.filter(price__range=(0, 101))[:2]
+    product = Product.objects.filter(price__range=(0, 101)).order_by("-created_at")[:2]
     context = {
         'product':product
     }
