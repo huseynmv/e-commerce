@@ -260,18 +260,23 @@
                                 </li>
                             </ul>
                             <!-- End Comments -->
-                            <form class="reply-section pb-4">
+
+                            <form class="reply-section pb-4" method='POST' action="{% url 'blog:blog-details' id=post.id  %}">
+                                {% csrf_token %}
                                 <h4 class="title title-md font-weight-bold pt-1 mt-10 mb-0">Leave a Reply</h4>
                                 <p>Your email address will not be published. Required fields are marked</p>
                                 <div class="row">
-                                    <div class="col-sm-6 mb-4">
+
+                                    {{ form }}
+
+                                    {% comment %} <div class="col-sm-6 mb-4">
                                         <input type="text" class="form-control" placeholder="Enter Your Name" id="name">
                                     </div>
                                     <div class="col-sm-6 mb-4">
                                         <input type="text" class="form-control" placeholder="Enter Your Email" id="email_1">
-                                    </div>
+                                    </div> {% endcomment %}
                                 </div>
-                                <textarea cols="30" rows="6" placeholder="Write a Comment" class="form-control mb-4" id="comment"></textarea>
+                                {% comment %} <textarea cols="30" rows="6" placeholder="Write a Comment" class="form-control mb-4" id="comment"></textarea> {% endcomment %}
                                 <button class="btn btn-dark btn-rounded btn-icon-right btn-comment">Post Comment<i class="w-icon-long-arrow-right"></i></button>
                             </form>
                         </div>
