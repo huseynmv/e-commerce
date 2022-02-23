@@ -259,8 +259,9 @@
                                 <div class="sticky-sidebar">
                                     <div class="widget widget-search-form">
                                         <div class="widget-body">
-                                            <form action="#" method="GET" class="input-wrapper input-wrapper-inline">
-                                                <input type="text" class="form-control"
+                                            <form action="{% url 'blog:blog-search' %}" method="POST" class="input-wrapper input-wrapper-inline">
+                                                {% csrf_token %}
+                                                <input type="text" name='searched' class="form-control"
                                                     placeholder="Search in Blog" autocomplete="off" required>
                                                 <button class="btn btn-search"><i
                                                         class="w-icon-search"></i></button>

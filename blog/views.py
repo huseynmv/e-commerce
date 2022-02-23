@@ -57,3 +57,13 @@ class BlogDetailView(DetailView):
 def dump_database_view(request):
     dump_database()
     return HttpResponse('Dump started')
+
+def blog_search(request):
+    if request.method == 'POST':
+        searched = request.POST['searched']
+        search_item = Blog.objects.filter(name__icontains = searched)
+        context = {
+            'search_item':search_item,
+            'searched':searched,
+        }
+        return render(request, 'blog-search.html',context)
