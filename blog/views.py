@@ -1,10 +1,12 @@
 
 from gc import get_objects
+from modulefinder import replacePackageMap
+from unicodedata import category
 from xml.etree.ElementTree import Comment
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
-from .models import Blog, Comment
+from .models import Blog, BlogCategory, Comment
 from django.views.generic import ListView, DetailView
 from . tasks import dump_database
 from .forms import BlogCommentForm
@@ -47,11 +49,14 @@ class BlogDetailView(DetailView):
         comment_count = Comment.objects.all().count()
         recent_blogs = Blog.objects.order_by("-date")[:3]
         context = super().get_context_data(**kwargs)
+        related_blog = Blog.objects.filter(category=self.object.category)
+        print(related_blog)
         context.update({
             'form': self.form,
             'comment': post_comments,
             'count': comment_count,
             'recent_blogs':recent_blogs,
+            'related_blog':related_blog
         })
         return context
     
