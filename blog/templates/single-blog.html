@@ -294,7 +294,7 @@
                                                                 </figure>
                                                                 <div class="post-details">
                                                                     <div class="post-meta">
-                                                                        <a href="#" class="post-date">{{ i.date }}</a>
+                                                                        <a href="#" class="post-date">{{ i.date |date:'M Y'}}</a>
                                                                     </div>
                                                                     <h4 class="post-title">
                                                                         <a href="{% url 'blog:blog-details' i.id  %}">{{ i.name }}</a>
@@ -345,8 +345,7 @@
                                                             </div>
                                                         </div> {% endcomment %}
                                                     </div>
-                                                    <button class="swiper-button-next"></button>
-                                                    <button class="swiper-button-prev"></button>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
