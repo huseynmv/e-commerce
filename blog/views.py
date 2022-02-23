@@ -3,7 +3,7 @@ from gc import get_objects
 from modulefinder import replacePackageMap
 from unicodedata import category
 from xml.etree.ElementTree import Comment
-from django.http import HttpResponse
+from django.http import HttpResponse, QueryDict
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from .models import Blog, BlogCategory, Comment
@@ -49,7 +49,8 @@ class BlogDetailView(DetailView):
         comment_count = Comment.objects.all().count()
         recent_blogs = Blog.objects.order_by("-date")[:3]
         context = super().get_context_data(**kwargs)
-        related_blog = Blog.objects.filter(category=self.object.category)
+        # current_blog = Blog.objects.filter(id=Blog.objects.values_list('id', flat=True))
+        related_blog = Blog.objects.filter(category=self.object.category).exclude(name=self.object.name)
         print(related_blog)
         context.update({
             'form': self.form,
