@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'vendor',
     'social_django',
     'django_celery_beat',
+    'taggit',
 ]
 
 
