@@ -45,11 +45,13 @@ class BlogDetailView(DetailView):
     def get_context_data(self, **kwargs):
         post_comments = Comment.objects.all()
         comment_count = Comment.objects.all().count()
+        recent_blogs = Blog.objects.order_by("-date")[:3]
         context = super().get_context_data(**kwargs)
         context.update({
             'form': self.form,
             'comment': post_comments,
-            'count': comment_count
+            'count': comment_count,
+            'recent_blogs':recent_blogs,
         })
         return context
     
