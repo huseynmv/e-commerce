@@ -5,9 +5,13 @@ from ckeditor.fields import RichTextField
 class BlogCategory(models.Model):
     name = models.CharField(max_length=127, null=True, blank=True)
     
+class BlogTag(models.Model):
+    tag = models.TextField(max_length=127, null=True, blank=True)
+    
 
 class Blog(models.Model):
     category = models.ForeignKey(BlogCategory, on_delete=models.SET_NULL, max_length=127, blank=True, null=True)
+    tag = models.ManyToManyField(BlogTag, max_length=127, null=True, blank=True)
     name = models.CharField(max_length=127, blank=True, null=True)
     image = models.ImageField(upload_to='blog/')
     author = models.CharField(max_length=127, null=True, blank=True)
