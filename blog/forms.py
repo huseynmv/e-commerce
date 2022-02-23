@@ -1,19 +1,18 @@
 from django import forms
-from .models import Blog
+from .models import Blog, Comment
 from django.db.models import fields
 
-class BlogCommentForm(forms.ModelForm):
-    
-    email = forms.EmailField(label='Email', max_length=100, widget=forms.EmailInput(
-        attrs={'class': 'form-control', 'placeholder': 'Your Email...'}
-    ))
-    
+class BlogCommentForm(forms.ModelForm): 
     class Meta:
-        model = Blog
-        fields = '__all__'
-        widgets = {
-            'name': forms.TextInput(
-                attrs={'class': 'form-control', 'placeholder': 'Your Name...'}),
-            'body': forms.Textarea(
-                attrs={'class': 'form-control', 'placeholder': 'Your Message...'})
-        }
+        model = Comment
+        fields = ('name', 'email', 'body',)
+    
+    # class Meta:
+    #     model = Blog
+    #     fields = ('name','body',)
+    #     widgets = {
+    #         'name': forms.TextInput(
+    #             attrs={'class': 'form-control', 'placeholder': 'Your Name...'}),
+    #         'body': forms.Textarea(
+    #             attrs={'class': 'form-control', 'placeholder': 'Your Message...'})
+    #     }

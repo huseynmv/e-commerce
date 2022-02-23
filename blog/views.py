@@ -1,9 +1,10 @@
 
 from gc import get_objects
+from xml.etree.ElementTree import Comment
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
-from .models import Blog
+from .models import Blog, Comment
 from django.views.generic import ListView, DetailView
 from . tasks import dump_database
 from .forms import BlogCommentForm
@@ -38,17 +39,18 @@ class BlogDetailView(DetailView):
     def post(self, request, *args, **kwargs):
         form = BlogCommentForm(request.POST)
         if form.is_valid():
-            post = self.get_object()
-            form.instance.user = request.user
-            form.instance.post = post
             form.save()
-            return reverse_lazy('home:home', kwargs={
-                'id':post.id
-            })
+            return redirect(reverse_lazy('home:home'))
     
     def get_context_data(self, **kwargs):
+        post_comments = Comment.objects.all()
+        comment_count = Comment.objects.all().count()
         context = super().get_context_data(**kwargs)
-        context['form'] = self.form
+        context.update({
+            'form': self.form,
+            'comment': post_comments,
+            'count': comment_count
+        })
         return context
     
     
