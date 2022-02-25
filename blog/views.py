@@ -23,28 +23,28 @@ from .forms import BlogCommentForm
 #     }
 #     return render(request, 'blog.html', context)
 
-
-class TagMixin(object):
-     def get_context_data(self, **kwargs):
-        context = super(TagMixin, self).get_context_data(**kwargs)
-        context["tags"] = Tag.objects.all()
-        return context
-    
-
 class BlogListView(ListView):
     model = Blog
     template_name = 'blog.html'
     paginate_by = 3
+    ontext_object_name = 'blog_list'
 
-# def single_blog(request):
-#     return render(request, 'single-blog.html')
+
+
+class TagIndexView(ListView):
+    model = Blog
+    template_name = 'tags.html'
+    paginate_by = 3
+    context_object_name = 'blog_list'
+    
+    def get_queryset(self):
+        return Blog.objects.filter(tags__slug=self.kwargs.get('tag_slug'))
+    #kwargs.get('slug')
 
 class BlogDetailView(DetailView):
     model = Blog
     template_name = 'single-blog.html'
     context_object_name='blog_obj'
-    
-     
     form = BlogCommentForm
     
     def post(self, request, *args, **kwargs):
@@ -57,25 +57,13 @@ class BlogDetailView(DetailView):
             return redirect(reverse_lazy('home:home'), kwargs={
                 'id': post.id
             })
-        
-        
-
-    
+            
     def get_context_data(self, **kwargs):
-        
-       
-        
-        
         post_comments = Comment.objects.all().filter(post=self.object.id)
         comment_count = Comment.objects.all().filter(post=self.object.id).count()
         recent_blogs = Blog.objects.order_by("-date")[:3]
         context = super().get_context_data(**kwargs)
-        # tag = BlogTag.objects.filter(name=self.object.tag)
-        # print(tag)
-        # current_blog = Blog.objects.filter(id=Blog.objects.values_list('id', flat=True))
         related_blog = Blog.objects.filter(category=self.object.category).exclude(name=self.object.name)
-        # blog = Blog.objects.filter(tags__in=[tag])
-        # print(related_blog)
         context.update({
             'form': self.form,
             'comment': post_comments,
@@ -84,16 +72,7 @@ class BlogDetailView(DetailView):
             'related_blog':related_blog,
         })
         return context
-    
-    
-class TagIndexView(TagMixin,ListView):
-    model = Blog
-    template_name = 'single-blog.html'
-    context_object_name='posts'
-    
-    def get_queryset(self):
-        print( Blog.objects.filter(tags__slug=self.kwargs.get('tag_slug')))
-    
+
     
 def dump_database_view(request):
     dump_database()
