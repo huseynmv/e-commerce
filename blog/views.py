@@ -63,10 +63,11 @@ class BlogDetailView(DetailView):
         post_comments = Comment.objects.all().filter(post=self.object.id)
         comment_count = Comment.objects.all().filter(post=self.object.id).count()
         recent_blogs = Blog.objects.order_by("-date")[:3]
+        # blog = Blog.objects.tags.all().filter(id=self.object.id)
+        tags = list(Blog.objects.filter(id=self.object.id).values_list('tags__name', flat=True))
+        print(tags)
         context = super().get_context_data(**kwargs)
         related_blog = Blog.objects.filter(category=self.object.category).exclude(name=self.object.name)
-        
-        
         
         context.update({
             'form': self.form,
@@ -74,7 +75,7 @@ class BlogDetailView(DetailView):
             'count': comment_count,
             'recent_blogs':recent_blogs,
             'related_blog':related_blog,
-            'all_blog':all_blog
+            'tags':tags
         })
         return context
 
