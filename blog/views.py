@@ -1,5 +1,6 @@
 
 from gc import get_objects
+from turtle import pos
 from taggit.models import Tag 
 from modulefinder import replacePackageMap
 from unicodedata import category
@@ -64,12 +65,16 @@ class BlogDetailView(DetailView):
         recent_blogs = Blog.objects.order_by("-date")[:3]
         context = super().get_context_data(**kwargs)
         related_blog = Blog.objects.filter(category=self.object.category).exclude(name=self.object.name)
+        
+        
+        
         context.update({
             'form': self.form,
             'comment': post_comments,
             'count': comment_count,
             'recent_blogs':recent_blogs,
             'related_blog':related_blog,
+            'all_blog':all_blog
         })
         return context
 

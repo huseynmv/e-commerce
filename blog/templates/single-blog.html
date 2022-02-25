@@ -71,8 +71,8 @@
                             <div class="tags">
                                 <label class="text-dark mr-2">Tags:</label>
                                 
-                                {% for tag in tags %}
-                                <a href="{% url 'blog:posts_by_tag' tag.slug %}" class="tag">{{ tag.name }}</a>
+                                {% for tag in all_blog %}
+                                <a href="" class="tag">{{ tag.tags.all }}</a>
                                 {% endfor %}
                                 
                             </div>
