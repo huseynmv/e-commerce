@@ -50,8 +50,13 @@ class BlogDetailView(DetailView):
     def post(self, request, *args, **kwargs):
         form = BlogCommentForm(request.POST)
         if form.is_valid():
+            post = self.get_object()
+            form.instance.user = request.user
+            form.instance.post = post
             form.save()
-            return redirect(reverse_lazy('home:home'))
+            return redirect(reverse_lazy('home:home'), kwargs={
+                'id': post.id
+            })
         
         
 
@@ -61,8 +66,8 @@ class BlogDetailView(DetailView):
        
         
         
-        post_comments = Comment.objects.all()
-        comment_count = Comment.objects.all().count()
+        post_comments = Comment.objects.all().filter(post=self.object.id)
+        comment_count = Comment.objects.all().filter(post=self.object.id).count()
         recent_blogs = Blog.objects.order_by("-date")[:3]
         context = super().get_context_data(**kwargs)
         # tag = BlogTag.objects.filter(name=self.object.tag)

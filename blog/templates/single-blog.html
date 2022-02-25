@@ -182,7 +182,7 @@
                             </ul>
                             <!-- End Comments -->
 
-                            <form class="reply-section pb-4" method='POST'>
+                            <form class="reply-section pb-4" method='POST' action="{% url 'blog:blog-details' blog_obj.id %}">
                                 {% csrf_token %}
                                 <h4 class="title title-md font-weight-bold pt-1 mt-10 mb-0">Leave a Reply</h4>
                                 <p>Your email address will not be published. Required fields are marked</p>
