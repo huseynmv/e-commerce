@@ -1,4 +1,5 @@
 from django.db import models
+from account.models import User
 from ckeditor.fields import RichTextField
 from taggit.managers import TaggableManager
 
@@ -25,6 +26,7 @@ class Blog(models.Model):
     
     
 class Comment(models.Model):
+    user = models.ForeignKey(User,on_delete=models.CASCADE,null=True,blank=True)
     post = models.ForeignKey(Blog,on_delete=models.CASCADE,related_name='comments', null=True, blank=True)
     name = models.CharField(max_length=80)
     email = models.EmailField()
