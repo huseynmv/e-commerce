@@ -4,7 +4,7 @@ from . models import Product, Order, OrderItem, ProductCategory
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    fields = ('category', 'desc', 'name', 'price', 'image',)
+    fields = ('category', 'desc', 'name', 'price', 'image','size',)
     
 @admin.register(ProductCategory)
 class ProductCategoryAdmin(admin.ModelAdmin):

@@ -15,9 +15,12 @@ def product(request):
             order = {'get_cart_total': 0,'get_cart_items': 0 }
             cartItems = order['get_cart_items']
         product = Product.objects.all()
+        categories = list(ProductCategory.objects.all().values_list('name', flat=True))
+        print(categories)
         context = {
             'product' : product,
-            'cartItems': cartItems
+            'cartItems': cartItems,
+            'categories':categories,
         }
         return render(request, 'product.html', context)
 
