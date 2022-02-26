@@ -127,6 +127,8 @@ TEMPLATES = [
                 'social_django.context_processors.login_redirect', # social auth
                 'django.template.context_processors.request',# jet
                 'shop.contex_processors.global_product_category',
+                'blog.context_processors.global_blog_category',
+                
 
             ],
         },

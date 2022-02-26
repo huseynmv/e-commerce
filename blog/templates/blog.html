@@ -29,7 +29,7 @@
                 <div class="container">
                     <ul class="nav-filters filter-underline blog-filters mb-4">
                         {% for i in category %}
-                        <li><a href="{% url 'blog:blog-filter' i.id %}" class="nav-filter active" data-filter="*">{{ i.name }}</a></li>
+                        <li><a href="{% url 'blog:blog-filter' i.slug %}" class="nav-filter active" data-filter="*">{{ i.name }}</a></li>
                         {% endfor %}
                     </ul>
 
@@ -40,7 +40,7 @@
                         <div class="grid-item fashion">
                             <article class="post post-mask overlay-zoom br-sm">
                                 <figure class="post-media">
-                                    <a href="{% url 'blog:blog-details' blog.id  %}">
+                                    <a href="{% url 'blog:blog-details' blog.slug  %}">
                                         <img src="{{ blog.image.url }}" width="600"
                                             height="420" alt="blog">
                                     </a>

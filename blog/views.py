@@ -104,11 +104,11 @@ def blog_search(request):
         return render(request, 'blog-search.html',context)
     
     
-def blog_filter(request, id):
-    blog = Blog.objects.filter(category__id=id)
+def blog_filter(request, slug):
+    blog = Blog.objects.filter(category__slug=slug)
     blogCategory = BlogCategory.objects.all()
     context = {
         'blog':blog,
         'blogCategory':blogCategory,
     }
-    return render(request, 'blog_filter.html', context)
+    return render(request, 'blog-filter.html', context)
