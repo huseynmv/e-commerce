@@ -16,8 +16,17 @@ class ProductCategory(models.Model):
     slug = models.SlugField(max_length=127, null=True, blank=True)
 
 class Product(models.Model):
+    
+    PRODUCT_SIZE_CHOICES = (
+        ('L', 'L'),
+        ('S', 'S'),
+        ('M', 'M'),
+        ('XL', 'XL')
+    )
+    
     color = models.ForeignKey(Color,on_delete=models.SET_NULL, null=True, blank=True)
     brand = models.ForeignKey(Brand,on_delete=models.SET_NULL, null=True, blank=True)
+    size  = models.CharField(choices=PRODUCT_SIZE_CHOICES, default='L', max_length=255)
     category = models.ForeignKey(ProductCategory, on_delete=models.SET_NULL,max_length=127, null=True, blank=True)
     desc = models.TextField(null=True, blank=True)
     name = models.CharField(max_length=127, null=True, blank=True)
