@@ -2,6 +2,7 @@ from django.shortcuts import render
 from . models import Brand, Color, Order, OrderItem, Product, ProductCategory
 from django.http import JsonResponse
 from django.views.generic import DetailView
+from django.template.loader import render_to_string
 import json
 # Create your views here.
 def product(request):
@@ -122,3 +123,15 @@ def filter(request, slug):
         'category':category,
     }
     return render(request, 'filter.html', context)
+
+
+def filter_data(request):
+	colors=list(Color.objects.all().values_list('id', flat=True))
+	# brands=request.GET.getlist('brand[]')
+	allProducts=Product.objects.all().order_by('-id').distinct()
+	if len(colors)>0:   
+		allProducts=allProducts.filter(color__id__in=colors).distinct()
+	# if len(brands)>0:
+	# 	allProducts=allProducts.filter(brand__id__in=brands).distinct()
+	t=render_to_string('ajax/product.html',{'data':allProducts})
+	return JsonResponse({'data':t})
