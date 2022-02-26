@@ -64,9 +64,9 @@ class BlogDetailView(DetailView):
             form.instance.user = request.user
             form.instance.post = post
             form.save()
-            return redirect(reverse_lazy('home:home'), kwargs={
-                'id': post.id
-            })
+            return redirect(reverse_lazy('blog:blog-details', kwargs={
+                'slug':post.slug
+            }))
             
     def get_context_data(self, **kwargs):
         post_comments = Comment.objects.all().filter(post=self.object.id)

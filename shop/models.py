@@ -1,13 +1,23 @@
+from statistics import mode
 from django.db import models
 
 from account.models import User
 
 # Create your models here.
+
+class Color(models.Model):
+    name = models.CharField(max_length=127, null=True, blank=True)
+    
+class Brand(models.Model):
+    name = models.CharField(max_length=127, null=True, blank=True)
+
 class ProductCategory(models.Model):
     name = models.CharField(max_length=127, null=True, blank=True)
     slug = models.SlugField(max_length=127, null=True, blank=True)
 
 class Product(models.Model):
+    color = models.ForeignKey(Color,on_delete=models.SET_NULL, null=True, blank=True)
+    brand = models.ForeignKey(Brand,on_delete=models.SET_NULL, null=True, blank=True)
     category = models.ForeignKey(ProductCategory, on_delete=models.SET_NULL,max_length=127, null=True, blank=True)
     desc = models.TextField(null=True, blank=True)
     name = models.CharField(max_length=127, null=True, blank=True)
