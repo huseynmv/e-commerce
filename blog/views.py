@@ -29,6 +29,15 @@ class BlogListView(ListView):
     template_name = 'blog.html'
     paginate_by = 3
     ontext_object_name = 'blog_list'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        blog = Blog.objects.all()
+        blog_category = BlogCategory.objects.all()
+        context = {
+            'blog_list':blog,
+            'category': blog_category
+        }   
+        return context  
 
 
 
@@ -93,3 +102,13 @@ def blog_search(request):
             'searched':searched,
         }
         return render(request, 'blog-search.html',context)
+    
+    
+def blog_filter(request, id):
+    blog = Blog.objects.filter(category__id=id)
+    blogCategory = BlogCategory.objects.all()
+    context = {
+        'blog':blog,
+        'blogCategory':blogCategory,
+    }
+    return render(request, 'blog_filter.html', context)
