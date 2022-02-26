@@ -134,4 +134,5 @@ def filter_data(request):
 	# if len(brands)>0:
 	# 	allProducts=allProducts.filter(brand__id__in=brands).distinct()
 	t=render_to_string('ajax/product.html',{'data':allProducts})
+ 
 	return JsonResponse({'data':t})
