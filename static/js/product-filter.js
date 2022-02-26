@@ -15,7 +15,8 @@ $(document).ready(function(){
 		$.ajax({
 			url:'filter-data/',
 			data:_filterObj,
-			dataType:'json',
+			dataType:'application/json',
+            body: JSON.stringify({'_filterObj': _filterObj}),
 			beforeSend:function(){
 				$(".ajaxLoader").show();
 			},
@@ -24,7 +25,7 @@ $(document).ready(function(){
 				$("#filteredProducts").html(res.data);
 				$(".ajaxLoader").hide();
 			}
-		});
+		});  
 	});
 	// End
 

@@ -125,14 +125,26 @@ def filter(request, slug):
     return render(request, 'filter.html', context)
 
 
-def filter_data(request):
-	colors=list(Color.objects.all().values_list('id', flat=True))
-	# brands=request.GET.getlist('brand[]')
-	allProducts=Product.objects.all().order_by('-id').distinct()
-	if len(colors)>0:   
-		allProducts=allProducts.filter(color__id__in=colors).distinct()
-	# if len(brands)>0:
-	# 	allProducts=allProducts.filter(brand__id__in=brands).distinct()
-	t=render_to_string('ajax/product.html',{'data':allProducts})
+# def filter_data(request):
+# 	colors=list(Color.objects.all().values_list('id', flat=True))
+#     # data = json.loads(request.body)
+    
+# 	# brands=request.GET.getlist('brand[]')
+	 
+# 	allProducts=Product.objects.all().order_by('-id').values_list('name',flat=True)
+# 	# if len(brands)>0:
+# 	# 	allProducts=allProducts.filter(brand__id__in=brands).distinct()
+# 	t=render_to_string('ajax/product.html',{'data':allProducts})
  
-	return JsonResponse({'data':t})
+# 	return JsonResponse({'data':t})
+
+
+def filter_data(request):
+    data = json.loads(request.body)
+    colors=list(Color.objects.all().values_list('id',flat=True))
+    _filterObj = data['_filterObj']
+    print(_filterObj)
+    allProducts=Product.objects.all().order_by('-id').values_list('name',flat=True)
+    if _filterObj in colors:
+        t=render_to_string('ajax/product.html',{'data':allProducts})
+        return JsonResponse({'data':t})

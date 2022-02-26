@@ -377,7 +377,8 @@
                                     </div>
                                 </div>
                             </nav>
-                            <div class="product-wrapper row cols-md-3 cols-sm-2 cols-2">
+                            <div class="product-wrapper row cols-md-3 cols-sm-2 cols-2" id="filteredProducts">
+                                <p class="ajaxLoader">Loading...</p>
                                 {% for product in product %}
                                 <div class="product-wrap">
                                     <div class="product text-center">
