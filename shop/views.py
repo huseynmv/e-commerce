@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from . models import Order, OrderItem, Product, ProductCategory
+from . models import Brand, Color, Order, OrderItem, Product, ProductCategory
 from django.http import JsonResponse
 from django.views.generic import DetailView
 import json
@@ -16,11 +16,15 @@ def product(request):
             cartItems = order['get_cart_items']
         product = Product.objects.all()
         categories = list(ProductCategory.objects.all().values_list('name', flat=True))
+        brand = Brand.objects.all()
+        color  = Color.objects.all()
         print(categories)
         context = {
             'product' : product,
             'cartItems': cartItems,
             'categories':categories,
+            'brand':brand,
+            'color': color,
         }
         return render(request, 'product.html', context)
 

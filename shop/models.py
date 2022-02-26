@@ -7,9 +7,13 @@ from account.models import User
 
 class Color(models.Model):
     name = models.CharField(max_length=127, null=True, blank=True)
+    def __str__(self) :
+        return self.name
     
 class Brand(models.Model):
     name = models.CharField(max_length=127, null=True, blank=True)
+    def __str__(self) :
+        return self.name
 
 class ProductCategory(models.Model):
     name = models.CharField(max_length=127, null=True, blank=True)
