@@ -140,11 +140,5 @@ def filter(request, slug):
 
 
 def filter_data(request):
-    data = json.loads(request.body)
-    colors=list(Color.objects.all().values_list('id',flat=True))
-    _filterObj = data['_filterObj']
-    print(_filterObj)
-    allProducts=Product.objects.all().order_by('-id').values_list('name',flat=True)
-    if _filterObj in colors:
-        t=render_to_string('ajax/product.html',{'data':allProducts})
-        return JsonResponse({'data':t})
+
+    return JsonResponse({'data':'hello world'})
