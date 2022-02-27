@@ -1,3 +1,4 @@
+import colorsys
 from django.shortcuts import render
 from . models import Brand, Color, Order, OrderItem, Product, ProductCategory
 from django.http import JsonResponse
@@ -141,4 +142,17 @@ def filter(request, slug):
 
 def filter_data(request):
 
-    return JsonResponse({'data':'hello world'})
+    color = request.GET.getlist('color[]')
+    # color = list(Color.objects.all().values_list('id', flat=True))
+    
+    allproducts=Product.objects.all()
+    print(color)
+    if len(color)>0:
+        print('salam')
+        
+        allprod=allproducts.filter(color__name__in = color)
+        print(allprod)
+        
+        t = render_to_string('ajax/yusif.html', {'data': allprod})
+        print(t)
+    return JsonResponse({'data':t})
