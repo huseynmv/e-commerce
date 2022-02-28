@@ -161,7 +161,7 @@
                                         <li><a href="{% url 'pages:faq' %}">FAQs</a></li>
                                         <li><a href="{% url 'pages:error' %}">Error 404</a></li>
                                         <!-- <li><a href="coming-soon.html">Coming Soon</a></li> -->
-                                        <li><a href="{% url 'pages:wishlist' %}">Wishlist</a></li>
+                                        <li><a href="{% url 'shop:wishlist_view' %}">Wishlist</a></li>
                                         <li><a href="{% url 'shop:cart' %}">Cart</a></li>
                                         <li><a href="{% url 'shop:checkout' %}">Checkout</a></li>
                                         <li><a href="{% url 'account:login' %}">My Account</a></li>
@@ -201,7 +201,7 @@
                                 <a href="tel:#" class="phone-number font-weight-bolder ls-50">0(800)123-456</a>
                             </div>
                         </div>
-                        <a class="wishlist label-down link d-xs-show" href="{% url 'pages:wishlist' %}">
+                        <a class="wishlist label-down link d-xs-show" href="{% url 'shop:wishlist_view' %}">
                             <i class="w-icon-heart"></i>
                             <span class="wishlist-label d-lg-show">Wishlist</span>
                         </a>
@@ -409,7 +409,7 @@
                                     <li><a href="{% url 'shop:cart' %}">View Cart</a></li>
                                     <li><a href="{% url 'account:login' %}">Sign In</a></li>
                                     <li><a href="#">Help</a></li>
-                                    <li><a href="{% url 'pages:wishlist' %}">My Wishlist</a></li>
+                                    <li><a href="{% url 'shop:wishlist_view' %}">My Wishlist</a></li>
                                     <li><a href="#">Privacy Policy</a></li>
                                 </ul>
                             </div>

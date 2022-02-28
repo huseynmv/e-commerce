@@ -18,6 +18,4 @@ def order(request):
 def order_view(request):
     return render(request, 'order-view.html')
 
-def wishlist(request):
-    return render(request, 'wishlist.html')
 

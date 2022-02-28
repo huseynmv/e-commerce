@@ -3,9 +3,9 @@ let updatebtns = document.getElementsByClassName('wishlist')
 for(let i = 0; i < updatebtns.length; i++ ){
     updatebtns[i].addEventListener('click', function(e){
         e.preventDefault; 
-        let productID = this.dataset.product
-        let action = this.dataset.action
-        console.log('productID:', productID, 'action:', action) 
+        let p = this.dataset.product
+        let a = this.dataset.action
+        console.log('p:', p, 'a:', a) 
 
         console.log('USER', user)
 
@@ -13,12 +13,12 @@ for(let i = 0; i < updatebtns.length; i++ ){
             console.log('Not logged in')
 
         }else{
-            updateUserOrder(productID, action)
+            updateUserOrder(p, a)
         }
     })
 }
 
-function updateUserOrder(productID, action){
+function updateUserOrder(p, a){
     console.log('User logged in, sending data...')
 
     var url = 'wishlist/'; 
@@ -28,14 +28,14 @@ function updateUserOrder(productID, action){
             'Content-Type': 'application/json',
             'X-CSRFToken' : csrftoken,
         },
-        body: JSON.stringify({'productID': productID, 'action': action})
+        body: JSON.stringify({'p': p, 'a': a})
     })
 
     .then((response) =>{
         return response.json()
     })
-    .then((data) =>{
-        console.log('data:', data)
+    .then((datas) =>{
+        console.log('datas:', datas)
         location.reload()
     })
 }
