@@ -14,6 +14,6 @@ urlpatterns = [
     path('search/', search, name='search'),
     path('filter/<slug:slug>', filter, name='filter'),
     path('filter-data/',filter_data,name='filter_data'),
-    
-    
+
+
 ]

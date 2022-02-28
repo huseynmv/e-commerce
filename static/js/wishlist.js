@@ -1,7 +1,7 @@
-let updateBtns = document.getElementsByClassName('wishlist')
+let updatebtns = document.getElementsByClassName('wishlist')
 
-for(let i = 0; i < updateBtns.length; i++ ){
-    updateBtns[i].addEventListener('click', function(e){
+for(let i = 0; i < updatebtns.length; i++ ){
+    updatebtns[i].addEventListener('click', function(e){
         e.preventDefault; 
         let productID = this.dataset.product
         let action = this.dataset.action
