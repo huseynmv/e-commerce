@@ -327,7 +327,7 @@
                                         <h3 class="widget-title"><span>Color</span></h3>
                                         <ul class="widget-body filter-items item-check mt-1">
                                             {% for i in color %}
-                                            <li><input class='filter-checkbox' data-filter="color" value="{{i}}" type='checkbox'></li>
+                                            <li><input class='filter-checkbox' data-filter="color" value="{{i}}" type='checkbox'>{{ i.name }}</li>
                                             {% endfor %}
                                         </ul>
                                     </div>
