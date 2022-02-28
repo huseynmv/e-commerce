@@ -31,12 +31,12 @@
                         <div class="main-content post-single-content">
                             <div class="post post-grid post-single">
                                 <figure class="post-media br-sm">
-                                    <img src="" alt="Blog" width="930" height="500" />
+                                    <img src="{{ blog_obj.image.url }}" alt="Blog" width="930" height="500" />
                                 </figure>
                                 <div class="post-details">
                                     <div class="post-meta">
-                                        by <a href="#" class="post-author">John Doe</a>
-                                        - <a href="#" class="post-date">03.01.2021</a>
+                                        by <a href="#" class="post-author">{{ blog_obj.author }}</a>
+                                        - <a href="#" class="post-date">{{ blog_obj.date }}</a>
                                         <a href="#" class="post-comment"><i class="w-icon-comments"></i><span>0</span>Comments</a>
                                     </div>
                                     <h2 class="post-title"><a href="#">Fashion tells about who you are from external point</a></h2>
