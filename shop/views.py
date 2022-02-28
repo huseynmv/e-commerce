@@ -90,15 +90,21 @@ def update_item(request):
     product = Product.objects.get(id=productID)
     order, created = Order.objects.get_or_create(user=user, status=False)
     orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)
-    
+    oitemcount = OrderItem.objects.all().count()
     if action == 'add':
         orderItem.quantity = (orderItem.quantity + 1)
+        print(oitemcount)
     elif action == 'remove':
         orderItem.quantity = (orderItem.quantity - 1)
+
     orderItem.save()
     
     if orderItem.quantity <= 0 or action == 'removeAll':
         orderItem.delete()
+        print(oitemcount)
+        
+    if oitemcount <= 1 and (action == 'removeAll' or action == 'remove'):
+        order.delete()
         
      
     return JsonResponse('item was added', safe=False)
