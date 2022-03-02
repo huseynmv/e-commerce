@@ -1,6 +1,6 @@
 import colorsys
 from django.shortcuts import render
-from . models import Brand, Color, Order, OrderItem, Product, ProductCategory
+from . models import Brand, Color, Order, OrderItem, Product, ProductCategory, WishlistItem,Wishlist
 from django.http import JsonResponse
 from django.views.generic import DetailView
 from django.template.loader import render_to_string
@@ -110,6 +110,7 @@ def update_item(request):
     return JsonResponse('item was added', safe=False)
 
 
+
 def wishlist(request):
     datas = json.loads(request.body)
     productID = datas['p']
@@ -117,28 +118,23 @@ def wishlist(request):
     print('Action', action)
     print('ProductID', productID) 
     
-    user = request.user.id
+    user = request.user
     product = Product.objects.get(id=productID)
-    order, created = Order.objects.get_or_create(user=user, status=False)
-    orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)
-    oitemcount = OrderItem.objects.all().count()
-    if action == 'add':
-        orderItem.quantity = (orderItem.quantity + 1)
-        print(oitemcount)
-    elif action == 'remove':
-        orderItem.quantity = (orderItem.quantity - 1)
+    wishlist, created = Wishlist.objects.get_or_create(user=user, status=False)
+    wishlistitem, created = WishlistItem.objects.get_or_create(wishlist=wishlist, product=product)
+    if action == 'addWishlist':
+        wishlistitem.quantity = (wishlistitem.quantity + 1)
+        print('ProductID', productID)
+    elif action == 'removeWishlist':
+        wishlistitem.quantity = 0     
+    wishlistitem.save()
 
-    orderItem.save()
-    
-    if orderItem.quantity <= 0 or action == 'removeAll':
-        orderItem.delete()
-        print(oitemcount)
-        
-    if oitemcount <= 1 and (action == 'removeAll' or action == 'remove'):
-        order.delete()
-        
+    if wishlistitem.quantity == 0:        
+        wishlistitem.delete()
+
      
     return JsonResponse('item was added', safe=False)
+
 
 
 def wishlist_view(request):
