@@ -49,7 +49,7 @@
                         <button class="btn btn-rounded btn-login">Login</button>
                     </form>
                     
-                    <form class="form checkout-form" action="#" method="post">
+                    <form class="form checkout-form" action="" method="post">
                         <div class="row mb-9">
                             <div class="col-lg-7 pr-lg-4 mb-4">
                                 <h3 class="title billing-title text-uppercase ls-10 pt-1 pb-3 mb-0">
@@ -90,70 +90,14 @@
                                     {% for field in form %}
                                     {{ field }}
                                     {% endfor %}
+                                    
+                                        <button type="submit" class="btn btn-dark btn-block btn-rounded">Place Order</button>
+                                    
+                                    
                                 </form>
-                               
                                 
-                                <div class="checkbox-content">
-                                    <div class="row gutter-sm">
-                                        <div class="col-xs-6">
-                                            <div class="form-group">
-                                                <label>First name *</label>
-                                                <input type="text" class="form-control form-control-md" name="firstname"
-                                                    required>
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-6">
-                                            <div class="form-group">
-                                                <label>Last name *</label>
-                                                <input type="text" class="form-control form-control-md" name="lastname"
-                                                    required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Company name (optional)</label>
-                                        <input type="text" class="form-control form-control-md" name="company-name">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Country / Region *</label>
-                                        <div class="select-box">
-                                            <select name="country" class="form-control form-control-md">
-                                                <option value="default" selected="selected">United States
-                                                    (US)
-                                                </option>
-                                                <option value="uk">United Kingdom (UK)</option>
-                                                <option value="us">United States</option>
-                                                <option value="fr">France</option>
-                                                <option value="aus">Australia</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Street address *</label>
-                                        <input type="text" placeholder="House number and street name"
-                                            class="form-control form-control-md mb-2" name="street-address-1" required>
-                                        <input type="text" placeholder="Apartment, suite, unit, etc. (optional)"
-                                            class="form-control form-control-md" name="street-address-2" required>
-                                    </div>
-                                    <div class="row gutter-sm">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Town / City *</label>
-                                                <input type="text" class="form-control form-control-md" name="town" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Postcode *</label>
-                                                <input type="text" class="form-control form-control-md" name="postcode" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Country (optional)</label>
-                                                <input type="text" class="form-control form-control-md" name="zip" required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
+                                
 
                                 
                             </div>
@@ -203,9 +147,6 @@
 
                                         
 
-                                        <div class="form-group place-order pt-6">
-                                            <button type="submit" class="btn btn-dark btn-block btn-rounded">Place Order</button>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

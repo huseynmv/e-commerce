@@ -74,9 +74,15 @@ class ProductDetailView(DetailView):
 
 def checkout(request):
     if request.user.is_authenticated:
-        form = CheckoutForm(data=request.POST)
-        if form.is_valid():
-            form.save()
+        form = CheckoutForm()
+        if request.method == 'POST':
+            form = CheckoutForm(data=request.POST)
+            if form.is_valid():
+                
+                print(form)
+                    
+                form.save()
+                    
         user = request.user
         order, created = Order.objects.get_or_create(user=user, status=False)
         items = order.orderitem_set.all()
