@@ -5,11 +5,14 @@ from blog.models import *
 # Create your views here.
 def index(request):
     product = Product.objects.filter(price__range=(0, 101)).order_by("-created_at")[:2]
+    electronic = Product.objects.filter(category__name__in=['electronic', 'Electronic'])
+    print(electronic)
     blog = Blog.objects.all()[:4]
     print(blog)
     context = {
         'product':product,
-        'blog':blog
+        'blog':blog,
+        'electronic': electronic,
     }
     return render(request, 'index.html',context)
 

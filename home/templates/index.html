@@ -193,12 +193,8 @@
                 <!-- End of Iocn Box Wrapper -->
 
                 <div class="title-link-wrapper mb-3 appear-animate">
-                    <h2 class="title title-deals mb-1">Deals Of The Day</h2>
-                    <div class="product-countdown-container font-size-sm text-dark align-items-center">
-                        <label>Offer Ends in: </label>
-                        <div class="product-countdown countdown-compact ml-1 font-weight-bold" data-until="+10d"
-                            data-relative="true" data-compact="true">10days,00:00:00</div>
-                    </div>
+                    <h2 class="title title-deals mb-1">New Arrivals</h2>
+                    
                     <a href="shop-boxed-banner.html" class="font-weight-bold ls-25">More Products<i
                             class="w-icon-long-arrow-right"></i></a>
                 </div>
@@ -524,20 +520,7 @@
                 <!-- End of Vendor Wrapper -->
                 <div class="tab tab-with-title tab-nav-boxed appear-animate">
                     <h2 class="title">Consumer Electronics</h2>
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#tab-1">New Arrivals</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#tab-2">Best Seller</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#tab-3">Most Popular</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#tab-4">View All</a>
-                        </li>
-                    </ul>
+                    
                 </div>
                 <!-- End of Tab Title-->
                 <div class="tab-content appear-animate">
@@ -582,13 +565,14 @@
                                     </div>
                                 </div>
                             </div>
+                            {% for i in electronic  %}
                             <div class="product-wrap sm-item">
                                 <div class="product text-center">
                                     <figure class="product-media">
                                         <a href="product-default.html">
-                                            <img src="{% static 'images/demos/demo2/products/3-2-1.jpg' %}" alt="Product"
+                                            <img src="{{ i.image.url }}" alt="Product"
                                                 width="300" height="338">
-                                            <img src="{% static 'images/demos/demo2/products/3-2-2.jpg' %}" alt="Product"
+                                            <img src="{{ i.image.url }}" alt="Product"
                                                 width="300" height="338">
                                         </a>
                                         <div class="product-action-vertical">
@@ -602,11 +586,11 @@
                                                 title="Add to Compare"></a>
                                         </div>
                                         <div class="product-label-group">
-                                            <label class="product-label label-new">New</label>
+                                            {% comment %} <label class="product-label label-new">New</label> {% endcomment %}
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-default.html">Gold Watch</a></h4>
+                                        <h4 class="product-name"><a href="product-default.html">{{ i.name }}</a></h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 80%;"></span>
@@ -615,190 +599,12 @@
                                             {% comment %} <a href="product-default.html" class="rating-reviews">(3 Reviews)</a> {% endcomment %}
                                         </div>
                                         <div class="product-price">
-                                            <ins class="new-price">$164.47</ins><del class="old-price">$183.47</del>
+                                            <ins class="new-price">{{ i.price }}</ins>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="product-wrap sm-item">
-                                <div class="product text-center">
-                                    <figure class="product-media">
-                                        <a href="product-default.html">
-                                            <img src="{% static 'images/demos/demo2/products/3-3-1.jpg' %}" alt="Product"
-                                                width="300" height="338">
-                                            <img src="{% static 'images/demos/demo2/products/3-3-2.jpg' %}" alt="Product"
-                                                width="300" height="338">
-                                        </a>
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-cart w-icon-cart"
-                                                title="Add to cart"></a>
-                                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
-                                                title="Add to wishlist"></a>
-                                            <a href="#" class="btn-product-icon btn-quickview w-icon-search"
-                                                title="Quickview"></a>
-                                            <a href="#" class="btn-product-icon btn-compare w-icon-compare"
-                                                title="Add to Compare"></a>
-                                        </div>
-                                    </figure>
-                                    <div class="product-details">
-                                        <h4 class="product-name"><a href="product-default.html">Drone Wireless</a></h4>
-                                        <div class="ratings-container">
-                                            <div class="ratings-full">
-                                                <span class="ratings" style="width: 60%;"></span>
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div>
-                                            {% comment %} {% comment %} <a href="product-default.html" class="rating-reviews">( Reviews)</a> {% endcomment %} 
-                                        </div>
-                                        <div class="product-price">
-                                            <ins class="new-price">$89.00</ins>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-wrap sm-item">
-                                <div class="product text-center">
-                                    <figure class="product-media">
-                                        <a href="product-default.html">
-                                            <img src="{% static 'images/demos/demo2/products/3-4-1.jpg' %}" alt="Product"
-                                                width="300" height="338">
-                                            <img src="{% static 'images/demos/demo2/products/3-4-2.jpg' %}" alt="Product"
-                                                width="300" height="338">
-                                        </a>
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-cart w-icon-cart"
-                                                title="Add to cart"></a>
-                                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
-                                                title="Add to wishlist"></a>
-                                            <a href="#" class="btn-product-icon btn-quickview w-icon-search"
-                                                title="Quickview"></a>
-                                            <a href="#" class="btn-product-icon btn-compare w-icon-compare"
-                                                title="Add to Compare"></a>
-                                        </div>
-                                    </figure>
-                                    <div class="product-details">
-                                        <h4 class="product-name"><a href="product-default.html">Multi-colorful Music
-                                                Player</a></h4>
-                                        <div class="ratings-container">
-                                            <div class="ratings-full">
-                                                <span class="ratings" style="width: 100%;"></span>
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div>
-                                            {% comment %} {% comment %} <a href="product-default.html" class="rating-reviews">( 6 Reviews)</a> {% endcomment %}
-                                        </div>
-                                        <div class="product-price">
-                                            <ins class="new-price">$24.00</ins>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-wrap sm-item">
-                                <div class="product text-center">
-                                    <figure class="product-media">
-                                        <a href="product-default.html">
-                                            <img src="{% static 'images/demos/demo2/products/3-5-1.jpg' %}" alt="Product"
-                                                width="300" height="338">
-                                            <img src="{% static 'images/demos/demo2/products/3-5-2.jpg' %}" alt="Product"
-                                                width="300" height="338">
-                                        </a>
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-cart w-icon-cart"
-                                                title="Add to cart"></a>
-                                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
-                                                title="Add to wishlist"></a>
-                                            <a href="#" class="btn-product-icon btn-quickview w-icon-search"
-                                                title="Quickview"></a>
-                                            <a href="#" class="btn-product-icon btn-compare w-icon-compare"
-                                                title="Add to Compare"></a>
-                                        </div>
-                                    </figure>
-                                    <div class="product-details">
-                                        <h4 class="product-name"><a href="product-default.html">Charge &amp; Alarm
-                                                Machine</a></h4>
-                                        <div class="ratings-container">
-                                            <div class="ratings-full">
-                                                <span class="ratings" style="width: 80%;"></span>
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div>
-                                            {% comment %} {% comment %} <a href="product-default.html" class="rating-reviews">(3 Reviews)</a> {% endcomment %} 
-                                        </div>
-                                        <div class="product-price">
-                                            <ins class="new-price">$39.00</ins>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-wrap sm-item">
-                                <div class="product text-center">
-                                    <figure class="product-media">
-                                        <a href="product-default.html">
-                                            <img src="{% static 'images/demos/demo2/products/3-6-1.jpg' %}" alt="Product"
-                                                width="300" height="338">
-                                            <img src="{% static 'images/demos/demo2/products/3-6-2.jpg' %}" alt="Product"
-                                                width="300" height="338">
-                                        </a>
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-cart w-icon-cart"
-                                                title="Add to cart"></a>
-                                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
-                                                title="Add to wishlist"></a>
-                                            <a href="#" class="btn-product-icon btn-quickview w-icon-search"
-                                                title="Quickview"></a>
-                                            <a href="#" class="btn-product-icon btn-compare w-icon-compare"
-                                                title="Add to Compare"></a>
-                                        </div>
-                                    </figure>
-                                    <div class="product-details">
-                                        <h4 class="product-name"><a href="product-default.html">Mini Wireless
-                                                Earphone</a></h4>
-                                        <div class="ratings-container">
-                                            <div class="ratings-full">
-                                                <span class="ratings" style="width: 100%;"></span>
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div>
-                                            {% comment %} <a href="product-default.html" class="rating-reviews">(9 Reviews)</a> {% endcomment %}
-                                        </div>
-                                        <div class="product-price">
-                                            <ins class="new-price">$3.66</ins>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-wrap sm-item">
-                                <div class="product text-center">
-                                    <figure class="product-media">
-                                        <a href="product-default.html">
-                                            <img src="{% static 'images/demos/demo2/products/3-7-1.jpg' %}" alt="Product"
-                                                width="300" height="338">
-                                            <img src="{% static 'images/demos/demo2/products/3-7-2.jpg' %}" alt="Product"
-                                                width="300" height="338">
-                                        </a>
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-cart w-icon-cart"
-                                                title="Add to cart"></a>
-                                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
-                                                title="Add to wishlist"></a>
-                                            <a href="#" class="btn-product-icon btn-quickview w-icon-search"
-                                                title="Quickview"></a>
-                                            <a href="#" class="btn-product-icon btn-compare w-icon-compare"
-                                                title="Add to Compare"></a>
-                                        </div>
-                                    </figure>
-                                    <div class="product-details">
-                                        <h4 class="product-name"><a href="product-default.html">Hight Quality Screen
-                                                Tablet</a></h4>
-                                        <div class="ratings-container">
-                                            <div class="ratings-full">
-                                                <span class="ratings" style="width: 80%;"></span>
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div>
-                                            {% comment %} {% comment %} <a href="product-default.html" class="rating-reviews">( 5 Reviews)</a> {% endcomment %} 
-                                        </div>
-                                        <div class="product-price">
-                                            <ins class="new-price">$173.84</ins>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                     <div class="tab-pane" id="tab-2">
@@ -2273,144 +2079,7 @@
                         </div>
                     </div>
                     <div class="swiper-pagination"></div>
-                </div>
-                <!-- End of Swiper Container -->
-
-                <h2 class="title text-left text-capitalize mb-5 appear-animate">Your Recent Views</h2>
-                <div class="swiper-container swiper-theme appear-animate viewed-products mb-7" data-swiper-options="{
-                    'spaceBetween': 20,
-                    'slidesPerView': 2,
-                    'breakpoints': {
-                        '576': {
-                            'slidesPerView': 3
-                        },
-                        '768': {
-                            'slidesPerView': 5
-                        },
-                        '992': {
-                            'slidesPerView': 6
-                        },
-                        '1200': {
-                            'slidesPerView': 8
-                        }
-                    }
-                }">
-                    <div class="swiper-wrapper row cols-xl-8 cols-lg-6 cols-md-4 cols-2">
-                        <div class="swiper-slide product-wrap">
-                            <div class="product text-center product-absolute">
-                                <figure class="product-media">
-                                    <a href="https://www.portotheme.com/html/wolmart/product-defaproduct-default.html">
-                                        <img src="{% static 'images/demos/demo2/products/3-5-1.jpg' %}" alt="Category image"
-                                            width="300" height="338" style="background-color: #fff" />
-                                    </a>
-                                </figure>
-                                <h4 class="product-name">
-                                    <a href="product-default.html">Charge &amp; Alarm Machine</a>
-                                </h4>
-                            </div>
-                        </div>
-                        <!-- End of Product Wrap -->
-                        <div class="swiper-slide product-wrap">
-                            <div class="product text-center product-absolute">
-                                <figure class="product-media">
-                                    <a href="https://www.portotheme.com/html/wolmart/product-defaproduct-default.html">
-                                        <img src="{% static 'images/demos/demo2/products/4-2-1.jpg' %}" alt="Category image"
-                                            width="300" height="338" style="background-color: #fff" />
-                                    </a>
-                                </figure>
-                                <h4 class="product-name">
-                                    <a href="product-default.html">Women's Comforter</a>
-                                </h4>
-                            </div>
-                        </div>
-                        <!-- End of Product Wrap -->
-                        <div class="swiper-slide product-wrap">
-                            <div class="product text-center product-absolute">
-                                <figure class="product-media">
-                                    <a href="https://www.portotheme.com/html/wolmart/product-defaproduct-default.html">
-                                        <img src="{% static 'images/demos/demo2/products/3-2-1.jpg' %}" alt="Category image"
-                                            width="300" height="338" style="background-color: #fff" />
-                                    </a>
-                                </figure>
-                                <h4 class="product-name">
-                                    <a href="product-default.html">Gold Watch</a>
-                                </h4>
-                            </div>
-                        </div>
-                        <!-- End of Product Wrap -->
-                        <div class="swiper-slide product-wrap">
-                            <div class="product text-center product-absolute">
-                                <figure class="product-media">
-                                    <a href="https://www.portotheme.com/html/wolmart/product-defaproduct-default.html">
-                                        <img src="{% static 'images/demos/demo2/products/3-6-1.jpg' %}" alt="Category image"
-                                            width="300" height="338" style="background-color: #fff" />
-                                    </a>
-                                </figure>
-                                <h4 class="product-name">
-                                    <a href="product-default.html">Mini Wireless Earphone</a>
-                                </h4>
-                            </div>
-                        </div>
-                        <!-- End of Product Wrap -->
-                        <div class="swiper-slide product-wrap">
-                            <div class="product text-center product-absolute">
-                                <figure class="product-media">
-                                    <a href="https://www.portotheme.com/html/wolmart/product-defaproduct-default.html">
-                                        <img src="{% static 'images/demos/demo2/products/4-1-1.jpg' %}" alt="Category image"
-                                            width="300" height="338" style="background-color: #fff" />
-                                    </a>
-                                </figure>
-                                <h4 class="product-name">
-                                    <a href="product-default.html">White Schoolbag</a>
-                                </h4>
-                            </div>
-                        </div>
-                        <!-- End of Product Wrap -->
-                        <div class="swiper-slide product-wrap">
-                            <div class="product text-center product-absolute">
-                                <figure class="product-media">
-                                    <a href="https://www.portotheme.com/html/wolmart/product-defaproduct-default.html">
-                                        <img src="{% static 'images/demos/demo2/products/3-7-1.jpg' %}" alt="Category image"
-                                            width="300" height="338" style="background-color: #fff" />
-                                    </a>
-                                </figure>
-                                <h4 class="product-name">
-                                    <a href="product-default.html">High Quality Screen Tablet</a>
-                                </h4>
-                            </div>
-                        </div>
-                        <!-- End of Product Wrap -->
-                        <div class="swiper-slide product-wrap">
-                            <div class="product text-center product-absolute">
-                                <figure class="product-media">
-                                    <a href="https://www.portotheme.com/html/wolmart/product-defaproduct-default.html">
-                                        <img src="{% static 'images/demos/demo2/products/4-4.jpg' %}" alt="Category image"
-                                            width="300" height="338" style="background-color: #fff" />
-                                    </a>
-                                </figure>
-                                <h4 class="product-name">
-                                    <a href="product-default.html">Beyond OTP Shirt</a>
-                                </h4>
-                            </div>
-                        </div>
-                        <!-- End of Product Wrap -->
-                        <div class="swiper-slide product-wrap">
-                            <div class="product text-center product-absolute">
-                                <figure class="product-media">
-                                    <a href="https://www.portotheme.com/html/wolmart/product-defaproduct-default.html">
-                                        <img src="{% static 'images/demos/demo2/products/4-3.jpg' %}" alt="Category image"
-                                            width="300" height="338" style="background-color: #fff" />
-                                    </a>
-                                </figure>
-                                <h4 class="product-name">
-                                    <a href="product-default.html">Blue Training Shoes</a>
-                                </h4>
-                            </div>
-                        </div>
-                        <!-- End of Product Wrap -->
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
+               
                 <!-- End of Swiper Container -->
 
                 <h2 class="title text-left mb-5 appear-animate">Our Clients</h2>
