@@ -56,7 +56,7 @@
                                     Billing Details
                                 </h3>
                                 
-                                <div class="form-group">
+                                {% comment %} <div class="form-group">
                                     <label>Street address *</label>
                                     <input type="text" placeholder="House number and street name"
                                         class="form-control form-control-md mb-2" name="street-address-1" required>
@@ -84,7 +84,13 @@
                                             <input type="text" class="form-control form-control-md" name="phone" required>
                                         </div>
                                     </div>
-                                </div>
+                                </div> {% endcomment %}
+                                <form method='POST'>
+                                    {% csrf_token %}
+                                    {% for field in form %}
+                                    {{ field }}
+                                    {% endfor %}
+                                </form>
                                
                                 
                                 <div class="checkbox-content">

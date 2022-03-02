@@ -110,4 +110,6 @@ class Checkout(models.Model):
     town = models.CharField(max_length=255, null=True, blank=True)
     zip = models.CharField(max_length=255, null=True, blank=True)
     phone = models.IntegerField(null=True, blank=True)
+    state = models.CharField(max_length=255, null=True, blank=True)
+    
     

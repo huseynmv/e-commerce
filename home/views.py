@@ -1,7 +1,7 @@
 from unicodedata import category
 from django.shortcuts import render
-from shop.models import *
-from blog.models import *
+from shop.models import Product
+from blog.models import Blog
 # Create your views here.
 def index(request):
     product = Product.objects.filter(price__range=(0, 101)).order_by("-created_at")[:2]

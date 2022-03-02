@@ -1,5 +1,7 @@
 import colorsys
 from django.shortcuts import render
+
+from .forms import CheckoutForm
 from . models import Brand, Color, Order, OrderItem, Product, ProductCategory, WishlistItem,Wishlist
 from django.http import JsonResponse
 from django.views.generic import DetailView
@@ -72,6 +74,9 @@ class ProductDetailView(DetailView):
 
 def checkout(request):
     if request.user.is_authenticated:
+        form = CheckoutForm(data=request.POST)
+        if form.is_valid():
+            form.save()
         user = request.user
         order, created = Order.objects.get_or_create(user=user, status=False)
         items = order.orderitem_set.all()
@@ -87,7 +92,8 @@ def checkout(request):
     context = {
         'items': items,
         'order': order,
-        'cartItems':cartItems
+        'cartItems':cartItems,
+        'form':form
     }
     return render(request, 'checkout.html', context)
 
