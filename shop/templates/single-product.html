@@ -165,16 +165,9 @@
 
                                         <div class="fix-bottom product-sticky-content sticky-content">
                                             <div class="product-form container">
-                                                <div class="product-qty-form">
-                                                    <div class="input-group">
-                                                        <input class="quantity form-control" type="number" min="1"
-                                                            max="10000000">
-                                                        <button class="quantity-plus w-icon-plus"></button>
-                                                        <button class="quantity-minus w-icon-minus"></button>
-                                                    </div>
-                                                </div>
-                                                <button class="btn btn-primary btn-cart">
-                                                    <i class="w-icon-cart"></i>
+                                                
+                                                <button data-product={{product.id}} data-action='add' class="btn btn-primary btn-cart update-cart">
+                                                    <i  class="w-icon-cart "></i>
                                                     <span>Add to Cart</span>
                                                 </button>
                                             </div>
@@ -195,9 +188,8 @@
                                             <span class="divider d-xs-show"></span>
                                             <div class="product-link-wrapper d-flex">
                                                 <a href="#"
-                                                    class="btn-product-icon btn-wishlist w-icon-heart"><span></span></a>
-                                                <a href="#"
-                                                    class="btn-product-icon btn-compare btn-icon-left w-icon-compare"><span></span></a>
+                                                    class="btn-product-icon btn-wishlist w-icon-heart wishlistjs" data-action='addWishlist' data-product={{product.id}}><span></span></a>
+                                               
                                             </div>
                                         </div>
                                     </div>
