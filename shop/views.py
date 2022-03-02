@@ -57,6 +57,14 @@ class ProductDetailView(DetailView):
     model = Product
     template_name = 'single-product.html' 
     context_object_name = 'product'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        related_product = Product.objects.filter(category=self.object.category).exclude(name=self.object.name)
+        context.update({
+            'related_product':related_product
+        })
+        return context
 
 def checkout(request):
     if request.user.is_authenticated:
