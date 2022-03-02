@@ -11,12 +11,14 @@ def index(request):
     print(electronic)
     blog = Blog.objects.all()[:4]
     print(blog)
+    
     context = {
         'product':product,
         'blog':blog,
         'electronic': electronic,
         'clothes':clothes,
         'tech': technology,
+        
     }
     return render(request, 'index.html',context)
 
