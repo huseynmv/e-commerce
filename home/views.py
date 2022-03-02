@@ -7,6 +7,7 @@ def index(request):
     product = Product.objects.filter(price__range=(0, 101)).order_by("-created_at")[:2]
     electronic = Product.objects.filter(category__name__in=['electronic', 'Electronic'])
     clothes = Product.objects.filter(category__name__in=['clothes', 'wear'])
+    technology = Product.objects.filter(category__name__in=['technology', 'computer'])
     print(electronic)
     blog = Blog.objects.all()[:4]
     print(blog)
@@ -15,6 +16,7 @@ def index(request):
         'blog':blog,
         'electronic': electronic,
         'clothes':clothes,
+        'tech': technology,
     }
     return render(request, 'index.html',context)
 
