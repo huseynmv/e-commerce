@@ -35,11 +35,11 @@
                                 </figure>
                                 <div class="post-details">
                                     <div class="post-meta">
-                                        by <a href="#" class="post-author">{{ blog_obj.author }}</a>
+                                        by <a href="" class="post-author">{{ blog_obj.author }}</a>
                                         - <a href="#" class="post-date">{{ blog_obj.date }}</a>
-                                        <a href="#" class="post-comment"><i class="w-icon-comments"></i><span>0</span>Comments</a>
+                                        <a href="#" class="post-comment"><i class="w-icon-comments"></i><span>{{ count }}</span>Comments</a>
                                     </div>
-                                    <h2 class="post-title"><a href="#">Fashion tells about who you are from external point</a></h2>
+                                   
                                     <div class="post-content">
                                         <p>
                                             {{ blog_obj.desc | safe }} 
@@ -87,36 +87,9 @@
                                 </div>
                             </div>
                             <!-- End Social Links -->
-                            <div class="post-author-detail">
-                                <figure class="author-media mr-4">
-                                    <img src="{% static 'images/blog/single/1.png' %}" alt="Author" width="105" height="105" />
-                                </figure>
-                                <div class="author-details">
-                                    <div class="author-name-wrapper flex-wrap mb-2">
-                                        <h4 class="author-name font-weight-bold mb-2 pr-4 mr-auto">John Doe
-                                            <span class="font-weight-normal text-default">(AUTHOR)</span>
-                                        </h4>
-                                        <a href="#" class="btn btn-primary btn-link btn-icon-right pb-0 text-normal font-weight-normal mb-2">More Posts by admin<i class="w-icon-long-arrow-right"></i></a>
-                                    </div>
-                                    <p class="mb-0">Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismoder eu pulvinar nunc sapien ornare nisl.
-                                        Ped earcudaap ibuseu, fermentum et, dapibus sed, urna. Morbi interdum mollis sapien. </p>
-                                </div>
-                            </div>
+                            
                             <!-- End Post Author Detail -->
-                            <div class="post-navigation">
-                                <div class="nav nav-prev">
-                                    <a href="#" class="align-items-start text-left">
-                                        <span><i class="w-icon-long-arrow-left"></i>previous post</span>
-                                        <span class="nav-content mb-0 text-normal">Vivamus vestibulum ntulla nec ante</span>
-                                    </a>
-                                </div>
-                                <div class="nav nav-next"> 
-                                    <a href="#" class="align-items-end text-right">
-                                        <span>next post<i class="w-icon-long-arrow-right"></i></span>
-                                        <span class="nav-content mb-0 text-normal">Fusce lacinia arcuet nulla</span>
-                                    </a>
-                                </div>
-                            </div>
+                           
                             <!-- End Post Navigation -->
                             <h4 class="title title-lg font-weight-bold mt-10 pt-1 mb-5">Related Posts</h4>
                             <div class="swiper">
@@ -246,18 +219,7 @@
                                         </div>
                                     </div>
                                     <!-- End of Widget search form -->
-                                    <div class="widget widget-categories">
-                                        <h3 class="widget-title bb-no mb-0">Categories</h3>
-                                        <ul class="widget-body filter-items search-ul">
-                                            <li><a href="blog.html">Clothes</a></li>
-                                            <li><a href="blog.html">Entertainment</a></li>
-                                            <li><a href="blog.html">Fashion</a></li>
-                                            <li><a href="blog.html">Lifestyle</a></li>
-                                            <li><a href="blog.html">Others</a></li>
-                                            <li><a href="blog.html">Shoes</a></li>
-                                            <li><a href="blog.html">Technology</a></li>
-                                        </ul>
-                                    </div>
+                                   
                                     <!-- End of Widget categories -->
                                     <div class="widget widget-posts">
                                         <h3 class="widget-title bb-no">Popular Posts</h3>
@@ -338,19 +300,7 @@
                                         </div>
                                     </div>
                                     <!-- End of Widget custom block -->
-                                    <div class="widget widget-tags">
-                                        <h3 class="widget-title bb-no">Browse Tags</h3>
-                                        <div class="widget-body tags">
-                                            <a href="#" class="tag">Fashion</a>
-                                            <a href="#" class="tag">Style</a>
-                                            <a href="#" class="tag">Travel</a>
-                                            <a href="#" class="tag">Women</a>
-                                            <a href="#" class="tag">Men</a>
-                                            <a href="#" class="tag">Hobbies</a>
-                                            <a href="#" class="tag">Shopping</a>
-                                            <a href="#" class="tag">Photography</a>
-                                        </div>
-                                    </div>
+                                    
                                     <div class="widget widget-calendar">
                                         <h3 class="widget-title bb-no">Calendar</h3>
                                         <div class="widget-body">
