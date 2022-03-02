@@ -19,6 +19,7 @@ for(let i = 0; i < updatebtns.length; i++ ){
 }
 
 function updateUserWishlist(p, a){
+    updateUserWishlist.preventDefault;
     console.log('User logged in, sending data...')
 
     var url = 'wishlist/'; 

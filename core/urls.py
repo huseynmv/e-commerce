@@ -6,7 +6,7 @@ from django.utils.translation import  gettext_lazy as _
 
 from django.conf.urls.static import static
 from django.conf import settings
-from shop.views import update_item
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,4 +28,5 @@ urlpatterns += i18n_patterns(
     path('shop/',include('shop.urls', namespace='shop')),
     path('vendor/',include('vendor.urls', namespace='vendor')),
     path('social-auth/', include('social_django.urls', namespace="social")),
+    
 )
