@@ -167,17 +167,25 @@
                             
                             <h4 class="title title-lg font-weight-bold pt-1 mt-10">{{ count }} Comments</h4>
                             <ul class="comments list-style-none pl-0">
-                                <li class="comment">
-                                    {% for c in comment %}
+                                {% for c in comment %}
                                 
                                 <li class="comment">
                                     <div class="comment-body">
+                                        {% if c.user.image %}
+                                    
                                         <figure class="comment-avatar">
                                             <img src="{{ c.user.image.url }}" alt="Avatar" width="90" height="90" />
                                         </figure>
+
+                                        {% else %}
+                                        <figure class="comment-avatar">
+                                            <img src="{% static 'images/blank-profile-picture-973460__340.png' %}" alt="Avatar" width="90" height="90" />
+                                        </figure>
+                                        
+                                        {% endif %}
                                         <div class="comment-content">
                                             <h4 class="comment-author font-weight-bold">
-                                                <a href="#">{{ c.user.first_name }}</a>
+                                                <a href="#">{{ c.name }}</a>
                                                 <span class="comment-date">{{ c.created_on }}</span>
                                             </h4>
                                             <p>{{ c.body }}</p>
@@ -187,7 +195,7 @@
                                 </li>
 
                                 {% endfor %}
-                                </li>
+                                
                             </ul>
                             <!-- End Comments -->
                             
