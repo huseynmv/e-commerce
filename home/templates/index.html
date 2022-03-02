@@ -228,9 +228,9 @@
                                             width="300" height="338">
                                     </a>
                                     <div class="product-action-vertical">
-                                        <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                        <a href="#" data-product={{product.id}} data-action='add' class="btn-product-icon btn-cart w-icon-cart update-cart"
                                             title="Add to cart"></a>
-                                        <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                        <a href="#" data-product={{product.id}} data-action='add' class="btn-product-icon btn-wishlist w-icon-heart wishlistjs"
                                             title="Add to wishlist"></a>
                                         <a href="#" class="btn-product-icon btn-quickview w-icon-search"
                                             title="Quickview"></a>
@@ -582,8 +582,7 @@
                                                 title="Add to wishlist"></a>
                                             <a href="#" class="btn-product-icon btn-quickview w-icon-search"
                                                 title="Quickview"></a>
-                                            <a href="#" class="btn-product-icon btn-compare w-icon-compare"
-                                                title="Add to Compare"></a>
+                                            
                                         </div>
                                         <div class="product-label-group">
                                             {% comment %} <label class="product-label label-new">New</label> {% endcomment %}
@@ -1465,8 +1464,7 @@
                                                     title="Add to wishlist"></a>
                                                 <a href="#" class="btn-product-icon btn-quickview w-icon-search"
                                                     title="Quickview"></a>
-                                                <a href="#" class="btn-product-icon btn-compare w-icon-compare"
-                                                    title="Add to Compare"></a>
+                                                
                                             </div>
                                         </figure>
                                         <div class="product-details">
@@ -1600,8 +1598,7 @@
                                                     title="Add to wishlist"></a>
                                                 <a href="#" class="btn-product-icon btn-quickview w-icon-search"
                                                     title="Quickview"></a>
-                                                <a href="#" class="btn-product-icon btn-compare w-icon-compare"
-                                                    title="Add to Compare"></a>
+                                                
                                             </div>
                                         </figure>
                                         <div class="product-details">
@@ -1758,7 +1755,7 @@
                                 <div class="post-content">
                                     
                                 </div>
-                                <a href="post-single.html" class="btn btn-link btn-dark btn-underline">Read More<i
+                                <a href="{% url 'blog:blog' %}" class="btn btn-link btn-dark btn-underline">Read More<i
                                         class="w-icon-long-arrow-right"></i></a>
                             </div>
                         </div>
