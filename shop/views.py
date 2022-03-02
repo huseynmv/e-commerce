@@ -92,10 +92,10 @@ def update_item(request):
     orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)
     oitemcount = OrderItem.objects.all().count()
     if action == 'add':
-        orderItem.quantity = (orderItem.quantity + 1)
+        orderItem.quantity = orderItem.quantity + 1
         print(oitemcount)
     elif action == 'remove':
-        orderItem.quantity = (orderItem.quantity - 1)
+        orderItem.quantity = orderItem.quantity - 1
 
     orderItem.save()
     
