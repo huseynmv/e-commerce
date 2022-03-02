@@ -1401,15 +1401,9 @@
                         <div class="categories h-100">
                             <h2 class="title text-left">Clothes &amp; Fashion Apparel</h2>
                             <ul class="list-style-none mb-4">
-                                <li><a href="shop-banner-sidebar.html">Accessories</a></li>
-                                <li><a href="shop-banner-sidebar.html">Bodyclothes</a></li>
-                                <li><a href="shop-banner-sidebar.html">Dress &amp; Skirts</a></li>
-                                <li><a href="shop-banner-sidebar.html">Jeans</a></li>
-                                <li><a href="shop-banner-sidebar.html">Jumpers</a></li>
-                                <li><a href="shop-banner-sidebar.html">Knitwears</a></li>
-                                <li><a href="shop-banner-sidebar.html">Lounge &amp; Underwear</a></li>
-                                <li><a href="shop-banner-sidebar.html">Shoes</a></li>
-                                <li><a href="shop-banner-sidebar.html">T-shirts</a></li>
+                                {% for i in product_category %}
+                                <li><a href="{% url 'shop:filter' i.slug %}">{{ i.name }}</a></li>
+                                {% endfor %}
                             </ul>
                             <a href="shop-boxed-banner.html"
                                 class="btn btn-dark btn-link btn-underline btn-icon-right font-weight-bolder text-capitalize ls-50">
@@ -1542,15 +1536,11 @@
                         <div class="categories h-100">
                             <h2 class="title text-left">Computers &amp; Technologies</h2>
                             <ul class="list-style-none mb-4">
-                                <li><a href="shop-banner-sidebar.html">Desktop PC</a></li>
-                                <li><a href="shop-banner-sidebar.html">Headphones</a></li>
-                                <li><a href="shop-banner-sidebar.html">Laptops</a></li>
-                                <li><a href="shop-banner-sidebar.html">Monitors</a></li>
-                                <li><a href="shop-banner-sidebar.html">Smartphones</a></li>
-                                <li><a href="shop-banner-sidebar.html">Speakers</a></li>
-                                <li><a href="shop-banner-sidebar.html">Storage &amp; Memory</a></li>
-                                <li><a href="shop-banner-sidebar.html">Tablets</a></li>
-                                <li><a href="shop-banner-sidebar.html">Watches</a></li>
+                                {% for i in product_category %}
+                                
+                                <li><a href="{% url 'shop:filter' i.slug %}">{{ i.name }}</a></li>
+
+                                {% endfor %}
                             </ul>
                             <a href="shop-boxed-banner.html"
                                 class="btn btn-dark btn-link btn-underline btn-icon-right font-weight-bolder text-capitalize ls-50">
