@@ -12,6 +12,7 @@ def product(request):
             order, created = Order.objects.get_or_create(user=user, status=False)
             items = order.orderitem_set.all()
             cartItems = order.get_cart_items
+            print(items)
         else:
             items = []
             order = {'get_cart_total': 0,'get_cart_items': 0 }

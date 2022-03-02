@@ -81,6 +81,10 @@ class OrderItem(models.Model):
         total = self.product.price * self.quantity
         return total
     
+    def __str__(self):
+        
+        return self.product.name
+    
     
 class Wishlist(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
