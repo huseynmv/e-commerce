@@ -223,12 +223,18 @@ def filter_data(request):
     color = request.GET.getlist('color[]')
     # color = list(Color.objects.all().values_list('id', flat=True))
     
-
+    brand = request.GET.getlist('brand[]')
+    print(brand)
     print(color)
     if len(color)>0:
         print('salam')
         
         allprod=allprod.filter(color__name__in = color)
+        print(allprod)
+    if len(brand)>0:
+        print('sagol')
+        
+        allprod=allprod.filter(brand__name__in = brand)
         print(allprod)
         
     t = render_to_string('ajax/yusif.html', {'data': allprod})

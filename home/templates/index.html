@@ -195,7 +195,7 @@
                 <div class="title-link-wrapper mb-3 appear-animate">
                     <h2 class="title title-deals mb-1">New Arrivals</h2>
                     
-                    <a href="shop-boxed-banner.html" class="font-weight-bold ls-25">More Products<i
+                    <a href="{% url 'shop:product' %}" class="font-weight-bold ls-25">More Products<i
                             class="w-icon-long-arrow-right"></i></a>
                 </div>
                 <!-- End of .title-link-wrapper -->
@@ -1534,9 +1534,7 @@
 
                                 {% endfor %}
                             </ul>
-                            <a href="shop-boxed-banner.html"
-                                class="btn btn-dark btn-link btn-underline btn-icon-right font-weight-bolder text-capitalize ls-50">
-                                Browse All<i class="w-icon-long-arrow-right"></i></a>
+                          
                         </div>
                     </div>
                     <div class="col-xl-5col4 col-md-8 mb-4">
@@ -1549,7 +1547,7 @@
                                 <h3 class="banner-title text-capitalize ls-25 mb-4">
                                     Xbox One's <span class="text-primary">Limited</span> Edition
                                 </h3>
-                                <a href="shop-boxed-banner.html"
+                                <a href="{% url 'shop:product' %}"
                                     class="btn btn-dark btn-link btn-underline btn-icon-right">
                                     View Detail<i class="w-icon-long-arrow-right"></i>
                                 </a>
