@@ -115,8 +115,8 @@ def wishlist(request):
     datas = json.loads(request.body)
     productID = datas['p']
     action = datas['a']
-    print('Action', action)
-    print('ProductID', productID) 
+    # print('Action', action)
+    # print('ProductID', productID) 
     
     user = request.user
     product = Product.objects.get(id=productID)
