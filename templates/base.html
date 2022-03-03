@@ -98,19 +98,19 @@
                         <!-- End of DropDown Menu -->
 
                         <div class="dropdown">
-                            <a href="#language"><img src="{% static 'images/flags/eng.png'  %}" alt="ENG Flag" width="14"
-                                    height="8" class="dropdown-image" /> ENG</a>
+                            {% get_current_language as CURRENT_LANGUAGE %}
+                            {% get_available_languages as AVAILABLE_LANGUAGES %}
+                            {% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
+                            <a href="#language">{{CURRENT_LANGUAGE}}</a>
                             <div class="dropdown-box">
-                                <a href="#ENG">
-                                    <img src="{% static 'images/flags/eng.png'  %}" alt="ENG Flag" width="14" height="8"
-                                        class="dropdown-image" />
-                                    ENG
-                                </a>
-                                <a href="#FRA">
-                                    <img src="{% static 'images/flags/fra.png'  %}" alt="FRA Flag" width="14" height="8"
-                                        class="dropdown-image" />
-                                    FRA
-                                </a>
+                                {% for language in languages %}
+                                
+                                  <a href="/{{ language.code }}/"
+                                    {% if language.code == CURRENT_LANGUAGE %} class="active"{% endif %}>
+                                    {{ language.name_local }}
+                                  </a>
+                                
+                              {% endfor %}
                             </div>
                         </div>
                         <!-- End of Dropdown Menu -->
