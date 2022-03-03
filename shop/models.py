@@ -40,6 +40,11 @@ class Product(models.Model):
     price = models.BigIntegerField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     image = models.ImageField(upload_to='shop/')
+    image2 = models.ImageField(null=True,blank=True,upload_to='shop/')
+    image3= models.ImageField(null=True,blank=True,upload_to='shop/')
+    image4 = models.ImageField(null=True,blank=True,upload_to='shop/')
+    image5 = models.ImageField(null=True,blank=True,upload_to='shop/')
+
     slug = models.SlugField(max_length=127, null=True, blank=True)
     
     
@@ -47,7 +52,7 @@ class Product(models.Model):
         ordering = ('created_at',)
     
     def __str__(self):
-        return self.name
+        return f'{self.name}'
     
     
 class Order(models.Model):
