@@ -151,7 +151,7 @@
                                 <li>
                                     <a href="{% url 'blog:blog' %}">Blog</a>
                                 </li>
-                                <li>
+                                {% comment %} <li>
                                     <a href="{% url 'pages:faq' %}">Pages</a>
                                     <ul>
 
@@ -167,7 +167,7 @@
                                         <li><a href="{% url 'account:login' %}">My Account</a></li>
                                         <li><a href="{% url 'pages:compare' %}">Compare</a></li>
                                     </ul>
-                                </li>
+                                </li> {% endcomment %}
                                 <!-- <li>
                                     <a href="elements.html">Elements</a>
                                     <ul>
@@ -362,7 +362,7 @@
                 </div>
             </div> {% endcomment %}
             <div class="container">
-                <div class="footer-top">
+                {% comment %} <div class="footer-top">
                     <div class="row">
                         <div class="col-lg-4 col-sm-6">
                             <div class="widget widget-about">
@@ -501,7 +501,7 @@
                             <a href="#">View all</a>
                         </div>
                     </div>
-                </div>
+                </div> {% endcomment %}
                 <div class="footer-bottom">
                     <div class="footer-left">
                         <p class="copyright">Copyright © 2021 Wolmart Store. All Rights Reserved.</p>

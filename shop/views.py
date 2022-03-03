@@ -65,7 +65,7 @@ class ProductDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         related_product = Product.objects.filter(category=self.object.category).exclude(name=self.object.name)
         more_product = Product.objects.all().order_by('-id')[:3]
-        print(more_product)
+        
         context.update({
             'related_product':related_product,
             'more_product': more_product
@@ -229,7 +229,7 @@ def filter_data(request):
         print('salam')
         
         allprod=allprod.filter(color__name__in = color)
-        print(allprod)
+        # print(allprod)
     if len(brand)>0:
         print('sagol')
         
