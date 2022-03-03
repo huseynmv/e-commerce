@@ -525,7 +525,7 @@
                             <div class="product-wrap lg-item">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-default.html">
+                                        <a href="{% url 'shop:product' %}">
                                             <img src="{% static 'images/demos/demo2/products/3-1-1.jpg' %}" alt="Product"
                                                 width="300" height="338">
                                             <img src="{% static 'images/demos/demo2/products/3-1-2.jpg' %}" alt="Product"
@@ -561,7 +561,7 @@
                             <div class="product-wrap sm-item">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-default.html">
+                                        <a href="{% url 'shop:single-product' i.slug %}">
                                             <img src="{{ i.image.url }}" alt="Product"
                                                 width="300" height="338">
                                             <img src="{{ i.image.url }}" alt="Product"
@@ -1437,7 +1437,7 @@
                                 <div class="swiper-slide product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="product-default.html">
+                                            <a href="{% url 'shop:single-product' i.slug %}">
                                                 <img src="{{ i.image.url }}" alt="Product"
                                                     width="300" height="338">
                                                 <img src="{{ i.image.url }}" alt="Product"
@@ -1565,7 +1565,7 @@
                                 <div class="swiper-slide product-wrap">
                                     <div class="product text-center">
                                         <figure class="product-media">
-                                            <a href="product-default.html">
+                                            <a href="{% url 'shop:single-product' i.slug %}">
                                                 <img src="{{ i.image.url }}" alt="Product"
                                                     width="300" height="338">
                                                 <img src="{{ i.image.url }}" alt="Product"

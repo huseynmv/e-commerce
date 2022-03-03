@@ -4,7 +4,7 @@ from shop.models import Product
 from blog.models import Blog
 # Create your views here.
 def index(request):
-    product = Product.objects.filter(price__range=(0, 101)).order_by("-created_at")[:2]
+    product = Product.objects.all().order_by("-created_at")[:3]
     electronic = Product.objects.filter(category__name__in=['electronic', 'Electronic'])
     clothes = Product.objects.filter(category__name__in=['clothes', 'wear'])
     technology = Product.objects.filter(category__name__in=['technology', 'computer'])
