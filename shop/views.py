@@ -108,7 +108,6 @@ def update_item(request):
     data = json.loads(request.body)
     productID = data['productID']
     action = data['action']
-    
     user = request.user.id
     product = Product.objects.get(id=productID)
     order, created = Order.objects.get_or_create(user=user, status=False)

@@ -8,7 +8,6 @@ def index(request):
     electronic = Product.objects.filter(category__name__in=['electronic', 'Electronic'])
     clothes = Product.objects.filter(category__name__in=['clothes', 'wear'])
     technology = Product.objects.filter(category__name__in=['technology', 'computer'])
-    print(electronic)
     blog = Blog.objects.all()[:4]
     print(blog)
     
