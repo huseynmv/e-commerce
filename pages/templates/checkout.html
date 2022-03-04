@@ -85,6 +85,10 @@
                                         </div>
                                     </div>
                                 </div> {% endcomment %}
+                                {% if message_send %}
+                                <p>{%trans "Thank you. Your order has been received."%}</p>
+                                {% endif %}
+
                                 <form method='POST'>
                                     {% csrf_token %}
                                     {% for field in form %}

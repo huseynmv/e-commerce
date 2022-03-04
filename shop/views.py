@@ -74,10 +74,12 @@ class ProductDetailView(DetailView):
 
 def checkout(request):
     if request.user.is_authenticated:
+        message_send = False
         form = CheckoutForm()
         if request.method == 'POST':
             form = CheckoutForm(data=request.POST)
             if form.is_valid():
+                message_send = True
                 
                 print(form)
                     
@@ -100,7 +102,8 @@ def checkout(request):
         'items': items,
         'order': order,
         'cartItems':cartItems,
-        'form':form
+        'form':form,
+        'message_send':message_send
     }
     return render(request, 'checkout.html', context)
 
