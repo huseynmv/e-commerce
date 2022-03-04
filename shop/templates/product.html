@@ -24,11 +24,11 @@
                     <div class="shop-default-banner banner d-flex align-items-center mb-5 br-xs"
                         style="background-image: url({% static 'images/shop/banner1.jpg' %}); background-color: #FFC74E;">
                         <div class="banner-content">
-                            <h4 class="banner-subtitle font-weight-bold">Accessories Collection</h4>
-                            <h3 class="banner-title text-white text-uppercase font-weight-bolder ls-normal">Smart Wrist
-                                Watches</h3>
-                            <a href="{% url 'shop:product' %}" class="btn btn-dark btn-rounded btn-icon-right">Discover
-                                Now<i class="w-icon-long-arrow-right"></i></a>
+                            <h4 class="banner-subtitle font-weight-bold">{% trans 'Accessories Collection' %}</h4>
+                            <h3 class="banner-title text-white text-uppercase font-weight-bolder ls-normal">{% trans 'Smart Wrist
+                                Watches' %}</h3>
+                            <a href="{% url 'shop:product' %}" class="btn btn-dark btn-rounded btn-icon-right">{% trans 'Discover
+                                Now' %}<i class="w-icon-long-arrow-right"></i></a>
                         </div>
                     </div>
                     <!-- End of Shop Banner -->
@@ -134,7 +134,7 @@
                                         </figure>
                                         <div class="category-content">
                                             <h4 class="category-name">
-                                                Sports
+                                                {% trans 'Sports' %}
                                             </h4>
                                         </div>
                                     </div>
@@ -149,7 +149,7 @@
                                         </figure>
                                         <div class="category-content">
                                             <h4 class="category-name">
-                                                Babies
+                                                {% trans 'Babies' %}
                                             </h4>
                                         </div>
                                     </div>
@@ -164,7 +164,7 @@
                                         </figure>
                                         <div class="category-content">
                                             <h4 class="category-name">
-                                                Sneakers
+                                                {% trans 'Sneakers' %}
                                             </h4>
                                         </div>
                                     </div>
@@ -179,7 +179,7 @@
                                         </figure>
                                         <div class="category-content">
                                             <h4 class="category-name">
-                                                Cameras
+                                                {% trans 'Cameras' %}
                                             </h4>
                                         </div>
                                     </div>
@@ -194,7 +194,7 @@
                                         </figure>
                                         <div class="category-content">
                                             <h4 class="category-name">
-                                                Games
+                                                {% trans 'Games' %}
                                             </h4>
                                         </div>
                                     </div>
@@ -209,7 +209,7 @@
                                         </figure>
                                         <div class="category-content">
                                             <h4 class="category-name">
-                                                Kitchen
+                                                {% trans 'Kitchen' %}
                                             </h4>
                                         </div>
                                     </div>
@@ -224,7 +224,7 @@
                                         </figure>
                                         <div class="category-content">
                                             <h4 class="category-name">
-                                                Watches
+                                                {% trans 'Watches' %}
                                             </h4>
                                         </div>
                                     </div>
@@ -239,7 +239,7 @@
                                         </figure>
                                         <div class="category-content">
                                             <h4 class="category-name">
-                                                Clothes
+                                                {% trans 'Clothes' %}
                                             </h4>
                                         </div>
                                     </div>
@@ -265,7 +265,7 @@
                                     
                                     <!-- Start of Collapsible widget -->
                                     <div class="widget widget-collapsible">
-                                        <h3 class="widget-title"><span>All Categories</span></h3>
+                                        <h3 class="widget-title"><span>{% trans 'All Categories' %}</span></h3>
                                         <ul class="widget-body filter-items search-ul">
                                             {% for i in categories %}
                                             <li><a href="{% url 'shop:filter' i %}">{{ i }}</a></li>
@@ -284,7 +284,7 @@
 
                                     <!-- Start of Collapsible Widget -->
                                     <div class="widget widget-collapsible">
-                                        <h3 class="widget-title"><span>Brand</span></h3>
+                                        <h3 class="widget-title"><span>{% trans 'Brand' %}</span></h3>
                                         <ul class="widget-body filter-items item-check mt-1">
                                             {% for i in brand %}
                                             <li><input class='filter-checkbox' data-filter="brand" value="{{i}}" type='checkbox'>{{ i.name }}</li>
@@ -295,7 +295,7 @@
 
                                     <!-- Start of Collapsible Widget -->
                                     <div class="widget widget-collapsible">
-                                        <h3 class="widget-title"><span>Color</span></h3>
+                                        <h3 class="widget-title"><span>{% trans 'Color' %}</span></h3>
                                         <ul class="widget-body filter-items item-check mt-1">
                                             {% for i in color %}
                                             <li><input class='filter-checkbox' data-filter="color" value="{{i}}" type='checkbox'>{{ i.name }}</li>

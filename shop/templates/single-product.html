@@ -160,7 +160,7 @@
                                                 
                                                 <button data-product={{product.id}} data-action='add' class="btn btn-primary btn-cart update-cart">
                                                     <i  class="w-icon-cart "></i>
-                                                    <span>Add to Cart</span>
+                                                    <span>{% trans 'Add to Cart' %}</span>
                                                 </button>
                                             </div>
                                         </div>
@@ -191,14 +191,14 @@
                             <div class="tab tab-nav-boxed tab-nav-underline product-tabs mt-3">
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li class="nav-item">
-                                        <a href="#product-tab-description" class="nav-link active">Description</a>
+                                        <a href="#product-tab-description" class="nav-link active">{% trans 'Description' %}</a>
                                     </li>
                                 </ul>
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="product-tab-description">
                                         <div class="row mb-4">
                                             <div class="col-md-6 mb-5">
-                                                <h4 class="title tab-pane-title font-weight-bold mb-2">Detail</h4>
+                                                <h4 class="title tab-pane-title font-weight-bold mb-2">{% trans 'Detail' %}</h4>
                                                 <p class="mb-4">{{ product.desc }}</p>
                                                 
                                             </div>
@@ -210,8 +210,8 @@
                                             <div class="mb-3">
                                                 <h5 class="sub-title font-weight-bold"><span class="mr-3">1.</span>Free
                                                     Shipping &amp; Return</h5>
-                                                <p class="detail pl-5">We offer free shipping for products on orders
-                                                    above 50$ and offer free delivery for all orders in US.</p>
+                                                <p class="detail pl-5">{% trans 'We offer free shipping for products on orders
+                                                    above 50$ and offer free delivery for all orders in US' %}.</p>
                                             </div>
                                             <div class="mb-3">
                                                 <h5 class="sub-title font-weight-bold"><span>2.</span>Free and Easy

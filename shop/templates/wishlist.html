@@ -26,13 +26,13 @@
             <!-- Start of PageContent -->
             <div class="page-content">
                 <div class="container">
-                    <h3 class="wishlist-title">My wishlist</h3>
+                    <h3 class="wishlist-title">{% trans 'My wishlist' %}</h3>
                     <table class="shop-table wishlist-table">
                         <thead>
                             <tr>
                                 <th class="product-name"><span>Product</span></th>
                                 <th></th>
-                                <th class="product-price"><span style='margin-right:150px;'>Price</span></th>
+                                <th class="product-price"><span style='margin-right:150px;'>{% trans 'Price' %}</span></th>
                                 {% comment %} <th class="product-stock-status"><span>Stock Status</span></th> {% endcomment %}
                                 <th class="wishlist-action" >Actions</th>
                             </tr>
@@ -65,8 +65,7 @@
                                     <div class="d-lg-flex">
                                         <a href="#"
                                             
-                                        <a href="" style='margin-left:150px;' data-product={{item.product.id}}  data-action="add" class="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart update-cart">Add to
-                                            cart</a>
+                                        <a href="" style='margin-left:150px;' data-product={{item.product.id}}  data-action="add" class="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart update-cart">{% trans 'Add to cart' %}</a>
                                     </div>
                                 </td>
                             </tr>

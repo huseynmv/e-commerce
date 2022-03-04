@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-25 17:48+0400\n"
+"POT-Creation-Date: 2022-03-05 01:39+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,31 +20,64 @@ msgstr ""
 
 #: .\account\forms.py:15
 msgid "Password"
-msgstr ""
+msgstr "Şifrə"
 
 #: .\account\forms.py:21
 msgid "Password confirmation"
-msgstr ""
+msgstr "Şifrə tısdiqi"
 
 #: .\account\forms.py:24
 msgid "Enter the same password as before, for verification."
-msgstr ""
+msgstr "Doğrulama üçün əvvəlki parolu daxil edin"
 
 #: .\account\models.py:14
 msgid "email address"
-msgstr ""
+msgstr "E-poçt adresi"
 
-#: .\core\settings.py:180
+#: .\contact\templates\contact-us.html:11
+#: .\contact\templates\contact-us.html:21
+msgid "Contact Us"
+msgstr "Bizimlə əlaqə"
+
+#: .\contact\templates\contact-us.html:62
+msgid "E-mail Address"
+msgstr "E-poçt adresi"
+
+#: .\contact\templates\contact-us.html:71
+msgid "Phone Number"
+msgstr "Əlaqə nömrəsi"
+
+#: .\contact\templates\contact-us.html:172
+msgid "Send Us a Message"
+msgstr "Bizə mesaj göndərin"
+
+#: .\contact\templates\contact-us.html:175
+msgid "Email successfully sent"
+msgstr "Email uğurla göndərildi"
+
+#: .\contact\templates\contact-us.html:176
+msgid "Your message was successfully sent to"
+msgstr "Mesajınız uğurla göndərildi"
+
+#: .\contact\templates\contact-us.html:187
+msgid "Send Now"
+msgstr "Göndər"
+
+#: .\core\settings.py:192
 msgid "English"
 msgstr ""
 
-#: .\core\settings.py:181
+#: .\core\settings.py:193
 msgid "Azerbaijan"
 msgstr ""
 
 #: .\home\templates\index.html:73
 msgid "Sale up to"
 msgstr ""
+
+#: .\pages\templates\checkout.html:90
+msgid "Thank you. Your order has been received."
+msgstr "Təşəkkür edirik, sifarişiniz qəbul edildi"
 
 #: .\pages\templates\faq.html:148
 msgid ""
@@ -57,24 +90,125 @@ msgstr ""
 
 #: .\pages\templates\faq.html:149
 msgid "Hello"
+msgstr "Salam"
+
+#: .\shop\templates\cart.html:13
+msgid "Shopping Cart"
+msgstr "Səbət"
+
+#: .\shop\templates\cart.html:14
+msgid "Checkout"
+msgstr "Sifarişi tamamla"
+
+#: .\shop\templates\cart.html:29
+msgid "Product"
+msgstr "Məhsul"
+
+#: .\shop\templates\cart.html:31 .\shop\templates\wishlist.html:35
+msgid "Price"
+msgstr "Qiymıt"
+
+#: .\shop\templates\cart.html:32
+msgid "Quantity"
+msgstr "Miqdar"
+
+#: .\shop\templates\cart.html:33 .\shop\templates\cart.html:91
+msgid "Subtotal"
+msgstr "Cəm"
+
+#: .\shop\templates\cart.html:89
+msgid "Cart Total"
+msgstr "Səbətin cəmi"
+
+#: .\shop\templates\cart.html:174
+msgid "Total"
+msgstr "Cəm"
+
+#: .\shop\templates\cart.html:179
+msgid "Proceed to checkout"
+msgstr "Sifarişi tamamla"
+
+#: .\shop\templates\filter.html:52 .\shop\templates\search.html:51
+msgid "not found!"
+msgstr "Tapılmadı"
+
+#: .\shop\templates\product.html:27
+msgid "Accessories Collection"
+msgstr "Aksesuarlar"
+
+#: .\shop\templates\product.html:137
+msgid "Sports"
+msgstr "İdman"
+
+#: .\shop\templates\product.html:152
+msgid "Babies"
+msgstr "Uşaq"
+
+#: .\shop\templates\product.html:167
+msgid "Sneakers"
+msgstr "İdman ayaqqabıları"
+
+#: .\shop\templates\product.html:182
+msgid "Cameras"
+msgstr "Kameralar"
+
+#: .\shop\templates\product.html:197
+msgid "Games"
+msgstr "Oyunlar"
+
+#: .\shop\templates\product.html:212
+msgid "Kitchen"
 msgstr ""
 
-#: .\templates\base.html:98
+#: .\shop\templates\product.html:227
+msgid "Watches"
+msgstr "Saatlar"
+
+#: .\shop\templates\product.html:242
+msgid "Clothes"
+msgstr "Heyim"
+
+#: .\shop\templates\product.html:268
+msgid "All Categories"
+msgstr "Bütün kateqoriyalar"
+
+#: .\shop\templates\product.html:287
+msgid "Brand"
+msgstr "Brend"
+
+#: .\shop\templates\product.html:298
+msgid "Color"
+msgstr "Rəng"
+
+#: .\shop\templates\single-product.html:163
+msgid "Add to Cart"
+msgstr "Səbətə əlavə et"
+
+#: .\shop\templates\single-product.html:194
+msgid "Description"
+msgstr "Açqalama"
+
+#: .\shop\templates\single-product.html:201
+msgid "Detail"
+msgstr "Məlumat"
+
+#: .\shop\templates\wishlist.html:29
+msgid "My wishlist"
+msgstr "Favoritlər"
+
+#: .\shop\templates\wishlist.html:69
+
+msgid "Add to cart"
+msgstr "Səbətə əlavə et"
+
+#: .\templates\base.html:119
 msgid "Blog"
-msgstr ""
+msgstr "Bloq"
 
-#: .\templates\base.html:121
+#: .\templates\base.html:147
 msgid "Home"
 msgstr ""
 
-#: .\templates\base.html:858
-msgid "Got Question? Call us 24/7"
-msgstr ""
-
-#: .\templates\base.html:860
-msgid "Register now to get updates on pronot get up icons"
-msgstr ""
-
-#: .\templates\base.html:1692
+#: .\templates\base.html:1033
 msgid "Ultrices eros in cursus turpis massa cursus mattis."
 msgstr ""

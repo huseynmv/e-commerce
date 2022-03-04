@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-25 17:48+0400\n"
+"POT-Creation-Date: 2022-03-05 01:27+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,16 +34,49 @@ msgstr ""
 msgid "email address"
 msgstr ""
 
-#: .\core\settings.py:180
+#: .\contact\templates\contact-us.html:11
+#: .\contact\templates\contact-us.html:21
+msgid "Contact Us"
+msgstr ""
+
+#: .\contact\templates\contact-us.html:62
+msgid "E-mail Address"
+msgstr ""
+
+#: .\contact\templates\contact-us.html:71
+msgid "Phone Number"
+msgstr ""
+
+#: .\contact\templates\contact-us.html:172
+msgid "Send Us a Message"
+msgstr ""
+
+#: .\contact\templates\contact-us.html:175
+msgid "Email successfully sent"
+msgstr ""
+
+#: .\contact\templates\contact-us.html:176
+msgid "Your message was successfully sent to"
+msgstr ""
+
+#: .\contact\templates\contact-us.html:187
+msgid "Send Now"
+msgstr ""
+
+#: .\core\settings.py:192
 msgid "English"
 msgstr ""
 
-#: .\core\settings.py:181
+#: .\core\settings.py:193
 msgid "Azerbaijan"
 msgstr ""
 
 #: .\home\templates\index.html:73
 msgid "Sale up to"
+msgstr ""
+
+#: .\pages\templates\checkout.html:90
+msgid "Thank you. Your order has been received."
 msgstr ""
 
 #: .\pages\templates\faq.html:148
@@ -59,22 +92,118 @@ msgstr ""
 msgid "Hello"
 msgstr ""
 
-#: .\templates\base.html:98
+#: .\shop\templates\cart.html:13
+msgid "Shopping Cart"
+msgstr ""
+
+#: .\shop\templates\cart.html:14
+msgid "Checkout"
+msgstr ""
+
+#: .\shop\templates\cart.html:29
+msgid "Product"
+msgstr ""
+
+#: .\shop\templates\cart.html:31 .\shop\templates\wishlist.html:35
+msgid "Price"
+msgstr ""
+
+#: .\shop\templates\cart.html:32
+msgid "Quantity"
+msgstr ""
+
+#: .\shop\templates\cart.html:33 .\shop\templates\cart.html:91
+msgid "Subtotal"
+msgstr ""
+
+#: .\shop\templates\cart.html:89
+msgid "Cart Total"
+msgstr ""
+
+#: .\shop\templates\cart.html:174
+msgid "Total"
+msgstr ""
+
+#: .\shop\templates\cart.html:179
+msgid "Proceed to checkout"
+msgstr ""
+
+#: .\shop\templates\filter.html:52 .\shop\templates\search.html:51
+msgid "not found!"
+msgstr ""
+
+#: .\shop\templates\product.html:27
+msgid "Accessories Collection"
+msgstr ""
+
+#: .\shop\templates\product.html:137
+msgid "Sports"
+msgstr ""
+
+#: .\shop\templates\product.html:152
+msgid "Babies"
+msgstr ""
+
+#: .\shop\templates\product.html:167
+msgid "Sneakers"
+msgstr ""
+
+#: .\shop\templates\product.html:182
+msgid "Cameras"
+msgstr ""
+
+#: .\shop\templates\product.html:197
+msgid "Games"
+msgstr ""
+
+#: .\shop\templates\product.html:212
+msgid "Kitchen"
+msgstr ""
+
+#: .\shop\templates\product.html:227
+msgid "Watches"
+msgstr ""
+
+#: .\shop\templates\product.html:242
+msgid "Clothes"
+msgstr ""
+
+#: .\shop\templates\product.html:268
+msgid "All Categories"
+msgstr ""
+
+#: .\shop\templates\product.html:287
+msgid "Brand"
+msgstr ""
+
+#: .\shop\templates\product.html:298
+msgid "Color"
+msgstr ""
+
+#: .\shop\templates\single-product.html:163
+msgid "Add to Cart"
+msgstr ""
+
+#: .\shop\templates\single-product.html:194
+msgid "Description"
+msgstr ""
+
+#: .\shop\templates\single-product.html:201
+msgid "Detail"
+msgstr ""
+
+#: .\shop\templates\wishlist.html:29
+msgid "My wishlist"
+msgstr ""
+
+#: .\templates\base.html:119
 msgid "Blog"
 msgstr ""
 
-#: .\templates\base.html:121
+#: .\templates\base.html:147
 msgid "Home"
 msgstr ""
 
-#: .\templates\base.html:858
-msgid "Got Question? Call us 24/7"
-msgstr ""
-
-#: .\templates\base.html:860
-msgid "Register now to get updates on pronot get up icons"
-msgstr ""
-
-#: .\templates\base.html:1692
+#: .\templates\base.html:1033
 msgid "Ultrices eros in cursus turpis massa cursus mattis."
 msgstr ""
