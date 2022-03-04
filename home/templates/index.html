@@ -157,7 +157,7 @@
                                 <i class="w-icon-truck"></i>
                             </span>
                             <div class="icon-box-content">
-                                <h4 class="icon-box-title">Free Shipping & Returns</h4>
+                                <h4 class="icon-box-title">{% trans 'Free Shipping & Returns' %}</h4>
                                 <p class="text-default">For all orders over $99</p>
                             </div>
                         </div>
@@ -166,8 +166,8 @@
                                 <i class="w-icon-bag"></i>
                             </span>
                             <div class="icon-box-content">
-                                <h4 class="icon-box-title">Secure Payment</h4>
-                                <p class="text-default">We ensure secure payment</p>
+                                <h4 class="icon-box-title">{% trans 'Secure Payment' %}</h4>
+                                <p class="text-default">{% trans 'We ensure secure payment' %}</p>
                             </div>
                         </div>
                         <div class="swiper-slide icon-box icon-box-side text-dark icon-box-money">
@@ -175,8 +175,8 @@
                                 <i class="w-icon-money"></i>
                             </span>
                             <div class="icon-box-content">
-                                <h4 class="icon-box-title">Money Back Guarantee</h4>
-                                <p class="text-default">Any back within 30 days</p>
+                                <h4 class="icon-box-title">{% trans 'Money Back Guarantee' %}</h4>
+                                <p class="text-default">{% trans 'Any back within 30 days' %}</p>
                             </div>
                         </div>
                         <div class="swiper-slide icon-box icon-box-side text-dark icon-box-chat">
@@ -184,8 +184,8 @@
                                 <i class="w-icon-chat"></i>
                             </span>
                             <div class="icon-box-content">
-                                <h4 class="icon-box-title">Customer Support</h4>
-                                <p class="text-default">Call or email us 24/7</p>
+                                <h4 class="icon-box-title">{% trans 'Customer Support' %}</h4>
+                                <p class="text-default">{% trans 'Call or email us 24/7' %}</p>
                             </div>
                         </div>
                     </div>
@@ -193,9 +193,9 @@
                 <!-- End of Iocn Box Wrapper -->
 
                 <div class="title-link-wrapper mb-3 appear-animate">
-                    <h2 class="title title-deals mb-1">New Arrivals</h2>
+                    <h2 class="title title-deals mb-1">{% trans 'New Arrivals' %}</h2>
                     
-                    <a href="{% url 'shop:product' %}" class="font-weight-bold ls-25">More Products<i
+                    <a href="{% url 'shop:product' %}" class="font-weight-bold ls-25">{% trans 'More Products' %}<i
                             class="w-icon-long-arrow-right"></i></a>
                 </div>
                 <!-- End of .title-link-wrapper -->
@@ -264,7 +264,7 @@
                                     width="640" height="200" style="background-color: #25282D;" />
                             </figure>
                             <div class="banner-content y-50">
-                                <h3 class="banner-title text-white ls-25 mb-0">Electronics</h3>
+                                <h3 class="banner-title text-white ls-25 mb-0">{% trans 'Electronics' %}</h3>
                                 <div class="banner-price-info text-white font-weight-bold text-uppercase mb-1">Starting
                                     At
                                     <strong class="text-secondary">$125.00</strong>
@@ -272,7 +272,7 @@
                                 <hr class="banner-divider bg-white" />
                                 <a href="{% url 'shop:product' %}"
                                     class="btn btn-white btn-link btn-underline btn-icon-right">
-                                    Shop Now<i class="w-icon-long-arrow-right"></i></a>
+                                    {% trans 'Shop Now' %}<i class="w-icon-long-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -515,7 +515,7 @@
                 </div> {% endcomment %}
                 <!-- End of Vendor Wrapper -->
                 <div class="tab tab-with-title tab-nav-boxed appear-animate">
-                    <h2 class="title">Consumer Electronics</h2>
+                    <h2 class="title">{% trans 'Consumer Electronics' %}</h2>
                     
                 </div>
                 <!-- End of Tab Title-->
@@ -1618,7 +1618,7 @@
                
                 <!-- End of Swiper Container -->
 
-                <h2 class="title text-left mb-5 appear-animate">Our Clients</h2>
+                <h2 class="title text-left mb-5 appear-animate">{% trans 'Our Clients' %}</h2>
                 <div class="swiper-container swiper-theme brands-wrapper br-sm mb-10 appear-animate"
                     data-swiper-options="{
                     'loop': true,
@@ -1696,7 +1696,7 @@
                 </div>
                 <!-- End of Brands Wrapper -->
 
-                <h2 class="title text-left mb-5 pt-1 appear-animate">From Our Blog</h2>
+                <h2 class="title text-left mb-5 pt-1 appear-animate">{% trans 'From Our Blog' %}</h2>
                 <div class="swiper-container swiper-theme post-wrapper mb-10 mb-lg-5 appear-animate"
                     data-swiper-options="{
                     'spaceBetween': 20,

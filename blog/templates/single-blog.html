@@ -37,7 +37,7 @@
                                     <div class="post-meta">
                                         by <a href="" class="post-author">{{ blog_obj.author }}</a>
                                         - <a href="#" class="post-date">{{ blog_obj.date }}</a>
-                                        <a href="#" class="post-comment"><i class="w-icon-comments"></i><span>{{ count }}</span>Comments</a>
+                                        <a href="#" class="post-comment"><i class="w-icon-comments"></i><span>{{ count }}</span>{% trans 'Comments' %}</a>
                                     </div>
                                    
                                     <div class="post-content">
@@ -54,8 +54,7 @@
                                 <cite class="font-weight-normal text-dark">JELLY CRISTIANA</cite>
                             </blockquote>
                             <!-- End Blockquote -->
-                            <p class="mb-10">Morbi interdum mollis sapien. Sed ac risus. Pha sellus lacinia, magna a  laoreet, lect us arcu pulvinar risus, vitae fac ilisis libeo dolor. 
-                                Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna.</p>
+                            <p class="mb-10">{% trans 'Morbi interdum mollis sapien. Sed ac risus. Pha sellus lacinia, magna a  laoreet, lect us arcu pulvinar risus, vitae fac ilisis libeo dolor. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna.' %}</p>
                             <h4 class="title title-md font-weight-bold">Defaulting to Mindfulness: The Third Person Effect</h4>
                             <p class="mb-2">Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, 
                                 da pibus id, mattis vel, nisi. Sed pretium, ligula soll itudin laoreet viverra. Sed lectus. 
@@ -91,7 +90,7 @@
                             <!-- End Post Author Detail -->
                            
                             <!-- End Post Navigation -->
-                            <h4 class="title title-lg font-weight-bold mt-10 pt-1 mb-5">Related Posts</h4>
+                            <h4 class="title title-lg font-weight-bold mt-10 pt-1 mb-5">{% trans 'Related Posts' %}</h4>
                             <div class="swiper">
                                 <div class="post-slider swiper-container swiper-theme nav-top pb-2" data-swiper-options="{
                                     'spaceBetween': 20,
@@ -126,7 +125,7 @@
                                                     - <a href="#" class="post-date">{{ i.date }}</a>
                                                 </div>
                                                 <h4 class="post-title mb-3"><a href="post-single.html">{{ i.name }}</a></h4>
-                                                <a href="post-single.html" class="btn btn-link btn-dark btn-underline font-weight-normal">Read More<i class="w-icon-long-arrow-right"></i></a>
+                                                <a href="{% url 'blog:blog' %}" class="btn btn-link btn-dark btn-underline font-weight-normal">Read More<i class="w-icon-long-arrow-right"></i></a>
                                             </div>
                                         </div>
                                         {% endfor %}
@@ -138,7 +137,7 @@
                             </div>
                             <!-- End Related Posts -->
                             
-                            <h4 class="title title-lg font-weight-bold pt-1 mt-10">{{ count }} Comments</h4>
+                            <h4 class="title title-lg font-weight-bold pt-1 mt-10">{{ count }} {% trans 'Comments' %}</h4>
                             <ul class="comments list-style-none pl-0">
                                 {% for c in comment %}
                                 
@@ -175,8 +174,8 @@
                             {% if user.is_authenticated %}
                             <form class="reply-section pb-4" method='POST' action="{% url 'blog:blog-details' blog_obj.slug %}">
                                 {% csrf_token %}
-                                <h4 class="title title-md font-weight-bold pt-1 mt-10 mb-0">Leave a Reply</h4>
-                                <p>Your email address will not be published. Required fields are marked</p>
+                                <h4 class="title title-md font-weight-bold pt-1 mt-10 mb-0">{% trans 'Leave a Reply' %}</h4>
+                                <p>{% trans 'Your email address will not be published. Required fields are marked' %}</p>
                                 <div class="row">
                                     {{ form }}
                                     
@@ -189,7 +188,7 @@
                                     </div> {% endcomment %}
                                 </div>
                                 {% comment %} <textarea cols="30" rows="6" placeholder="Write a Comment" class="form-control mb-4" id="comment"></textarea> {% endcomment %}
-                                <button class="btn btn-dark btn-rounded btn-icon-right btn-comment">Post Comment<i class="w-icon-long-arrow-right"></i></button>
+                                <button class="btn btn-dark btn-rounded btn-icon-right btn-comment">{% trans 'Post Comment' %}<i class="w-icon-long-arrow-right"></i></button>
                             </form>
                             {% else %}
                             <p>Please register to write a comment..</p>
@@ -222,7 +221,7 @@
                                    
                                     <!-- End of Widget categories -->
                                     <div class="widget widget-posts">
-                                        <h3 class="widget-title bb-no">Popular Posts</h3>
+                                        <h3 class="widget-title bb-no">{% trans 'Popular Posts' %}</h3>
                                         <div class="widget-body">
                                             <div class="swiper">
                                                 
@@ -302,7 +301,7 @@
                                     <!-- End of Widget custom block -->
                                     
                                     <div class="widget widget-calendar">
-                                        <h3 class="widget-title bb-no">Calendar</h3>
+                                        <h3 class="widget-title bb-no">{% trans 'Calendar' %}</h3>
                                         <div class="widget-body">
                                             <div class="calendar-container" data-calendar-options="{
                                                 'dayExcerpt': 1
