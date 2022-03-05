@@ -28,15 +28,14 @@ class BlogListView(ListView):
     model = Blog
     template_name = 'blog.html'
     paginate_by = 3
-    ontext_object_name = 'blog_list'
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
         blog = Blog.objects.all()
         blog_category = BlogCategory.objects.all()
-        context = {
+        context = super().get_context_data(**kwargs)
+        context.update({
             'blog_list':blog,
             'category': blog_category
-        }   
+        })
         return context  
 
 

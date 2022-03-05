@@ -26,7 +26,9 @@ class Blog(models.Model):
     
     def __str__(self):
         return f'{self.name}'
-    
+  
+    class Meta:
+        ordering = ['-id']
     
 class Comment(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE,null=True,blank=True)
