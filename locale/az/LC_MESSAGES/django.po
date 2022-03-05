@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-05 02:03+0400\n"
+"POT-Creation-Date: 2022-03-05 14:03+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,6 +34,14 @@ msgstr "Doğrulama üçün əvvəlki parolu daxil edin"
 msgid "email address"
 msgstr "E-poçt adresi"
 
+#: .\account\templates\login.html:31
+msgid "Sign In"
+msgstr "Giriş"
+
+#: .\account\templates\register.html:31
+msgid "Sign Up"
+msgstr "Qeydiyyat"
+
 #: .\blog\templates\single-blog.html:40 .\blog\templates\single-blog.html:140
 msgid "Comments"
 msgstr "Şərhlər"
@@ -52,7 +60,7 @@ msgstr "Əlaqəli paylaşımlar"
 
 #: .\blog\templates\single-blog.html:177
 msgid "Leave a Reply"
-msgstr ",ərh yazın"
+msgstr "Şərh yazın"
 
 #: .\blog\templates\single-blog.html:178
 msgid "Your email address will not be published. Required fields are marked"
@@ -82,6 +90,27 @@ msgstr "E-poçt adresi"
 #: .\contact\templates\contact-us.html:71
 msgid "Phone Number"
 msgstr "Əlaqə nömrəsi"
+
+#: .\contact\templates\contact-us.html:103
+msgid "People usually ask these"
+msgstr "Ən çox soruşulan suallar"
+
+#: .\contact\templates\contact-us.html:107
+msgid "How can I cancel my order?"
+msgstr "Sifarişimi necə ləğv edə bilərəm?"
+
+#: .\contact\templates\contact-us.html:120
+msgid "Why is my registration delayed?"
+msgstr "Niyə qeydiyyatım gecikir?"
+
+#: .\contact\templates\contact-us.html:133
+msgid "What do I need to buy products?"
+msgstr "Məhsulları almaq üçün nə lazımdır?"
+
+#: .\contact\templates\contact-us.html:146
+#: .\contact\templates\contact-us.html:159
+msgid "How can I get money back?"
+msgstr "Mən pulu necə geri ala bilərəm?"
 
 #: .\contact\templates\contact-us.html:172
 msgid "Send Us a Message"
@@ -196,7 +225,7 @@ msgstr "Səbət"
 msgid "Checkout"
 msgstr "Sifarişi tamamla"
 
-#: .\shop\templates\cart.html:29
+#: .\shop\templates\cart.html:29 .\shop\templates\wishlist.html:33
 msgid "Product"
 msgstr "Məhsul"
 
@@ -304,6 +333,19 @@ msgstr "Açəqalama"
 msgid "Detail"
 msgstr "Məlumat"
 
+#: .\shop\templates\single-product.html:219
+msgid ""
+"We guarantee our products and you could get back all of your money anytime "
+"you want in 30 days"
+msgstr "Məhsullarımıza zəmanət veririk və istədiyiniz zaman bütün pulunuzu geri ala bilərsiniz 30 günə istəyirsən"
+
+#: .\shop\templates\single-product.html:224
+#, python-format
+msgid ""
+"Get 20%%-50%% off items over 50$ for a month or over 250$ for a year with "
+"our special credit card."
+msgstr "Bir ay ərzində 50$-dan yuxarı və ya bir il ərzində 250$-dan yuxarı məhsullara 20%%-50%% endirim əldə edin"
+
 #: .\shop\templates\wishlist.html:29
 msgid "My wishlist"
 msgstr "Favoritlər"
@@ -311,6 +353,10 @@ msgstr "Favoritlər"
 #: .\shop\templates\wishlist.html:69
 msgid "Add to cart"
 msgstr "Səbətə əlavə et"
+
+#: .\shop\templates\wishlist.html:77
+msgid "Share on"
+msgstr "Paylaş"
 
 #: .\templates\base.html:119
 msgid "Blog"
