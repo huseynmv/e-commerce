@@ -46,8 +46,6 @@ def cart(request):
         order = {'get_cart_total': 0,'get_cart_items': 0 }
         cartItems = order['get_cart_items']
         
-        
-        
     context = {
         'items': items,
         'order': order,
@@ -115,8 +113,10 @@ def update_item(request):
     order, created = Order.objects.get_or_create(user=user, status=False)
     orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)
     oitemcount = OrderItem.objects.all().count()
+    print('salam')
     if action == 'add':
         orderItem.quantity = orderItem.quantity + 1
+        print('added')
         
     elif action == 'remove':
         orderItem.quantity = orderItem.quantity - 1

@@ -31,7 +31,7 @@
             s.parentNode.insertBefore(wf, s);
         })(document);
     </script> -->
-    {% comment %} <script type='text/javascript'>
+    <script type='text/javascript'>
         let user = '{{ request.user }}'
         function getToken(name) {
             let cookieValue = null;
@@ -49,7 +49,7 @@
             return cookieValue;
         }
         const csrftoken = getToken('csrftoken'); 
-    </script> {% endcomment %}
+    </script>
     <!-- <script src="../static/js/cart.js"></script> -->
 
     <link rel="preload" href="{% static 'vendor/fontawesome-free/webfonts/fa-regular-400.woff2' %}" as="font" type="font/woff2"
@@ -1107,7 +1107,7 @@
     <script src="{% static 'js/cart.js' %}"></script>
     <script src="{% static 'js/wishlist.js' %}"></script>
     <script type='text/javascript' src="{% static 'js/jquery.min.js' %}"></script>
-
+    
 </body>
 
 
