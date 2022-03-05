@@ -105,7 +105,7 @@
                             <div class="dropdown-box">
                                 {% for language in languages %}
                                 
-                                  <a href="/{{ language.code }}/"
+                                  <a href="/{{ language.code }}/{{request.get_full_path|slice:"4:"}}"
                                     {% if language.code == CURRENT_LANGUAGE %} class="active"{% endif %}>
                                     {{ language.name_local }}
                                   </a>
