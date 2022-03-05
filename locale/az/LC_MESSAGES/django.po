@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-05 14:03+0400\n"
+"POT-Creation-Date: 2022-03-05 14:12+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,7 +34,7 @@ msgstr "Doğrulama üçün əvvəlki parolu daxil edin"
 msgid "email address"
 msgstr "E-poçt adresi"
 
-#: .\account\templates\login.html:31
+#: .\account\templates\login.html:31 .\templates\base.html:128
 msgid "Sign In"
 msgstr "Giriş"
 
@@ -79,7 +79,7 @@ msgid "Calendar"
 msgstr "Kalendar"
 
 #: .\contact\templates\contact-us.html:11
-#: .\contact\templates\contact-us.html:21
+#: .\contact\templates\contact-us.html:21 .\templates\base.html:120
 msgid "Contact Us"
 msgstr "Bizimlə əlaqə"
 
@@ -337,14 +337,18 @@ msgstr "Məlumat"
 msgid ""
 "We guarantee our products and you could get back all of your money anytime "
 "you want in 30 days"
-msgstr "Məhsullarımıza zəmanət veririk və istədiyiniz zaman bütün pulunuzu geri ala bilərsiniz 30 günə istəyirsən"
+msgstr ""
+"Məhsullarımıza zəmanət veririk və istədiyiniz zaman bütün pulunuzu geri ala "
+"bilərsiniz 30 günə istəyirsən"
 
 #: .\shop\templates\single-product.html:224
 #, python-format
 msgid ""
 "Get 20%%-50%% off items over 50$ for a month or over 250$ for a year with "
 "our special credit card."
-msgstr "Bir ay ərzində 50$-dan yuxarı və ya bir il ərzində 250$-dan yuxarı məhsullara 20%%-50%% endirim əldə edin"
+msgstr ""
+"Bir ay ərzində 50$-dan yuxarı və ya bir il ərzində 250$-dan yuxarı "
+"məhsullara 20%%-50%% endirim əldə edin"
 
 #: .\shop\templates\wishlist.html:29
 msgid "My wishlist"
@@ -358,14 +362,54 @@ msgstr "Səbətə əlavə et"
 msgid "Share on"
 msgstr "Paylaş"
 
-#: .\templates\base.html:119
+#: .\templates\base.html:119 .\templates\base.html:154
+#: .\templates\base.html:633
 msgid "Blog"
 msgstr "Bloq"
 
-#: .\templates\base.html:147
+#: .\templates\base.html:130
+msgid "Register"
+msgstr "Qeydiyyat"
+
+#: .\templates\base.html:148
 msgid "Home"
 msgstr ""
 
-#: .\templates\base.html:1033
+#: .\templates\base.html:151
+#, fuzzy
+#| msgid "Send Now"
+msgid "Shop"
+msgstr "Göndər"
+
+#: .\templates\base.html:203
+msgid "Live Chat"
+msgstr "Canlı Söhbət"
+
+#: .\templates\base.html:209
+
+msgid "Wishlist"
+msgstr "Favoritlər"
+
+#: .\templates\base.html:223
+msgid "Cart"
+msgstr "Səbət"
+
+#: .\templates\base.html:242
+#, fuzzy
+#| msgid "All Categories"
+msgid "Browse Categories"
+msgstr "Bütün kateqoriyalar"
+
+#: .\templates\base.html:460
+msgid "Copyright © 2021 Wolmart Store. All Rights Reserved."
+msgstr "Bütün hüquqlar qorunur"
+
+#: .\templates\base.html:463
+#, fuzzy
+#| msgid "We ensure secure payment"
+msgid "We are using safe payment for"
+msgstr "Biz təhlükəsiz ödəniş təmin edirik"
+
+#: .\templates\base.html:1034
 msgid "Ultrices eros in cursus turpis massa cursus mattis."
 msgstr "Az-dili"
