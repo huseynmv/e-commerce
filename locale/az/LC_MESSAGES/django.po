@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-05 14:12+0400\n"
+"POT-Creation-Date: 2022-03-05 15:10+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,7 +34,7 @@ msgstr "Doğrulama üçün əvvəlki parolu daxil edin"
 msgid "email address"
 msgstr "E-poçt adresi"
 
-#: .\account\templates\login.html:31 .\templates\base.html:128
+#: .\account\templates\login.html:31 .\templates\base.html:129
 msgid "Sign In"
 msgstr "Giriş"
 
@@ -79,52 +79,56 @@ msgid "Calendar"
 msgstr "Kalendar"
 
 #: .\contact\templates\contact-us.html:11
-#: .\contact\templates\contact-us.html:21 .\templates\base.html:120
+#: .\contact\templates\contact-us.html:21 .\templates\base.html:121
 msgid "Contact Us"
 msgstr "Bizimlə əlaqə"
 
-#: .\contact\templates\contact-us.html:62
+#: .\contact\templates\contact-us.html:31
+msgid "Contact Information"
+msgstr "Əlaqə Məlumatları"
+
+#: .\contact\templates\contact-us.html:61
 msgid "E-mail Address"
 msgstr "E-poçt adresi"
 
-#: .\contact\templates\contact-us.html:71
+#: .\contact\templates\contact-us.html:70
 msgid "Phone Number"
 msgstr "Əlaqə nömrəsi"
 
-#: .\contact\templates\contact-us.html:103
+#: .\contact\templates\contact-us.html:102
 msgid "People usually ask these"
 msgstr "Ən çox soruşulan suallar"
 
-#: .\contact\templates\contact-us.html:107
+#: .\contact\templates\contact-us.html:106
 msgid "How can I cancel my order?"
 msgstr "Sifarişimi necə ləğv edə bilərəm?"
 
-#: .\contact\templates\contact-us.html:120
+#: .\contact\templates\contact-us.html:119
 msgid "Why is my registration delayed?"
 msgstr "Niyə qeydiyyatım gecikir?"
 
-#: .\contact\templates\contact-us.html:133
+#: .\contact\templates\contact-us.html:132
 msgid "What do I need to buy products?"
 msgstr "Məhsulları almaq üçün nə lazımdır?"
 
-#: .\contact\templates\contact-us.html:146
-#: .\contact\templates\contact-us.html:159
+#: .\contact\templates\contact-us.html:145
+#: .\contact\templates\contact-us.html:158
 msgid "How can I get money back?"
 msgstr "Mən pulu necə geri ala bilərəm?"
 
-#: .\contact\templates\contact-us.html:172
+#: .\contact\templates\contact-us.html:171
 msgid "Send Us a Message"
 msgstr "Bizə mesaj göndərin"
 
-#: .\contact\templates\contact-us.html:175
+#: .\contact\templates\contact-us.html:174
 msgid "Email successfully sent"
 msgstr "Email uğurla göndərildi"
 
-#: .\contact\templates\contact-us.html:176
+#: .\contact\templates\contact-us.html:175
 msgid "Your message was successfully sent to"
 msgstr "Mesajınız uğurla göndərildi"
 
-#: .\contact\templates\contact-us.html:187
+#: .\contact\templates\contact-us.html:186
 msgid "Send Now"
 msgstr "Göndər"
 
@@ -362,54 +366,53 @@ msgstr "Səbətə əlavə et"
 msgid "Share on"
 msgstr "Paylaş"
 
-#: .\templates\base.html:119 .\templates\base.html:154
-#: .\templates\base.html:633
+#: .\templates\base.html:120 .\templates\base.html:155
+#: .\templates\base.html:634
 msgid "Blog"
 msgstr "Bloq"
 
-#: .\templates\base.html:130
+#: .\templates\base.html:131
 msgid "Register"
 msgstr "Qeydiyyat"
 
-#: .\templates\base.html:148
+#: .\templates\base.html:149
 msgid "Home"
 msgstr ""
 
-#: .\templates\base.html:151
+#: .\templates\base.html:152
 #, fuzzy
 #| msgid "Send Now"
 msgid "Shop"
 msgstr "Göndər"
 
-#: .\templates\base.html:203
+#: .\templates\base.html:204
 msgid "Live Chat"
 msgstr "Canlı Söhbət"
 
-#: .\templates\base.html:209
-
+#: .\templates\base.html:210
 msgid "Wishlist"
 msgstr "Favoritlər"
 
-#: .\templates\base.html:223
+#: .\templates\base.html:224
 msgid "Cart"
 msgstr "Səbət"
 
-#: .\templates\base.html:242
+#: .\templates\base.html:243
 #, fuzzy
 #| msgid "All Categories"
 msgid "Browse Categories"
 msgstr "Bütün kateqoriyalar"
 
-#: .\templates\base.html:460
+#: .\templates\base.html:461
 msgid "Copyright © 2021 Wolmart Store. All Rights Reserved."
 msgstr "Bütün hüquqlar qorunur"
 
-#: .\templates\base.html:463
+#: .\templates\base.html:464
 #, fuzzy
 #| msgid "We ensure secure payment"
 msgid "We are using safe payment for"
 msgstr "Biz təhlükəsiz ödəniş təmin edirik"
 
-#: .\templates\base.html:1034
+#: .\templates\base.html:1035
 msgid "Ultrices eros in cursus turpis massa cursus mattis."
 msgstr "Az-dili"

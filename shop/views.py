@@ -14,7 +14,6 @@ def product(request):
             order, created = Order.objects.get_or_create(user=user, status=False)
             items = order.orderitem_set.all()
             cartItems = order.get_cart_items
-            print(items)
         else:
             items = []
             order = {'get_cart_total': 0,'get_cart_items': 0 }
@@ -23,7 +22,7 @@ def product(request):
         categories = list(ProductCategory.objects.all().values_list('name', flat=True))
         brand = Brand.objects.all()
         color  = Color.objects.all()
-        print(categories)
+
         context = {
             'product' : product,
             'cartItems': cartItems,
@@ -81,14 +80,14 @@ def checkout(request):
             if form.is_valid():
                 message_send = True
                 
-                print(form)
+             
                     
                 form.save()
                     
         user = request.user
         order, created = Order.objects.get_or_create(user=user, status=False)
         items = order.orderitem_set.all()
-        print(items)
+
         cartItems = order.get_cart_items
         
     else:
@@ -118,7 +117,7 @@ def update_item(request):
     oitemcount = OrderItem.objects.all().count()
     if action == 'add':
         orderItem.quantity = orderItem.quantity + 1
-        print(oitemcount)
+        
     elif action == 'remove':
         orderItem.quantity = orderItem.quantity - 1
 
@@ -126,7 +125,7 @@ def update_item(request):
     
     if orderItem.quantity <= 0 or action == 'removeAll':
         orderItem.delete()
-        print(oitemcount)
+        
         
     if oitemcount <= 1 and (action == 'removeAll' or action == 'remove'):
         order.delete()
@@ -140,8 +139,7 @@ def wishlist(request):
     datas = json.loads(request.body)
     productID = datas['p']
     action = datas['a']
-    # print('Action', action)
-    # print('ProductID', productID) 
+
     
     user = request.user
     product = Product.objects.get(id=productID)
@@ -149,7 +147,7 @@ def wishlist(request):
     wishlistitem, created = WishlistItem.objects.get_or_create(wishlist=wishlist, product=product)
     if action == 'addWishlist':
         wishlistitem.quantity = (wishlistitem.quantity + 1)
-        print('ProductID', productID)
+
     elif action == 'removeWishlist':
         wishlistitem.quantity = 0     
     wishlistitem.save()
@@ -189,7 +187,7 @@ def search(request):
         searched = request.POST['searched']
         search_item = Product.objects.filter(name__icontains = searched)
         x = list(Product.objects.values_list('name', flat=True))
-        print(x)
+        
         context = {
             'search_item':search_item,
             'searched':searched,
@@ -226,18 +224,17 @@ def filter_data(request):
     # color = list(Color.objects.all().values_list('id', flat=True))
     
     brand = request.GET.getlist('brand[]')
-    print(brand)
-    print(color)
+
     if len(color)>0:
-        print('salam')
+      
         
         allprod=allprod.filter(color__name__in = color)
-        # print(allprod)
+        
     if len(brand)>0:
-        print('sagol')
+        
         
         allprod=allprod.filter(brand__name__in = brand)
-        print(allprod)
+        
         
     t = render_to_string('ajax/yusif.html', {'data': allprod})
         

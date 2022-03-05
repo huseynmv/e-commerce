@@ -6,8 +6,8 @@ from blog.models import Blog
 def index(request):
     product = Product.objects.all().order_by("-created_at")[:3]
     electronic = Product.objects.filter(category__name__in=['electronic', 'Electronic'])
-    clothes = Product.objects.filter(category__name__in=['clothes', 'wear'])
-    technology = Product.objects.filter(category__name__in=['technology', 'computer'])
+    clothes = Product.objects.filter(category__name__in=['clothes','Clothes','wear','Wear'])
+    technology = Product.objects.filter(category__name__in=['technology',"Technology", 'computer', 'computer', ])
     blog = Blog.objects.all()[:4]
     print(blog)
     
