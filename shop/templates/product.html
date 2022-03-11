@@ -265,8 +265,8 @@
                                     <div class="widget widget-collapsible">
                                         <h3 class="widget-title"><span>{% trans 'All Categories' %}</span></h3>
                                         <ul class="widget-body filter-items search-ul">
-                                            {% for i in categories %}
-                                            <li><a href="{% url 'shop:filter' i %}">{{ i }}</a></li>
+                                            {% for i in product_category %}
+                                            <li><a href="{% url 'shop:filter' i.slug %}">{{ i.name }}</a></li>
                                             {% endfor %}
                                         </ul>
                                     </div>
