@@ -32,7 +32,7 @@
                                     }">Deals And Promotions</h5>
                                     <h3 class="banner-title ls-25 mb-6 slide-animate" data-animation-options="{
                                         'name': 'fadeInUpShorter', 'duration': '1s'
-                                    }">Fashion <span class="text-primary">Skiwears</span> for the ardent Sports
+                                    }">Fashion Skiwears for the ardent Sports
                                         devotees
                                     </h3>
                                     <a href="{% url 'shop:product' %}"
@@ -59,10 +59,10 @@
                                         height="732" />
                                 </figure>
                                 <div class="banner-content y-50">
-                                    <h5 class="banner-subtitle text-uppercase font-weight-bold mb-2 slide-animate"
+                                    {% comment %} <h5 class="banner-subtitle text-uppercase font-weight-bold mb-2 slide-animate"
                                         data-animation-options="{
                                         'name': 'fadeInRightShorter', 'duration': '1s', 'delay': '.5s'
-                                    }">News And Inspiration</h5>
+                                    }">News And Inspiration</h5> {% endcomment %}
                                     <h3 class="banner-title ls-25 mb-2 text-uppercase lh-1 slide-animate"
                                         data-animation-options="{
                                         'name': 'fadeInRightShorter', 'duration': '1s', 'delay': '.7s'
@@ -70,13 +70,8 @@
                                     <div class="banner-price-info font-weight-bold text-dark ls-25 slide-animate"
                                         data-animation-options="{
                                         'name': 'fadeInRightShorter', 'duration': '1s', 'delay': '.9s'
-                                    }"> {% trans 'Sale up to' %}   
-                                        <span class="text-primary font-weight-bolder text-uppercase ls-normal">30%
-                                            Off</span></div>
-                                    <p class="font-weight-normal text-default ls-25 slide-animate"
-                                        data-animation-options="{
-                                        'name': 'fadeInRightShorter', 'duration': '1s', 'delay': '1.1s'
-                                    }">Free returns extended to 30 days after delivery</p>
+                                    }"> Sale up to  30% Off Free returns extended to 30 days after delivery</div>
+                                    
                                     <a href="{% url 'shop:product' %}"
                                         class="btn btn-dark btn-outline btn-rounded btn-icon-right slide-animate"
                                         data-animation-options="{
@@ -107,7 +102,7 @@
                                     }">Top Monthly Seller</h5>
                                     <h4 class="banner-title ls-25 slide-animate" data-animation-options="{
                                         'name': 'fadeInRightShorter', 'duration': '1s'
-                                    }">Sumsung 52 Inches Full HD <span class="text-primary">Smart LED</span> TV</h4>
+                                    }">Sumsung 52 Inches Full HD Smart LED TV</h4>
                                     <p class="font-weight-normal text-dark slide-animate" data-animation-options="{
                                         'name': 'fadeInRightShorter', 'duration': '1s'
                                     }">Only until the end of this week.</p>
@@ -1731,7 +1726,7 @@
                                 <div class="post-content">
                                     
                                 </div>
-                                <a href="{% url 'blog:blog' %}" class="btn btn-link btn-dark btn-underline">Read More<i
+                                <a href="{% url 'blog:blog-details' i.slug %}" class="btn btn-link btn-dark btn-underline">Read More<i
                                         class="w-icon-long-arrow-right"></i></a>
                             </div>
                         </div>
