@@ -8,6 +8,8 @@ class HomeSlider(models.Model):
     title = models.CharField(max_length=200, null=True,blank=True)
     desc = models.CharField(max_length=200,null=True, blank=True)
     
+    def __str__(self):
+        return self.title
     # class Meta:
         
     #     exclude = ['title','desc']
@@ -16,3 +18,6 @@ class HomeSecondarySlider(models.Model):
     icon = models.CharField(max_length=200, null=True, blank=True)
     title = models.CharField(max_length=200, null=True, blank=True)
     desc = models.CharField(max_length=200, null=True, blank=True)
+    
+    def __str__(self):
+        return self.title
