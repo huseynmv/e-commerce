@@ -6,6 +6,7 @@ from . models import Brand, Color, Order, OrderItem, Product, ProductCategory, W
 from django.http import JsonResponse
 from django.views.generic import DetailView
 from django.template.loader import render_to_string
+from django.db.models import Q
 import json
 # Create your views here.
 def product(request):
@@ -182,25 +183,21 @@ def wishlist_view(request):
     }
     return render(request, 'wishlist.html', context)
 
+
 def search(request):
-    search_item = None
     if request.method == 'POST':
         searched = request.POST['searched']
-        print('yusif')
-        print(Product.objects.values_list('desc', flat=True) )
-        if searched in list(Product.objects.values_list('desc', flat=True))  :
-            print('Hello world')
         
-            search_item = Product.objects.filter(desc__icontains=searched)
-        
-        elif searched in list(Product.objects.values_list('name', flat=True)):
-            search_item = Product.objects.filter(name__icontains=searched)
-            print('Salam Dunya')
+        search_item = Product.objects.filter(
+        Q(name__icontains=searched) | Q(desc__icontains=searched)
+    )   
+        print(search_item)     
         context = {
-                'search_item':search_item,
-                'searched':searched,
-            }
+            'search_item':search_item,
+            'searched':searched,
+        }
         return render(request, 'search.html',context)
+
     
 def filter(request, slug):
     product = Product.objects.filter(category__slug=slug)
