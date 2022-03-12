@@ -114,7 +114,7 @@ class Checkout(models.Model):
     zip = models.CharField(max_length=255, null=True, blank=True)
     phone = models.IntegerField(null=True, blank=True)
     
-    # add user field
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
     
     
