@@ -117,4 +117,8 @@ class Checkout(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
     
+class Discount(models.Model):
+    discount_price = models.IntegerField(null=True,blank=True)
     
+    def __str__(self):
+        return f'{self.discount_price}'

@@ -2,7 +2,7 @@ import colorsys
 from django.shortcuts import render
 
 from .forms import CheckoutForm
-from . models import Brand, Color, Order, OrderItem, Product, ProductCategory, WishlistItem,Wishlist
+from . models import Brand, Color, Order, OrderItem, Product, ProductCategory, WishlistItem,Wishlist, Discount
 from django.http import JsonResponse
 from django.views.generic import DetailView
 from django.template.loader import render_to_string
@@ -10,6 +10,10 @@ from django.db.models import Q
 import json
 # Create your views here.
 def product(request):
+    
+    for i in list(Discount.objects.all().values_list('discount_price', flat=True)):
+        print(i)
+
         if request.user.is_authenticated:
             user = request.user
             order, created = Order.objects.get_or_create(user=user, status=False)
@@ -105,34 +109,57 @@ def checkout(request):
     }
     return render(request, 'checkout.html', context)
 
-def update_item(request):
-    data = json.loads(request.body)
-    productID = data['productID']
-    action = data['action']
-    user = request.user.id
-    product = Product.objects.get(id=productID)
-    order, created = Order.objects.get_or_create(user=user, status=False)
-    orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)
-    oitemcount = OrderItem.objects.all().count()
-    print('salam')
-    if action == 'add':
-        orderItem.quantity = orderItem.quantity + 1
-        print('added')
+# def update_item(request):
+#     data = json.loads(request.body)
+#     productID = data['productID']
+#     action = data['action']
+#     user = request.user.id
+#     product = Product.objects.get(id=productID)
+#     order, created = Order.objects.get_or_create(user=user, status=False)
+#     orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)
+#     oitemcount = OrderItem.objects.all().count()
+#     print('salam')
+#     if action == 'add':
+#         orderItem.quantity = orderItem.quantity + 1
+#         print('added')
         
-    elif action == 'remove':
-        orderItem.quantity = orderItem.quantity - 1
+#     elif action == 'remove':
+#         orderItem.quantity = orderItem.quantity - 1
 
-    orderItem.save()
+#     orderItem.save()
     
-    if orderItem.quantity <= 0 or action == 'removeAll':
-        orderItem.delete()
+#     if orderItem.quantity <= 0 or action == 'removeAll':
+#         orderItem.delete()
         
         
-    if oitemcount <= 1 and (action == 'removeAll' or action == 'remove'):
-        order.delete()
+#     if oitemcount <= 1 and (action == 'removeAll' or action == 'remove'):
+#         order.delete()
         
      
-    return JsonResponse('item was added', safe=False)
+#     return JsonResponse('item was added', safe=False)
+
+def update_item(request):
+	# del request.session['cartdata']
+	cart_p={}
+	cart_p[str(request.GET['id'])]={
+		# 'image':request.GET['image'],
+		'title':request.GET['title'],
+		'qty':request.GET['qty'],
+		# 'price':request.GET['price'],
+	}
+	if 'cartdata' in request.session:
+		if str(request.GET['id']) in request.session['cartdata']:
+			cart_data=request.session['cartdata']
+			cart_data[str(request.GET['id'])]['qty']=int(cart_p[str(request.GET['id'])]['qty'])
+			cart_data.update(cart_data)
+			request.session['cartdata']=cart_data
+		else:
+			cart_data=request.session['cartdata']
+			cart_data.update(cart_p)
+			request.session['cartdata']=cart_data
+	else:
+		request.session['cartdata']=cart_p
+	return JsonResponse({'data':request.session['cartdata'],'totalitems':len(request.session['cartdata'])})
 
 
 

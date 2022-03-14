@@ -37,6 +37,6 @@ function updateUserWishlist(p, a){
     })
     .then((datas) =>{
         console.log('datas:', datas)
-        location.reload()
+        location.reload(false)
     })
 }
