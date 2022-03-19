@@ -10,9 +10,7 @@ from django.db.models import Q
 import json
 # Create your views here.
 def product(request):
-    
-    for i in list(Discount.objects.all().values_list('discount_price', flat=True)):
-        print(i)
+
 
         if request.user.is_authenticated:
             user = request.user
@@ -27,7 +25,16 @@ def product(request):
         categories = list(ProductCategory.objects.all().values_list('name', flat=True))
         brand = Brand.objects.all()
         color  = Color.objects.all()
-
+        a = list(Product.objects.all().values_list('category',flat=True))
+        percent = list(ProductCategory.objects.values_list('discount_percent', flat=True))
+        discount_price = list(Product.objects.all().values_list('price', flat=True))
+        
+        print(percent)
+        for j in percent:
+            print(j)
+            for i in discount_price:
+                p = i - i * j / 100
+                print(p)
         context = {
             'product' : product,
             'cartItems': cartItems,

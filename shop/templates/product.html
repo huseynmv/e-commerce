@@ -350,8 +350,15 @@
                                             </h3>
                                             
                                             <div class="product-pa-wrapper">
+                                                
+                
                                                 <div class="product-price">
-                                                    {{product.price}} $
+                                                    {% if product.category.discount_percent %}
+                                                    {{ product.price }}
+                                                    {{ product.category.discount }}
+                                                    {% else %}  
+                                                    {{ product.price }}
+                                                    {% endif %}
                                                 </div>
                                             </div>
                                         </div>

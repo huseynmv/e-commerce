@@ -18,9 +18,13 @@ class Brand(models.Model):
 class ProductCategory(models.Model):
     name = models.CharField(max_length=127, null=True, blank=True)
     slug = models.SlugField(max_length=127, null=True, blank=True)
-    
+
+    discount_percent = models.IntegerField(default=0) 
     def __str__(self) :
         return self.name
+    
+
+    
 
 class Product(models.Model):
     
@@ -34,7 +38,7 @@ class Product(models.Model):
     color = models.ForeignKey(Color,on_delete=models.SET_NULL, null=True, blank=True)
     brand = models.ForeignKey(Brand,on_delete=models.SET_NULL, null=True, blank=True)
     size  = models.CharField(choices=PRODUCT_SIZE_CHOICES, default='L', max_length=255)
-    category = models.ForeignKey(ProductCategory, on_delete=models.SET_NULL,max_length=127, null=True, blank=True)
+    category = models.ForeignKey(ProductCategory, on_delete=models.SET_NULL,max_length=127,related_name='category', null=True, blank=True)
     desc = models.TextField(null=True, blank=True)
     name = models.CharField(max_length=127, null=True, blank=True)
     price = models.BigIntegerField(null=True, blank=True)
@@ -47,7 +51,7 @@ class Product(models.Model):
 
     slug = models.SlugField(max_length=127, null=True, blank=True)
     
-    
+
     class Meta:
         ordering = ('created_at',)
     
