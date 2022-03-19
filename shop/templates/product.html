@@ -265,8 +265,8 @@
                                     <div class="widget widget-collapsible">
                                         <h3 class="widget-title"><span>{% trans 'All Categories' %}</span></h3>
                                         <ul class="widget-body filter-items search-ul">
-                                            {% for i in product_category %}
-                                            <li><a href="{% url 'shop:filter' i.slug %}">{{ i.name }}</a></li>
+                                            {% for i in categories %}
+                                            <li><a href="{% url 'shop:filter' i %}">{{ i }}</a></li>
                                             {% endfor %}
                                         </ul>
                                     </div>
@@ -333,14 +333,10 @@
                                                     height="338" />
                                             </a>
                                             <div class="product-action-horizontal">
-                                                <input type="number" value="1" class="form-control product-qty-{{product.id}}" id="productQty" />
-                                                <input type="hidden" class="product-id-{{product.id}}" value="{{product.id}}" />
-                                                <input type="hidden" class="product-image-{{product.id}}" value="{{product.image.url}}" />
-                                                <input type="hidden" class="product-title-{{product.id}}" value="{{product.name}}" />
-                                                <button type="button" data-product={{product.id}} data-action="add" id="add" class="btn-product-icon btn-cart w-icon-cart update-cart"
-                                                    title="Add to cart"></button>
-                                                <button type="button" data-product={{product.id}} data-action='addWishlist' class="btn-product-icon btn-wishlist w-icon-heart wishlistjs" 
-                                                    title="Wishlist"></button>
+                                                <a href="#" data-product={{product.id}} data-action='add' class="btn-product-icon btn-cart w-icon-cart update-cart"
+                                                    title="Add to cart"></a>
+                                                <a href="#" data-action='addWishlist' data-product={{product.id}} class="btn-product-icon btn-wishlist w-icon-heart wishlistjs"
+                                                    title="Wishlist"></a>
                                                 
                                                 
                                             </div>
